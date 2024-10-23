@@ -34,7 +34,7 @@ def valor_with_ipca(symbol):
     for i in range(df[symbol].shape[0]):
         date = df[symbol].date.iloc[i]
         # date = date[3:7] + '-' + date[0:2] + '-01'
-        date = datetime(day=1, month=int(date[0:2]), year=int(date[3:7]))
+        date = dt(day=1, month=int(date[0:2]), year=int(date[3:7]))
         ipca_index = df_ipca[df_ipca.index >= date].ipca_index.iloc[0]
         df[symbol]['valor'].iloc[i] = df[symbol]['valor'].iloc[i] * (ipca_last / ipca_index)
 
@@ -80,7 +80,7 @@ def load_symbol_data(symbol):
     # Arquivos de dados criados manualmente
     if symbol in files_created:
         datahead, skiprows = load_info_digitado(symbol)
-        if gvar.get('dig_mode'):
+        if gvar.get('dig_mode', False):  # Use get() with default False
             load_info_digitado('digitado', symbol)
 
         if gvar['ERROR'] != '':
@@ -187,7 +187,7 @@ def get_symbol_data(symbol):
     # global save_file_name
 
     load_symbol_data(symbol)
-    if gvar['ERROR'] != '':
+    if gvar.get('ERROR_STATE', False):
         return None, None
 
     data = {}

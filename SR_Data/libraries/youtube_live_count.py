@@ -219,7 +219,7 @@ def youtube_get_qty_watching(video_id, channel_name):
         if  dt_ini == -2:  # video unavailable
             new_row[2] = df_vid.loc[filter]['title'].iloc[0]
         df_vid.loc[filter] = new_row
-        df_vid.to_csv(file_name_vid, index=False, sep=';')
+        df_vid.to_csv(file_name_vid, index=False, sep=';', lineterminator='\n')
         print(f'\nVídeo Encerrado : {new_row}')
         gen_graph_video(video_id)
 
@@ -397,7 +397,7 @@ def gen_graph_comp_channels(dt_ini, dt_end, filename, realtime=False, title=''):
 
     if realtime:
         add_annot(annot, 1200-120, 145, '( YOUTUBE  Real Time )', color, 24, xanchor='right')
-        df.to_csv(file_name_rti, index=False, sep=';')
+        df.to_csv(file_name_rti, index=False, sep=';', lineterminator='\n')
 
     fig.update_layout(annotations=annot)
 
@@ -513,7 +513,7 @@ def gen_graph_comp(dt_ini, dt_end, video_id, vchannel, vtitle, filename):
 
 
 def send_telegram_doc(doc):
-    if not OP_TELEGRAM  or  not gvar.get('send_by_telegram', True):
+    if not OP_TELEGRAM  or  not gvar.get('QUEUE_ENABLED', True):
         return
 
     if exists(doc):
@@ -544,7 +544,7 @@ def gen_graph_video(video_id):  # 'XDLaBADcPl0'
     filename_video = f'graphics/{channel}__{slugify(title)}__{dt_ini.strftime("%d-%m")}__{dt_ini.strftime("%H-%M")}_as_{dt_end.strftime("%H-%M")}.png'
     gen_graph_comp(dt_ini, dt_end, video_id, channel, title, filename_video)
 
-    if gvar.get('SEND_VIDEO_GRAPH'):
+    if gvar.get('SEND_VIDEO_GRAPH', False):
         send_telegram_doc(filename_video)
 
 

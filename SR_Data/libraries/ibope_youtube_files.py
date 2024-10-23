@@ -124,12 +124,12 @@ def load_dataframes():
         channel_show [channel] = row['name']
 
     global df_ib_min, df_ib_prg
-    df_ib_min = pd.read_csv(ibope_min_file.replace('.csv', gvar.get('complete_file', '') + '.csv'), sep=';', parse_dates=['MIN'])
+    df_ib_min = pd.read_csv(ibope_min_file.replace('.csv', gvar['complete_file'] if 'complete_file' in gvar else '' + '.csv'), sep=';', parse_dates=['MIN'])
     df_ib_prg = pd.read_csv(ibope_prg_file, sep=';')
 
     global df_live_vid, df_live_cnt
     df_live_vid = pd.read_csv(youtube_vid_file, sep=';')  # , parse_dates=['dt_ini', 'dt_end'])
-    df_live_cnt = pd.read_csv(youtube_cnt_file.replace('.csv', gvar.get('complete_file', '') + '.csv'), sep=';', parse_dates=['dtime'])
+    df_live_cnt = pd.read_csv(youtube_cnt_file.replace('.csv', gvar['complete_file'] if 'complete_file' in gvar else '' + '.csv'), sep=';', parse_dates=['dtime'])
 
     global df_chn, df_vid, df_cnt, df_rep_vid, df_rep_chn
     df_chn = pd.read_csv(yt_on_dem_chn_file, sep=';', parse_dates=['dtime'])

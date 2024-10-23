@@ -17,7 +17,7 @@ def draw_pizza(fig, annot, symbol, data):
     textinfo = 'none'
     showlegend = False
 
-    if gvar.get('JP_Ibope', False):
+    if gvar.get('TEMPLATE') == 'JP_IBOPE':
         rmargin = 0
         textinfo='percent+label'
         showlegend=False

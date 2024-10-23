@@ -1,7 +1,7 @@
 from .pres_template import *
 
 import pandas as pd
-from datetime import datetime, timedelta, timezone
+from datetime import datetime as dt, timedelta, timezone
 import random
 from .graphics import *
 from .coins import *
@@ -35,7 +35,7 @@ def focus_download(msg_lbl):
 
     try:
         dff = df_add_new_rows(dff_old, df_new).sort_values(['Indicador', 'Data'])
-        dff.to_csv('data/focus.csv', index=False, compression='zip')
+        dff.to_csv('data/focus.csv', index=False, lineterminator='\n', compression='zip')
         focus_adjust_data()
     except:
         if msg_lbl not in [False, None]:
@@ -49,7 +49,7 @@ def focus_download(msg_lbl):
 def focus_check_new_data(msg_lbl):
     # última data no arquivo já baixado, e data agora
     last_date = pd.to_datetime(dff.Data.iloc[-1])
-    date = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=-3)
+    date = dt.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=-3)
 
     # Se for segunda antes das 9h, volta 1 dia (ainda não tem focus novo)
     if date.weekday() == 0 and date.hour < 8:  # 9
@@ -81,8 +81,8 @@ def focus_load_data():
 
 def show_focus(fig, annot, symbol, focus_year, date_ini, date_end, debug=None):
     focus_load_data()
-    # if not gvar['ONLINE']:
-    focus_check_new_data(debug)
+    if not gvar.get('ONLINE', False):  # Use get() with default False
+        focus_check_new_data(debug)
 
     date_ret = dff.Data.iloc[-1]
 

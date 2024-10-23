@@ -212,7 +212,7 @@ def show_bolsas_mundo(fig, annotations, usd=False):
     ts = market_time_ts['time']
     # if market_time_ts["timezone"] != 'BRST':
     #     ts += market_time_ts['gmtoffset'] + 3*3600  # 3h Brasil
-    dt_obj = datetime.fromtimestamp(ts)
+    dt_obj = dt.fromtimestamp(ts)
     market_time = dt_obj.strftime('%d de %b. %H:%M')
     market_time +=  ' ' + market_time_ts["timezone"]
 
@@ -328,7 +328,7 @@ def show_moedas(fig, annotations):
     coins_draw_rectangles(fig, clabels, cbdy)
 
     # Adiciona timestamp com 15 minutos de atraso
-    dt_obj = datetime.fromtimestamp(time.time() - 15 * 60)
+    dt_obj = dt.fromtimestamp(time.time() - 15 * 60)
     market_time = dt_obj.strftime('%d de %b. %H:%M') + ' BRST'
     clabels[4][0] = f'<b>FONTE</b>: YAHOO FINANCE  -  {market_time}'
 

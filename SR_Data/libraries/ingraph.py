@@ -1,5 +1,5 @@
 import plotly.graph_objects as go
-from datetime import datetime
+from datetime import datetime as dt
 from .assets import *
 from .ingpos import *
 from .graphics import set_margins
@@ -188,7 +188,7 @@ def update_labels(fig, period, prices, info_prices, market_time_ts, symbol, curr
         ts = market_time_ts['time']
         if market_time_ts["timezone"] != 'BRST':
             ts += market_time_ts['gmtoffset'] + 3*3600  # 3h Brasil
-        dt_obj = datetime.fromtimestamp(ts)
+        dt_obj = dt.fromtimestamp(ts)
         market_time = dt_obj.strftime('%d de %b. %H:%M')
         market_time +=  ' ' + market_time_ts["timezone"]
 

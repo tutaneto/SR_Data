@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+
+# Project specific
+graphics/
+videos/
+test_outputs/
+*.log
+*.bak
+data/data_*.json
+data/bc/*.csv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Keep lib/ and bin/ as they contain our local dependencies
+!lib/
+!bin/

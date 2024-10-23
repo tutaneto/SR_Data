@@ -57,8 +57,8 @@ def button_scr_call(btype):
         video = (mp.VideoFileClip('images/bg_videos/FUNDO_ANIMADO.mp4', audio=False,))
         clips.append(video)
 
-        set_txt(['', gvar['scr_text'], gvar['scr_size'], gvar['scr_color'],
-            gvar['scr_x'], gvar['scr_y'], 0.1, 0.03] )
+        set_txt(['', gvar.get('scr_text', ''), gvar.get('scr_size', 30), gvar.get('scr_color', 'white'),
+            gvar.get('scr_x', 0), gvar.get('scr_y', 0), 0.1, 0.03] )
         file_num = config_data.get('txt_vid_file_num', 1)
         set_out(['', f'videos/Texto_Video_{file_num:04d}.mp4'])
         set_config('txt_vid_file_num', file_num+1)
@@ -76,14 +76,14 @@ def screen_hbox():
     video_bt.on_click(on_button_clicked)
 
     text_txt = widget.Text(
-        placeholder='text', value=gvar['scr_text'], indent=False,
+        placeholder='text', value=gvar.get('scr_text', ''), indent=False,
         layout=widget.Layout(width='800px'),
     )
     text_txt.observe(on_trait_txt)
 
     # x_txt = widget.BoundedFloatText(
     x_txt = widget.Text(
-        description='x:', placeholder='x', value=gvar['scr_x'], indent=False,
+        description='x:', placeholder='x', value=gvar.get('scr_x', ''), indent=False,
         layout=widget.Layout(width='150px'),
     )
     x_txt.observe(on_trait_txt)
@@ -95,7 +95,7 @@ def screen_hbox():
     y_txt.observe(on_trait_txt)
 
     color_txt = widget.Text(
-        description='color:', placeholder='color', value=gvar['scr_color'], indent=False,
+        description='color:', placeholder='color', value=gvar.get('scr_color', '#000000'), indent=False,
         layout=widget.Layout(width='250px'),
     )
     color_txt.observe(on_trait_txt)

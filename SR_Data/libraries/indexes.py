@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 from os.path import exists
-from datetime import datetime
+from datetime import datetime as dt
 
 
 ##########################
@@ -29,13 +29,13 @@ def bc_sgs_get_index_values(agreg):
 
         new_data = True
         if 'df0' in locals():
-            d_new = datetime.strptime(df.data.iloc[-1],  '%d/%m/%Y')
-            d_old = datetime.strptime(df0.data.iloc[-1], '%d/%m/%Y')
+            d_new = dt.strptime(df.data.iloc[-1],  '%d/%m/%Y')
+            d_old = dt.strptime(df0.data.iloc[-1], '%d/%m/%Y')
             if d_new < d_old:  # Usa "<" pois podem corrigir dados, então se for igual usa o que baixou
                 df = df0
                 new_data = False
         if new_data:
-            df.to_csv(file_name, index=False, line_terminator='\n')
+            df.to_csv(file_name, index=False, lineterminator='\n')
     except:
         df = df0
 
@@ -202,4 +202,3 @@ def ibge_get_index_values(symbol):
     classif = ibge_codes[symbol]['classif']
     df = ibge_get_data(agreg, var, classif, 199408, 202312)  # Inicio do Plano Real
     return df
-
