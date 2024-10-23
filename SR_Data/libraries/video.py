@@ -1,5 +1,5 @@
 import moviepy.editor as mp
-from datetime import datetime
+from datetime import datetime as dt
 from pathlib import Path
 from PIL import Image
 from .util import *
@@ -114,7 +114,7 @@ def create_video(file_name, w, h, x=-1, y=-1, debug=None, adj_center=True, pos='
         y += 220
 
     if OPTION == 2:  # esse OPTION 2 foi um teste que não ficou bom
-        image_bg = (mp.ImageClip('images\white.png')
+        image_bg = (mp.ImageClip('images/white.png')
         .set_opacity(0.60)
         .resize((1920-x*2 - 80, h2 - 40))
         .set_position((x + 40, y))
