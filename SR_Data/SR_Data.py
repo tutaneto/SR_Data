@@ -1,6 +1,8 @@
 #!/home/rogerup/opt/python-3.9.5/bin/python3
 
 import time
+import sys, os, platform
+import argparse
 
 time_start = time.time()
 
@@ -13,12 +15,16 @@ gvar['ONLINE'] = True
 # CGI = False
 # CRONJOB = False
 
-# Roda no servidor
-MERC_FIN_AUTO_ROBO = False
-CGI = False
-CRONJOB = True
+# Parse command line arguments
+parser = argparse.ArgumentParser(description='Financial Data Visualization')
+parser.add_argument('--mode', type=str, help='Operation mode (MERC_FIN_AUTO_ROBO, CGI, CRONJOB)')
+parser.add_argument('--auto-file', type=str, default='auto', help='Auto file name')
+args = parser.parse_args()
 
-import sys, os, platform
+# Roda no servidor
+MERC_FIN_AUTO_ROBO = args.mode == 'MERC_FIN_AUTO_ROBO'
+CGI = args.mode == 'CGI'
+CRONJOB = args.mode == 'CRONJOB'
 
 if CGI:
     print("Content-type: text/html\n\n")
@@ -29,8 +35,6 @@ if CGI or CRONJOB:
 
 if MERC_FIN_AUTO_ROBO:
     gvar['template_num'] = 1
-
-
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -45,7 +49,13 @@ from libraries.set_template import set_template
 
 # Brazilian R$ format
 import locale
-locale.setlocale(locale.LC_ALL, 'pt_BR')
+try:
+    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+except locale.Error:
+    try:
+        locale.setlocale(locale.LC_ALL, 'Portuguese_Brazil.1252')
+    except locale.Error:
+        print("Warning: Brazilian locale not available, using system default")
 
 
 
@@ -89,13 +99,32 @@ set_year_prev(year_prev)
 
 
 
-def process_bat(auto_file='auto'):
+def process_bat(auto_file=None):
     global symbol_old
 
-    if auto_file[-4].lower() != '.csv':
+    # Use command line argument if available, otherwise use default
+    if auto_file is None:
+        # Strip .csv extension if present in args.auto_file
+        auto_file = args.auto_file.replace('.csv', '') if args.auto_file else 'auto'
+
+    # Always ensure .csv extension
+    if not auto_file.lower().endswith('.csv'):
         auto_file += '.csv'
 
-    df_bat = pd.read_csv(f'data/config/{auto_file}', sep=';')
+    config_file = f'data/config/{auto_file}'
+    try:
+        if not os.path.exists(config_file):
+            print(f"Error: Could not find file '{config_file}'")
+            # Fall back to default auto.csv if specified file doesn't exist
+            config_file = 'data/config/auto.csv'
+            if not os.path.exists(config_file):
+                print("Error: Could not find default auto.csv file either")
+                return
+
+        df_bat = pd.read_csv(config_file, sep=';')
+    except Exception as e:
+        print(f"Error reading {auto_file}: {str(e)}")
+        return
 
     for i in range(df_bat.shape[0]):
         symbol = asset_name_to_code(df_bat.loc[i,'symbol'])
