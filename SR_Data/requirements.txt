@@ -1,0 +1,16 @@
+pandas
+numpy
+plotly
+kaleido
+Pillow
+moviepy
+requests
+selenium
+investpy
+ipywidgets
+google-api-python-client
+google-auth-oauthlib
+pyTelegramBotAPI
+python-telegram-bot
+investiny
+openpyxl

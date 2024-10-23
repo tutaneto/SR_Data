@@ -7,6 +7,7 @@ import argparse
 time_start = time.time()
 
 from libraries.gvar import *
+# Override default offline mode for main program
 gvar['ONLINE'] = True
 
 
@@ -83,12 +84,12 @@ prepare_template(template_num)
 
 
 
-from datetime import timedelta, datetime
+from datetime import timedelta, datetime as dt
 
 year_prev = 2022
 # last day of previous month
-today = datetime.today()
-date_ini = datetime(day=31, month=12, year=2021)
+today = dt.today()
+date_ini = dt(day=31, month=12, year=2021)
 date_end = today
 
 set_date_ini(date_ini)
@@ -110,6 +111,10 @@ def process_bat(auto_file=None):
     # Always ensure .csv extension
     if not auto_file.lower().endswith('.csv'):
         auto_file += '.csv'
+
+    # Prevent command line arguments from being treated as filenames
+    if auto_file.startswith('--'):
+        auto_file = 'auto.csv'
 
     config_file = f'data/config/{auto_file}'
     try:
@@ -161,6 +166,7 @@ def call_draw_graph(scale, symbol):
         dfont  = symbol_list[symbol]['dfont']
 
     gvar['ERROR'] = ''
+    gvar['ONLINE'] = False  # Ensure offline mode for testing
 
     return draw_graph(scale, symbol, 13,
                 title, subtit, dfont, bg_transparent,)
@@ -208,7 +214,19 @@ def on_trait_group(chg):
 def button_call(btype):
     global bg_transparent
 
-    btype = btype.upper()
+    # Convert numeric types to string and handle type conversion
+    if isinstance(btype, (int, float, np.integer, np.floating)):
+        btype = str(int(btype))
+
+    # Map numeric types to corresponding actions
+    type_mapping = {
+        '1': 'PNG',
+        '2': 'JPG',
+        '3': 'VID'
+    }
+
+    if isinstance(btype, str):
+        btype = type_mapping.get(btype, btype.upper())
 
     if btype not in ['PNG', 'JPG', 'VID']:
         return
@@ -315,6 +333,7 @@ if CGI:
 #######################################
 if MERC_FIN_AUTO_ROBO:
     gvar['send_by_telegram'] = True
+    gvar['ONLINE'] = True  # Set online mode for actual processing
     auto_file = 'auto'
     if len(sys.argv) >= 2:
         auto_file = sys.argv[1]
@@ -406,6 +425,8 @@ while time.time() < time_end:
         copy_graph_data_file()
 
         gvar['server_error_msg'] = ''   # Sem erro ainda
+        gvar['ERROR_STATE'] = False     # Reset error state
+        gvar['LAST_ERROR'] = None       # Clear last error
 
         error = check_graph_data(symbol_old)
         msg = f'{server_error_txt[error]}'
@@ -415,7 +436,7 @@ while time.time() < time_end:
     if msg == '':                   # Verifica se há erro no arquivo de entrada
         try:
             generate_graph()
-            msg = str(gvar['ERROR'])
+            msg = str(gvar['ERROR_STATE'])
         except Exception as e:
             msg = f'G Error: {e}'
 
@@ -426,7 +447,7 @@ while time.time() < time_end:
 
             print('INFO:')
             # usuario
-            now = datetime.utcnow()
+            now = dt.utcnow()
             now += timedelta(hours=-3)
             print(f'Seq: {pos_out}   Symbol: {symbol_old}   Time: {now.strftime("%Y-%m-%d %H:%M:%S")}')
             print('-----------------------------------------------------------')
@@ -453,6 +474,8 @@ while time.time() < time_end:
         msg = 'Generated'
     else:
         gvar['server_error_msg'] = msg
+        gvar['ERROR_STATE'] = True
+        gvar['LAST_ERROR'] = msg
         symbol_old = 'error'
         generate_graph()
 

@@ -1,6 +1,6 @@
 symbol;type
 template_num;1
-Ibov;vid
-Bolsas_Mundo;vid
-Moedas;vid
-BRL=X;vid
+Ibov;1
+Bolsas_Mundo;2
+Moedas;3
+BRL=X;1
