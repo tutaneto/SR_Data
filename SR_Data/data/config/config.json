@@ -1,6 +1,36 @@
 {
-    "api_url": "https://apisidra.ibge.gov.br/values/t/1620/n1/all/v/3135/p/all",
-    "title": "PIB Trimestral do Brasil",
-    "subtitle": "Em milhões de reais a preços correntes",
-    "api_params": {}
+    "apis": {
+        "bcb": {
+            "base_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.",
+            "format": "json",
+            "cache_duration": 86400
+        },
+        "ibge": {
+            "base_url": "https://servicodados.ibge.gov.br/api/v3/agregados",
+            "pib": {
+                "api_url": "https://apisidra.ibge.gov.br/values/t/1620/n1/all/v/3135/p/all",
+                "title": "PIB Trimestral do Brasil",
+                "subtitle": "Em milh\u00f5es de reais a pre\u00e7os correntes",
+                "api_params": {}
+            }
+        },
+        "fgv": {
+            "data_dir": "data/fgv"
+        }
+    },
+    "data_dirs": {
+        "bcb": "data/bc",
+        "ibge": "data/ibge",
+        "fgv": "data/fgv",
+        "anbima": "data/anbima",
+        "digitado": "data/digitado",
+        "filter": "data/filter",
+        "mt": "data/mt"
+    },
+    "cache": {
+        "enabled": true,
+        "duration": 86400,
+        "directory": "data/cache"
+    },
+    "template_num": 1
 }

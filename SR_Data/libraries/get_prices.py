@@ -1,35 +1,33 @@
-from datetime import datetime
-import requests
+from datetime import datetime as dt
+import yfinance as yf
 from .util import gvar_error
 
 # Info to download data
-headers = {
-    'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-    'x-rapidapi-key': '83d5ffc220msh9768d887d5d02fdp10d2a4jsne8be5b2fc940'
-    }
-
-url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart'
-params = {'symbol':'^BVSP', 'range':'1d', 'interval':'15m', 'region':'BR'}
-
-url_all = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes'
-params_all = {'region':'BR', 'symbols':'^DJI,^GSPC,^IXIC'}
-
-
-data_all, data_ts = 0, 0
+data_all = {}
+data_ts = 0
 
 def download_data_all(symbols):
     global data_all, data_ts
 
     # read new data only after 50s
-    ts = datetime.now().timestamp()
+    ts = dt.now().timestamp()
     if ts > data_ts + 50:
         try:
-            params_all['symbols'] = symbols
-            response = requests.request("GET", url_all, headers=headers, params=params_all)
-            data_all = response.json()
+            # Convert comma-separated string to list
+            symbol_list = symbols.split(',')
+            data_all = {}
+
+            # Fetch data for each symbol
+            for symbol in symbol_list:
+                ticker = yf.Ticker(symbol)
+                info = ticker.info
+                data_all[symbol] = {
+                    'regularMarketPrice': info.get('regularMarketPrice', 0),
+                    'regularMarketPreviousClose': info.get('previousClose', 0)
+                }
             data_ts = ts
-        except:
-            gvar_error(None, 'download_data_all', -1)
+        except Exception as e:
+            gvar_error(None, f'download_data_all: {str(e)}', -1)
 
     return data_all
 
@@ -41,15 +39,14 @@ def get_prices(symbol):
     data = download_data_all(symbols)
 
     try:
-        info = data['quoteResponse']['result']
-        for i in range(len(info)):
-            if info[i]['symbol'] == symbol:
-                market_price = info[i]['regularMarketPrice']
-                close_price  = info[i]['regularMarketPreviousClose']
-                break
-    except:
-        gvar_error(None, 'get_prices', -1)
+        if symbol in data:
+            market_price = data[symbol]['regularMarketPrice']
+            close_price = data[symbol]['regularMarketPreviousClose']
+        else:
+            raise KeyError(f"Symbol {symbol} not found in data")
+    except Exception as e:
+        gvar_error(None, f'get_prices: {str(e)}', -1)
         market_price = 0
-        close_price  = 0
+        close_price = 0
 
     return market_price, close_price

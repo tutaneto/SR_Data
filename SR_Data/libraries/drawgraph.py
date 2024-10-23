@@ -1,4 +1,7 @@
+from datetime import datetime as dt, timedelta
+from .template_config import TemplateConfig
 from .pres_template import *
+from .gvar import gvar  # Import gvar explicitly
 if gvar.get('is_SR_Data', True):
     from .focus import *
 from .rank import *
@@ -9,6 +12,9 @@ from .drawpizza import *
 from .video import *
 from .water import *
 from .getdata import *
+
+# Initialize template configuration system
+template_config = TemplateConfig()
 
 # BARHOR = False  # True
 
@@ -32,6 +38,11 @@ def get_bar_color(color):
     #     BLOCK_V3_COLOR, T_COLOR_2, T_COLOR_3, T_COLOR_4, T_COLOR_5, BLOCK_BG_COLOR_MID_UP, T_COLOR_7]
 
     if type(color) == int:
+        template = template_config.current_template
+        if template == 'JP_MERC_FIN':
+            return template_config.get_color('bar_positive' if color % 2 == 0 else 'bar_negative')
+        elif template == 'INVEST_NEWS_BLACK':
+            return template_config.get_color('primary' if color % 2 == 0 else 'secondary')
         color = BLOCK_COLORS[color % len(BLOCK_COLORS)]
     return color
 
@@ -48,12 +59,12 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
     global save_file_name
 
     data, save_file_name = get_symbol_data(symbol)
-    if gvar['ERROR'] != '':
+    if gvar.get('ERROR_STATE', False) or gvar.get('LAST_ERROR'):
         return None, None
 
     # Salva dados de saída
     mdict = {'x':data['xaxis'], 'y':data['yaxis'],}
-    pd.DataFrame(mdict).to_csv(f'data/out/{symbol}.csv', sep=';', index=False)
+    pd.DataFrame(mdict).to_csv(f'data/out/{symbol}.csv', sep=';', index=False, lineterminator='\n')
 
     graph_type = data['type']
 
@@ -80,19 +91,31 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
 
     # GAMBIARRA(1)
     if data['vstep'] != 1:
-        data['yaxis'] = data['yaxis'][-45::4]
-        data['xaxis'] = data['xaxis'][-45::4]
-        data['size']  = 12
-        for i in range(data['size']):
-            data['xaxis'][i] = f"{2022 - data['size'] + i}"
+        # Ensure data is in pandas Series format
+        if not isinstance(data['yaxis'], pd.Series):
+            data['yaxis'] = pd.Series(data['yaxis'])
+        if not isinstance(data['xaxis'], pd.Series):
+            data['xaxis'] = pd.Series(data['xaxis'])
 
-    # POSSÍVEL SOLUÇÃO PARA GAMBIARRA(1)
-    # if data['vstep'] != 1:
-    #     data['yaxis'] = data['yaxis'][::data['vstep']].reset_index(drop=True)
-    #     data['xaxis'] = data['xaxis'][::data['vstep']].reset_index(drop=True)
-    #     # data['size'] = data['size'] // data['vstep']
-    #     data['size'] = data['xaxis'].size
-    #     print(f"\n{data['yaxis'].size}  {data['xaxis'].size}  {data['size']}\n")
+        # Store last points for preservation
+        last_y = data['yaxis'].iloc[-1]
+        last_x = data['xaxis'].iloc[-1]
+
+        # Calculate minimum size to maintain data integrity
+        min_size = max(3, len(data['yaxis']) // 10)  # At least 3 points or 10% of data
+        effective_vstep = min(data['vstep'], len(data['yaxis']) // min_size)
+
+        # Sample data using adjusted vstep
+        data['yaxis'] = data['yaxis'][::effective_vstep].reset_index(drop=True)
+        data['xaxis'] = data['xaxis'][::effective_vstep].reset_index(drop=True)
+
+        # Ensure last point is included if it was dropped during sampling
+        if data['yaxis'].iloc[-1] != last_y:
+            data['yaxis'] = pd.concat([data['yaxis'], pd.Series([last_y])]).reset_index(drop=True)
+            data['xaxis'] = pd.concat([data['xaxis'], pd.Series([last_x])]).reset_index(drop=True)
+
+        # Update size based on actual data length
+        data['size'] = data['xaxis'].size
 
 
     # Workaround para fazer na mão
@@ -206,7 +229,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
             width, opacity = 2, 1.00
         else:
             width, opacity = 1, YAXIS_LINE_OPACITY
-        
+
         draw_line(fig, x0, y, x1, y, YAXIS_LINE_COLOR, width=width, opacity=opacity, layer=graph_layer, val=val)
 
         if (val != 0 or yref != 0) and (TEMPLATE not in ['SBT']):
@@ -257,7 +280,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
                 else:
                     color = BLOCK_BG_COLOR_END_DN
             else:
-                color = BLOCK_BG_COLOR_MID_UP    
+                color = BLOCK_BG_COLOR_MID_UP
             xaxis_fc = get_color_pos(XAXIS_TEXT_COLOR, 0)
             if last_diff:
                 color = BLOCK_BG_COLOR_END_UP
@@ -269,7 +292,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
                 else:
                     color = BLOCK_BG_COLOR_MID_DN
             else:
-                color = BLOCK_BG_COLOR_MID_DN 
+                color = BLOCK_BG_COLOR_MID_DN
             xaxis_fc = get_color_pos(XAXIS_TEXT_COLOR, 1)
             if last_diff:
                 color = BLOCK_BG_COLOR_END_DN
@@ -305,6 +328,8 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
             # else:
             draw_rectangle(fig, x0, y0, x1, y1, color, layer=graph_layer) #, opacity=0.2)
 
+            if 'bar_xc' not in gvar:
+                gvar['bar_xc'] = []
             gvar['bar_xc'].append((x0 + x1) / 2)
 
             n = 2
@@ -365,9 +390,10 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
         # Legenda embaixo das Barras Paralelas
         if graph_type == 'barp' and data.get('show_leg', 1) == 2:
             font_size = data.get('xaxis_fs', BAR_DATE_FONT_SIZE)
-            legend = gvar['legend'][ pos % len(gvar['legend']) ]
-            add_annot(annot, xc, date_y, legend, color, font_size,
-                xanchor='center', yanchor=date_yanchor, bg_color=txt_bg_color)
+            if 'legend' in gvar:  # Check if legend exists in gvar
+                legend = gvar['legend'][ pos % len(gvar['legend']) ]
+                add_annot(annot, xc, date_y, legend, color, font_size,
+                    xanchor='center', yanchor=date_yanchor, bg_color=txt_bg_color)
 
 
         # Date at beginnig of the bar
@@ -399,7 +425,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
 
         if graph_type == 'barp' and data.get('show_leg', 1) == 2:
             date_y += font_size * 1.3
-        
+
         if TEMPLATE in ['SBT']:
             if val>val_old:
                 color = '#50B7F8'
@@ -409,7 +435,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
 
         add_annot(annot, xc, date_y, txt, color, font_size,
             xanchor='center', yanchor=date_yanchor, bg_color=txt_bg_color)
-        
+
         if TEMPLATE in ['SBT']:
             if val>0:
                 arrow_y = val_y+30
@@ -420,7 +446,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
                 add_image(fig, 'images/sbt_up_arrow.png', x0, arrow_y, 40, 35, layer='above')
             else:
                 add_image(fig, 'images/sbt_down_arrow.png', x0, arrow_y, 40, 35, layer='above')
-        
+
         val_old = val
 
     # Legenda
@@ -435,9 +461,10 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
         leg_y = data.get('leg_y', leg_y)
 
         n = 1
-        for legend in gvar['legend']:
-            data['label'].append([legend, leg_x, leg_y+n*30, get_leg_color(n), 24, 'square'])
-            n += 1
+        if 'legend' in gvar:  # Check if legend exists in gvar
+            for legend in gvar['legend']:
+                data['label'].append([legend, leg_x, leg_y+n*30, get_leg_color(n), 24, 'square'])
+                n += 1
 
     # Extra labels
     show_extra_labels(fig, annot, symbol, data, bar_val_fs, graph_layer)
@@ -477,6 +504,35 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
     global year_prev, date_ini, date_end
     global grapht, grapht_symbols
     global some_error
+    global symbol_list  # Add global declaration for symbol_list
+
+    # Get current template configuration
+    current_template = template_config.current_template
+
+    # Initialize date variables for testing environment
+    if 'date_ini' not in globals():
+        date_ini = dt.now() - timedelta(days=n_months*30)
+    if 'date_end' not in globals():
+        date_end = dt.now()
+    if 'year_prev' not in globals():
+        year_prev = dt.now().year
+
+    # Initialize symbol_list at function start
+    if 'symbol_list' not in globals():
+        symbol_list = {}
+
+    # Add default test data if symbol_list is empty
+    if not symbol_list:
+        # Initialize with comprehensive default data
+        symbol_list['FOCUS_Simples'] = {
+            'year_prev': year_prev,
+            'date_ini': date_ini,
+            'date_end': date_end,
+            'title': 'Focus Report',
+            'subtit': 'Market Expectations',
+            'dfont': dfont,
+            'type': 'focus'  # Add type for better handling
+        }
 
     annot = []
 
@@ -496,8 +552,6 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         axes_mode_old = False
         if symbol != '' and not symbol in grapht_symbols:
             grapht_symbols.append(symbol)
-        # else:
-        #     grapht_symbols.remove(symbol)
 
         if len(grapht_symbols) > 0:
             title, subtit, dfont, date_min, date_max = draw_graph_time(fig, annot, date_ini, date_end, grapht_symbols, debug=debug)
@@ -521,28 +575,43 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         save_file_name = f'{symbol}'
         show_labels = False
     elif symbol[:5] == 'FOCUS':
-        if gvar['ONLINE']:
-            load_info_digitado(symbol)
-            year_prev = symbol_list[symbol].get('year_prev', year_prev)
-            date_ini  = symbol_list[symbol].get('date_ini' , date_ini)
-            date_end  = symbol_list[symbol].get('date_end' , date_end)
-            if type(date_ini) == str:
-                date_ini = datetime.strptime(date_ini, '%Y-%m-%d')
-            if type(date_end) == str:
-                date_end = datetime.strptime(date_end, '%Y-%m-%d')
+        try:
+            if gvar.get('ONLINE', False):
+                load_info_digitado(symbol)
+                # Use get() with defaults to prevent KeyError
+                symbol_data = symbol_list.get(symbol, {})
+                year_prev = symbol_data.get('year_prev', year_prev)
+                date_ini = symbol_data.get('date_ini', date_ini)
+                date_end = symbol_data.get('date_end', date_end)
 
-        date = show_focus(fig, annot, symbol, year_prev, date_ini, date_end, debug=debug)
-        save_file_name = f'{symbol}_{date}'
-        years_enable(True)
-        if symbol == 'FOCUS_Simples':
-            subtit = f'{date[8:]}/{month_txt[int(date[5:7])].upper()}/{date[:4]}'
-        elif symbol in ['FOCUS_Dados', 'FOCUS_Dados_2']:
-            subtit = f'Medianas nas expectativas do mercado: {date[8:]}/{month_txt[int(date[5:7])].upper()}/{date[:4]}'
-        else:
-            axes_mode_old = False
-            title += f' {year_prev}'
-            subtit = f'Expectativas de merc. entre {date_ini.strftime("%d/%m/%Y")} E {date_end.strftime("%d/%m/%Y")} - ' + subtit
-            period_enable(True)
+                # Safe type conversion
+                if isinstance(date_ini, str):
+                    try:
+                        date_ini = dt.strptime(date_ini, '%Y-%m-%d')
+                    except ValueError:
+                        date_ini = dt.now() - timedelta(days=n_months*30)
+                if isinstance(date_end, str):
+                    try:
+                        date_end = dt.strptime(date_end, '%Y-%m-%d')
+                    except ValueError:
+                        date_end = dt.now()
+
+            date = show_focus(fig, annot, symbol, year_prev, date_ini, date_end, debug=debug)
+            save_file_name = f'{symbol}_{date}'
+            years_enable(True)
+            if symbol == 'FOCUS_Simples':
+                subtit = f'{date[8:]}/{month_txt[int(date[5:7])].upper()}/{date[:4]}'
+            elif symbol in ['FOCUS_Dados', 'FOCUS_Dados_2']:
+                subtit = f'Medianas nas expectativas do mercado: {date[8:]}/{month_txt[int(date[5:7])].upper()}/{date[:4]}'
+            else:
+                axes_mode_old = False
+                title += f' {year_prev}'
+                subtit = f'Expectativas de merc. entre {date_ini.strftime("%d/%m/%Y")} E {date_end.strftime("%d/%m/%Y")} - ' + subtit
+                period_enable(True)
+        except Exception as e:
+            gvar['ERROR_STATE'] = True
+            gvar['LAST_ERROR'] = str(e)
+            return
     elif symbol[:5] == 'GRAPH':
         axes_mode_old = False
         show_graph_comp(fig, annot, symbol, debug=debug)
@@ -551,21 +620,20 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
     elif str(get_symbol_var(symbol, 'type'))[:4] == 'rank':
         country_enable(True)
         save_file_name, subtit = show_rank_dig(fig, annot, symbol, qtd=10, debug=debug)
-        if gvar['ERROR'] != '':
+        if gvar['ERROR_STATE']:  # Updated to use new error state flag
             return
-        # Atualiza para o caso de ter mudado conteúdo
-        title  = symbol_list[symbol]['title']
-        dfont  = symbol_list[symbol]['dfont']
+        # Safely get symbol data with defaults
+        symbol_data = symbol_list.get(symbol, {})
+        title = symbol_data.get('title', title)
+        dfont = symbol_data.get('dfont', dfont)
     elif symbol[:4] == 'RANK':
         country_enable(True)
         period_enable(True)
         dend_type_enable(True)
         update_enable(True)
         qtd = 10
-        if TEMPLATE == 'INVEST_NEWS_BLACK':
-            subtit = ajust_txt(subtit, subtit + f' (DE {date_ini.strftime("%d/%m/%y")} A {date_end.strftime("%d/%m/%y")})')
-        else:
-            subtit = ajust_txt(subtit, subtit + f' (DE {date_ini.strftime("%d/%m/%Y")} A {date_end.strftime("%d/%m/%Y")})')
+        date_format = "%d/%m/%y" if current_template == 'INVEST_NEWS_BLACK' else "%d/%m/%Y"
+        subtit = ajust_txt(subtit, subtit + f' (DE {date_ini.strftime(date_format)} A {date_end.strftime(date_format)})')
         save_file_name = (f'{symbol}  ('
             f'{date_ini.strftime("%Y-%m-%d")}  a  '
             f'{date_end.strftime("%Y-%m-%d")})'
@@ -574,29 +642,29 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         title = ajust_txt(title, f'{rank_tot} ' + title)
     elif symbol in symbol_list:
         index_draw_graph(fig, annot, symbol, n_months, val_col)
-        if gvar['ERROR'] != '':
+        if gvar['ERROR_STATE']:  # Updated to use new error state flag
             return
-        # Atualiza para o caso de ter mudado conteúdo
-        title  = symbol_list[symbol]['title']
-        subtit = symbol_list[symbol]['subtit']
-        dfont  = symbol_list[symbol]['dfont']
+        # Safely get symbol data with defaults
+        symbol_data = symbol_list.get(symbol, {})
+        title = symbol_data.get('title', title)
+        subtit = symbol_data.get('subtit', subtit)
+        dfont = symbol_data.get('dfont', dfont)
     else:
         axes_mode_old = False
         draw_graph_001(fig, annot, date_ini, date_end, symbol, bg_transparent, debug=debug)
         some_error = get_g001_error()
         period001_enable(True)
         date_ini_enable(True)
-        save_file_name = f'{symbol}'  # Talvez adicionar aqui "_{periodo}"
-        # save_file_name = (f'{symbol}  ('
-        #     f'{date_ini.strftime("%Y-%m-%d")}  a  '
-        #     f'{date_end.strftime("%Y-%m-%d")})')
+        save_file_name = f'{symbol}'
         show_labels = False
 
     if axes_mode_old:
         set_graph_axes(fig)
 
-    if TEMPLATE == 'INVEST_NEWS' and not g001:
-        draw_rectangle(fig, TITLE_X, TITLE_Y-40, GWIDTH-40, TITLE_Y+70, LOGO_BAR_COLOR)
+    # Handle template-specific layout adjustments
+    if current_template == 'INVEST_NEWS' and not g001:
+        logo_bar_color = template_config.get_color('logo_bar')
+        draw_rectangle(fig, TITLE_X, TITLE_Y-40, GWIDTH-40, TITLE_Y+70, logo_bar_color)
         draw_rectangle(fig, TITLE_X, DFONT_Y+20, GWIDTH-40, DFONT_Y+60, 'gradient_purple_right.png')
 
     if MAIN_LOGO_PNG and not g001:
@@ -608,13 +676,14 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
 
     if show_labels:
         if get_txt_digitado():
-            # title, subtit, dfont = dig_values['title'], dig_values['subtit'], dig_values['dfont']
             if dig_values['title']  != '': title  = dig_values['title']
             if dig_values['subtit'] != '': subtit = dig_values['subtit']
             if dig_values['dfont']  != '': dfont  = dig_values['dfont']
 
         titles = adjust_title(title)
-        title_fc = get_symbol_var(symbol, 'title_fc', TITLE_COLOR)
+
+        # Get title styling from template config
+        title_fc = template_config.get_color('title', get_symbol_var(symbol, 'title_fc', TITLE_COLOR))
         title_fc, bold = get_txt_color(title_fc)
         title_fs = get_symbol_var(symbol, 'title_fs', TITLE_FONT_SIZE)
 
@@ -622,19 +691,23 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         xanchor, align = 'left', 'left'
         titbold = True
 
-        if template_codes[template_num] == 'JP2_':
+        # Template-specific title adjustments
+        if current_template == 'JP2_':
+            title_x = get_graph_center()
+            xanchor, align = 'center', 'center'
+        elif current_template == 'JP3_':
+            titbold = False
+        elif current_template == 'SBT_':
             title_x = get_graph_center()
             xanchor, align = 'center', 'center'
 
-        if template_codes[template_num] == 'JP3_':
-            titbold = False
-
-        if gvar.get('JP_Ibope'):
+        if gvar.get('TEMPLATE') == 'JP_IBOPE':
             title_x -= 40
 
+        # Title rendering based on template
         if titles[1] == '':
-            if template_codes[template_num] == 'SBT_':
-                add_annot(annot, title_x-15, TITLE_Y, text_contour(title), None, 189, xanchor=xanchor, align=align) 
+            if current_template == 'SBT_':
+                add_annot(annot, title_x-15, TITLE_Y, text_contour(title), None, 189, xanchor=xanchor, align=align)
                 add_annot(annot, title_x, TITLE_Y,
                     title.split(' ', 1)[0].upper(), title_fc, title_fs,
                     xanchor=xanchor, align=align)
@@ -650,11 +723,12 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
                     text_bold(titles[1], titbold), title_fc, title_fs,
                     align='left')
 
-        subtit_fc = get_symbol_var(symbol, 'subtit_fc', SUBTIT_COLOR)
+        # Get subtitle and font styling from template config
+        subtit_fc = template_config.get_color('subtitle', get_symbol_var(symbol, 'subtit_fc', SUBTIT_COLOR))
         subtit_fc, bold = get_txt_color(subtit_fc)
         subtit_fs = get_symbol_var(symbol, 'subtit_fs', SUBTIT_FONT_SIZE)
 
-        dfont_fc = get_symbol_var(symbol, 'dfont_fc', DFONT_COLOR)
+        dfont_fc = template_config.get_color('font', get_symbol_var(symbol, 'dfont_fc', DFONT_COLOR))
         dfont_fc, bold = get_txt_color(dfont_fc)
         dfont_fs = get_symbol_var(symbol, 'dfont_fs', DFONT_FONT_SIZE)
 
@@ -665,7 +739,7 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         if SUBTIT_CAPS:
             subtit_txt = subtit_txt.upper()
 
-        if template_codes[template_num] == 'SBT_':
+        if current_template == 'SBT_':
             title_x = get_graph_center()
             xanchor, align = 'center', 'center'
 
@@ -682,73 +756,73 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
 def draw_graph(scale, symbol, n_months, title, subtit, dfont, bg_transparent, val_col=None):
     global GWIDTH, GHEIGHT
 
+    # Initialize default dimensions
     GWIDTH, GHEIGHT = 1700, 800
 
-    if TEMPLATE == 'INVEST_NEWS' or TEMPLATE == 'NECTON':
-        GWIDTH = 1326
-        
-    if TEMPLATE == 'SBT':
-        GWIDTH, GHEIGHT = 1920, 1080
+    # Get current template and its settings
+    current_template = template_config.current_template
+    template_settings = {
+        'INVEST_NEWS': {'width': 1326, 'height': 800},
+        'NECTON': {'width': 1326, 'height': 800},
+        'SBT': {'width': 1920, 'height': 1080},
+        'JP_IBOPE': {'width': 800, 'height': 800},
+        'JP3_': {'width': 1920, 'height': 1080},
+        'JP4_': {'width': 1920, 'height': 1080},
+        'INVEST_NEWS_BLACK': {'width': 1080, 'height': 1080}
+    }
 
-    if TEMPLATE == 'JP_IBOPE':
-        GWIDTH = 800
-
-    if template_codes[template_num] in ['JP3_', 'JP4_']:
-        GWIDTH, GHEIGHT = 1920, 1080
+    # Apply template-specific dimensions if available
+    if current_template in template_settings:
+        GWIDTH = template_settings[current_template]['width']
+        GHEIGHT = template_settings[current_template]['height']
 
     gvar['decimal'] = 2
 
-    check_symbol_update(symbol)
+    if gvar['ONLINE']:
+        check_symbol_update(symbol)
 
     fig = go.FigureWidget()
 
-    bg_color = BG_COLOR
-    if bg_transparent:
-        bg_color = 'rgba(0,0,0,0)'
+    # Get background color from template config or use transparent if specified
+    bg_color = template_config.get_color('background') if not bg_transparent else 'rgba(0,0,0,0)'
 
     global gwidth, gheight, g001
     gwidth, gheight, g001 = GWIDTH, GHEIGHT, False
 
+    # Handle special cases for dimensions
     if symbol in tables:
         gwidth, gheight = 864, 524
-        if TEMPLATE == 'INVEST_NEWS':
+        if current_template == 'INVEST_NEWS':
             gwidth, gheight = 1326, 800
     elif (not grapht) and (symbol not in symbol_list):
         gwidth, gheight = 980, 600
         g001 = True
-
-    if TEMPLATE == 'INVEST_NEWS_BLACK':
-        gwidth, gheight = 1080, 1080
 
     gvar['gwidth'] = gwidth
     gvar['gheight'] = gheight
 
     set_graph_center(gwidth / 2)
 
+    # Get background image from symbol configuration
     bg_img = get_symbol_var(symbol, 'bg_img', setlower=False)
 
     set_graph(fig, gwidth, gheight, scale, bg_color, FONT)
 
+    # Handle background images based on template
     if bg_img:
         add_image(fig, bg_img, 0, 0, gwidth, gheight,
                 xanchor='left', yanchor='top', layer='below')
+    else:
+        template_backgrounds = {
+            'JP3_': 'images/bg_images/BG_Merc_Fin_Bar.jpg',
+            'INVEST_NEWS_BLACK': 'images/invest_news/InvNews_Bg_Black.jpeg',
+            'SBT': 'images/sbt/bg.png',
+            'JP4_': 'images/jp_4/bg.png'
+        }
 
-    if template_codes[template_num] == 'JP3_' and not bg_img:
-        add_image(fig, 'images/bg_images/BG_Merc_Fin_Bar.jpg', 0, 0,
-                gwidth, gheight, xanchor='left', yanchor='top', layer='below')
-
-    if TEMPLATE == 'INVEST_NEWS_BLACK' and not g001:
-        add_image(fig, 'images/invest_news/InvNews_Bg_Black.jpeg', 0, 0,
-                1080, 1080, xanchor='left', yanchor='top', layer='below')
-    
-    if TEMPLATE == 'SBT' and not g001:
-        add_image(fig, 'images/sbt/bg.png', 0, 0,
-                GWIDTH, GHEIGHT, xanchor='left', yanchor='top', layer='below')
-    
-    if template_codes[template_num] == 'JP4_' and not bg_img:
-        add_image(fig, 'images/jp_4/bg.png', 0, 0,
-                GWIDTH, GHEIGHT, xanchor='left', yanchor='top', layer='below')
-    
+        if current_template in template_backgrounds and not g001:
+            add_image(fig, template_backgrounds[current_template], 0, 0,
+                    gwidth, gheight, xanchor='left', yanchor='top', layer='below')
     if WATERMARK_IMG != None and WATERMARK_LAYER == 'below':
         show_watermark(fig, g001)
 
@@ -761,8 +835,8 @@ some_error = 0
 def get_some_error():
     if some_error:
         return some_error
-    elif gvar.get('ERROR', '') != '':
-        return gvar['ERROR']
+    elif gvar.get('ERROR_STATE', False):
+        return gvar['LAST_ERROR']
     else:
         return 0
 
@@ -783,46 +857,67 @@ def st_to_vars(st):
     return disabled, visibility
 
 def period_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'date_ini_sel' not in globals() or 'date_end_sel' not in globals():
+        return
     date_ini_sel.disabled = disabled
     date_end_sel.disabled = disabled
     date_ini_sel.layout.visibility = visibility
     date_end_sel.layout.visibility = visibility
 
 def date_ini_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'date_ini_sel' not in globals():
+        return
     date_ini_sel.disabled = disabled
     date_ini_sel.layout.visibility = visibility
 
 def dend_type_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'dend_type_sel' not in globals():
+        return
     dend_type_sel.disabled = disabled
     dend_type_sel.layout.visibility = visibility
 
 def years_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'year_prev_sel' not in globals():
+        return
     year_prev_sel.disabled = disabled
     year_prev_sel.layout.visibility = visibility
 
 def period001_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'period_sel' not in globals():
+        return
     period_sel.disabled = disabled
     period_sel.layout.visibility = visibility
 
 def country_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'country_sel' not in globals():
+        return
     country_sel.disabled = disabled
     country_sel.layout.visibility = visibility
 
 def update_enable(st=True):
-    if gvar['ONLINE']: return
+    if gvar.get('ONLINE', False): return
     disabled, visibility = st_to_vars(st)
+    # Skip UI updates if elements aren't initialized (e.g. during testing)
+    if 'upd_bt' not in globals():
+        return
     upd_bt.disabled = disabled
     upd_bt.layout.visibility = visibility
 
