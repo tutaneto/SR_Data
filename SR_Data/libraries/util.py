@@ -3,7 +3,8 @@ import pandas as pd
 import requests
 import shutil
 import telebot
-import os, sys, traceback, datetime
+import os, sys, traceback
+from datetime import datetime as dt
 
 from os.path import exists
 from os import remove
@@ -11,7 +12,7 @@ from pathlib import Path
 
 from .gvar import *
 
-if gvar.get('is_SR_Data', True):
+if gvar.get('ONLINE', False):
     from .pres_template import *
 
 def delete_file(file_name):
@@ -26,7 +27,7 @@ if platform.system() == 'Windows':
 # from tkinter import Tk
 
 def send_to_clipboard(filepath):
-    if platform.system() != 'Windows' or gvar['ONLINE']:
+    if platform.system() != 'Windows' or gvar.get('ONLINE', False):
         return
 
     image = Image.open(filepath)
@@ -53,7 +54,7 @@ def send_to_clipboard(filepath):
 def remote_path():
     try:
         dir_remote = None
-        dir_date = datetime.datetime.now().strftime("%Y%m%d")
+        dir_date = dt.now().strftime("%Y%m%d")
         if template_codes[template_num] == 'JP_':
             dir_remote = f'U:/Samy_Dana/Mercado Financeiro/{dir_date}/'
         if template_codes[template_num] == 'JP2_':
@@ -77,7 +78,7 @@ def copy_img_to_remote(filename):
     shutil.copyfile(filename, remote_file)
 
 
-if not gvar.get('ONLINE', True):
+if not gvar.get('ONLINE', False):
     from .selenium_base import *
     from selenium.webdriver.common.keys import Keys
 
@@ -139,7 +140,7 @@ def send_by_whatsapp(item):
 
 
 def send_by_telegram(item):
-    if not gvar.get('send_by_telegram', False):
+    if not gvar.get('QUEUE_ENABLED', False):
         return
 
     send_by_whatsapp(item)
@@ -154,7 +155,7 @@ def send_by_telegram(item):
         f = open(item, 'rb')
         for chat_id in telegram_groups[gvar.get('send_groups_num', 1) - 1]:
             if len(gvar.get('send_message', '')) > 1:
-                bot.send_message(chat_id, gvar['send_message'])
+                bot.send_message(chat_id, gvar.get('send_message', ''))
                 sel_rnd_sleep(0.1, 0.1)
 
             f.seek(0)
@@ -224,7 +225,7 @@ def get_xy_anchors(x, y):
     if type(x) == str and x[0] == 'p':
         xanchor = 'center'
         x = float(x[1:])
-        x = (gvar['bar_xc'][round(x - 0.1)] + gvar['bar_xc'][round(x + 0.1)]) / 2
+        x = (gvar.get('bar_xc', {}).get(round(x - 0.1), 0) + gvar.get('bar_xc', {}).get(round(x + 0.1), 0)) / 2
 
     if type(x) == str and x[0] in 'lcmr':
         xanchor = xanchors[x[0]]
@@ -236,7 +237,7 @@ def get_xy_anchors(x, y):
 
     # Relative position
     if x > -1.5 and x < 1.5:
-        x *= gvar['gwidth']
+        x *= gvar['gwidth'] if 'gwidth' in gvar else 1.0
 
     if y > -1.5 and y < 1.5:
         y *= gvar['gheight']
@@ -376,10 +377,12 @@ def gvar_error(default, e_msg, e_num):
     if default != None:
         return default
     elif e_msg != '':
-        gvar['ERROR'] = 'ERROR: ' + e_msg
+        gvar['LAST_ERROR'] = 'ERROR: ' + e_msg
+        gvar['ERROR_STATE'] = True
         return e_num
     else:
-        gvar['ERROR'] = f'ERROR: Something wrong ocurred!'
+        gvar['LAST_ERROR'] = f'ERROR: Something wrong ocurred!'
+        gvar['ERROR_STATE'] = True
         return e_num
 
 def get_listp(listp, pos, default=None, e_msg='', e_num=-1):
@@ -431,8 +434,8 @@ def save_error(error_str, open_mode='w'):
 def display_exception(e, file_to_save=None, html_page=False, lines=''):
     lines += '<br>===========================================================<br>'
     lines += 'INFO:<br>'
-    now  = datetime.datetime.utcnow()
-    now += datetime.timedelta(hours=-3)  # Brazil
+    now  = dt.utcnow()
+    now += timedelta(hours=-3)  # Brazil
     lines += f'Time: {now.strftime("%Y-%m-%d %H:%M:%S")}<br>'
     lines += '-----------------------------------------------------------<br>'
 
@@ -523,5 +526,5 @@ def check_symbol_update(symbol):
         f.writelines(lines)
 
     # Copia arquivo para pasta wwwsec
-    if gvar['ONLINE'] and filename.startswith('data/digitado/'):
+    if gvar.get('ONLINE', False) and filename.startswith('data/digitado/'):
         shutil.copyfile(filename, f'../wwwsec/digitado/{filename[len("data/digitado/"):]}')

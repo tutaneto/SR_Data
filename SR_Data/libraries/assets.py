@@ -2,7 +2,7 @@ import requests
 import numpy as np
 import pandas as pd
 import json
-from datetime import datetime, timedelta
+from datetime import datetime as dt, timedelta
 from unidecode import unidecode
 from .coins import *
 from .gvar import *
@@ -89,8 +89,8 @@ def download_data(symbol_code):
                 json.dump(data[period], f, ensure_ascii=False) #, indent=4)
 
             ts = data[period]['chart']['result'][0]['meta']['regularMarketTime']
-            dt = datetime.fromtimestamp(ts)
-            market_date_int = dt.year*10000 + dt.month*100 + dt.day
+            dt_obj = dt.fromtimestamp(ts)
+            market_date_int = dt_obj.year*10000 + dt_obj.month*100 + dt_obj.day
         except:
             dojo_error = -1  # download fail
 
@@ -114,7 +114,7 @@ def load_data():
         data[3] = data[6]
         data[4] = data[6]
         data[5] = data[6]
-        if (datetime.today() - gvar['date_ini']).days <= 5*365 + 1:
+        if (dt.today() - gvar['date_ini']).days <= 5*365 + 1:
             data[8] = data[6]  # 'Var' = '5y'
             date_format[8]='%m/%Y'
         else:
@@ -139,7 +139,7 @@ def convert_data():
     try:
         info = data[1]['chart']['result'][0]['meta']
         ts_market = info['regularMarketTime']
-        dt_market = datetime.fromtimestamp(ts_market)
+        dt_market = dt.fromtimestamp(ts_market)
         date_market = dt_market.replace(hour=0, minute=0, second=0)
 
         df = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -150,6 +150,8 @@ def convert_data():
         ndays[4] = (date_market - date_year_init).days # + 1
 
         # variable days
+        if 'date_ini' not in gvar:
+            gvar['date_ini'] = date_market - timedelta(days=365)  # Default to 1 year if not set
         ndays[8] = (date_market - gvar['date_ini']).days # + 1
 
         for period in range(bt_qty):
@@ -162,7 +164,7 @@ def convert_data():
             # Convert timestamp to datetime
             datet, dtime, dtformat = [], [], []
             for ts in tstamp:
-                dt_obj = datetime.fromtimestamp(ts)
+                dt_obj = dt.fromtimestamp(ts)
                 datet.append(dt_obj)
                 dtime.append(dt_obj.strftime('%d/%m/%Y %H:%M'))
                 dtformat.append(dt_obj.strftime(date_format[period]))

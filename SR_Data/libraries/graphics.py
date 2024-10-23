@@ -7,7 +7,7 @@ from .util import *
 from .get_prices import get_prices
 from .coins import get_value_txt
 
-if gvar.get('is_SR_Data', True):
+if gvar.get('ONLINE', False):
     from .symbols import get_symbol_var
 
 GRAPH_WIDTH  = 0

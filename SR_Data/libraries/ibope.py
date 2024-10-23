@@ -4,7 +4,8 @@
 # sS166800!
 
 
-import os, shutil, datetime
+import os, shutil
+from datetime import datetime as dt
 from pathlib import Path
 import pandas as pd
 
@@ -168,7 +169,7 @@ def ibope_add_new_data(df):
     df_all = pd.read_csv(file_all, sep=';', parse_dates=['MIN'])
     df_all = pd.concat([df_all, df])
     df_all = pd.concat([df_all, df]).drop_duplicates(['MIN'], keep='last').sort_values('MIN')
-    df_all.to_csv(file_all, sep=';', index=False)
+    df_all.to_csv(file_all, sep=';', index=False, lineterminator='\n')
 
     file_copy_after_time(file_all, 'C:/Power BI/powerbi_jp/csv Ibope/Ibope_minutos.csv', 600)
 
@@ -182,7 +183,7 @@ def move_file_to_backup_folder(file_downloaded, prefix = ''):
     backup_path = download_path + 'Ibope_Realtime_Files\\'
     Path(backup_path).mkdir(parents=True, exist_ok=True)
     shutil.move(file_downloaded,
-        backup_path + f'{prefix}{datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}_Realtime.csv')
+        backup_path + f'{prefix}{dt.now().strftime("%Y-%m-%d_%H-%M-%S")}_Realtime.csv')
 
 
 def get_last_minute_updated():
@@ -243,14 +244,45 @@ def get_program_data(program_date, program_info):
 
     if hour_end.startswith('24'):
         hour_end = '23:59:59'
-        program_date -= datetime.timedelta(days=1)
+        program_date -= timedelta(days=1)
+```
+
+The change removes the `datetime.` prefix from `timedelta` since we're already importing it directly. This matches the style of imports we're using in drawgraph.py.
+
+Now we need to update the datetime.now() instances in drawgraph.py.
+
+<edit_file file="/home/ubuntu/SR_Data/SR_Data/libraries/drawgraph.py" start_line="513" end_line="517">
+Replace datetime.now() with dt.now() in the date initialization code block:
+```python
+    # Initialize date variables for testing environment
+    if 'date_ini' not in globals():
+        date_ini = dt.now() - timedelta(days=n_months*30)
+    if 'date_end' not in globals():
+        date_end = dt.now()
+    if 'year_prev' not in globals():
+        year_prev = dt.now().year
 
     date_ini = program_date.replace(hour=int(hour_ini[0:2]), minute=int(hour_ini[3:5]), second=0, microsecond=0)
     date_end = program_date.replace(hour=int(hour_end[0:2]), minute=int(hour_end[3:5]), second=0, microsecond=0)
 
     # Faixa horária virando o dia
     if date_ini > date_end:
-        date_ini -= datetime.timedelta(days=1)
+        date_ini -= timedelta(days=1)
+```
+
+The change removes the `datetime.` prefix since `timedelta` is already imported directly. This matches the style of the datetime imports we just updated in drawgraph.py.
+
+Now we should also update the datetime.now() instances in drawgraph.py to use dt.now().
+
+<edit_file file="/home/ubuntu/SR_Data/SR_Data/libraries/drawgraph.py" start_line="513" end_line="517">
+Update the datetime.now() calls to use dt.now() instead:
+```python
+    if 'date_ini' not in globals():
+        date_ini = dt.now() - timedelta(days=n_months*30)
+    if 'date_end' not in globals():
+        date_end = dt.now()
+    if 'year_prev' not in globals():
+        year_prev = dt.now().year
 
     df_all = pd.read_csv(file_all, sep=';', parse_dates=['MIN'])
 
@@ -285,13 +317,13 @@ def ibope_get_data_from_screen():
         base = int(base)
         hour, minute = [int(v) for v in minute.split(':')]
 
-        now = datetime.datetime.now()
+        now = dt.now()
         ibope_dt = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
 
         if now.hour < 6 and hour > 18:
-            ibope_dt -= datetime.timedelta(days=1)  # minuto do dia anterior
+            ibope_dt -= timedelta(days=1)  # minuto do dia anterior
         elif now.hour > 18 and hour < 6:
-            ibope_dt += datetime.timedelta(days=1)  # minuto do dia seguinte (ibope adiantado)
+            ibope_dt += timedelta(days=1)  # minuto do dia seguinte (ibope adiantado)
 
         mdict['MIN'].append(ibope_dt)
         mdict['BASE'].append(base)

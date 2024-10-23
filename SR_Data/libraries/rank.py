@@ -215,7 +215,7 @@ def draw_rank(fig, annot, countries, values, br_pos, pt_mode=None, show_perc=Fal
 
         imgx, imgy = x0+106/568*w, y0 - dir + dir*(134/568*w)
         imgw, imgh = 356/568*w, 356/568*w,
-        if  gvar.get('JP_Ibope'):
+        if  gvar.get('TEMPLATE') == 'JP_IBOPE':
             imgx -= 6
             imgy -= 8
             imgw, imgh = 64, 64
@@ -263,14 +263,14 @@ def adjust_index(index_name, val1, date1, val2, date2):
     # 2021-03-12, 2645283.75
     # 2021-03-15     2668.31
     if index_name.lower() == 'bursatil':
-        for cut_0_date in [datetime(2021, 3, 15), datetime(2018, 11, 6), datetime(2017, 10, 9)]:
+        for cut_0_date in [dt(2021, 3, 15), dt(2018, 11, 6), dt(2017, 10, 9)]:
             if date1 < cut_0_date: val1 /= 1_000
             if date2 < cut_0_date: val2 /= 1_000
     return val1, val2
 
 def adjust_currency(country, val1, date1, val2, date2):
     if country.lower() == 'venezuela':
-        cut_0_date = datetime(2021, 9, 27)
+        cut_0_date = dt(2021, 9, 27)
         if date1 < cut_0_date: val1 /= 1_000_000
         if date2 < cut_0_date: val2 /= 1_000_000
     return val1, val2
@@ -548,7 +548,7 @@ def set_country_filter(filter):
 def filter_countries(data):
     # Lista inteira original
     xaxis = data['xaxis'].tolist()
-    if not gvar.get('JP_Ibope'):
+    if not gvar.get('JP_Ibope', False):  # Use get() with default False
         xaxis = [x.lower() for x in xaxis]
     yaxis = data['yaxis'].tolist()
 
@@ -596,7 +596,7 @@ def filter_countries(data):
 
 def show_rank_dig(fig, annot, symbol, qtd=10, debug=None):
     data, save_file_name = get_symbol_data(symbol)
-    if gvar['ERROR'] != '':
+    if gvar['ERROR_STATE']:
         return None, None
 
     save_file_name += f'_{country_filter[0]}'

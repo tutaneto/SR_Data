@@ -40,7 +40,8 @@ def mult_load_data():
 def show_graph_comp(fig, annot, symbol, debug=None):
     mult_load_data()
 
-    gvar['gcomp_date_end'] = ''
+    if 'gcomp_date_end' not in gvar:
+        gvar['gcomp_date_end'] = ''
 
     if symbol == 'GRAPH_GASOL':
         draw_graph_comp(fig, annot, df_gasol, 'valor')
@@ -81,7 +82,7 @@ def draw_graph_comp(fig, annot, df, col):
     set_graph_center((CP_MARGINS_LRTBPAD[0] - CP_MARGINS_LRTBPAD[1])/2)  # valor negativo (Subtrai do centro)
     GS = get_scale()
 
-    if TEMPLATE == 'INVEST_NEWS_BLACK':
+    if gvar['TEMPLATE'] == 'INVEST_NEWS_BLACK':
         add_image(fig, 'images/invest_news/InvNews_Bg_Black.jpeg', 0, 0,
                 1080, 1080, xanchor='left', yanchor='top', layer='below')
 
@@ -159,8 +160,8 @@ def draw_graph_bovcdi(fig, annot):
     set_margins(fig, 200, 400, 200, 160, 10)
     GS = get_scale()
 
-    date_ini = datetime(1994,  7,  4)
-    date_end = datetime(2029, 12, 31)
+    date_ini = dt(1994,  7,  4)
+    date_end = dt(2029, 12, 31)
 
     df_test = generate_all_windows(date_ini, date_end, 21, taxes=True)  # 21 dias uteis ~ 1 mês
     # df_test.to_excel('GRAPH_IBOV_x_CDI.xlsx')
@@ -540,7 +541,7 @@ def load_cdi(only_cdi=False):
         return df_cdi
 
     # Dados a partir de Jul/1994 (Plano Real)
-    date_ini = datetime.strptime('1994-07-01', '%Y-%m-%d').date()
+    date_ini = dt.strptime('1994-07-01', '%Y-%m-%d').date()
     date1 = pd.Timestamp(date_ini)
 
     df_cdi2 = df_cdi[df_cdi.date >= date1][['date', 'nindex']].copy()

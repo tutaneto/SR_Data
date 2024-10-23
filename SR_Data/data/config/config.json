@@ -1,16 +1,32 @@
 {
     "apis": {
         "bcb": {
-            "base_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.",
-            "format": "json",
-            "cache_duration": 86400
+            "sgs": {
+                "base_url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.",
+                "format": "json",
+                "cache_duration": 86400
+            },
+            "expectativas": {
+                "base_url": "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/",
+                "endpoints": {
+                    "anuais": "ExpectativasMercadoAnuais",
+                    "mensais": "ExpectativasMercadoMensais"
+                },
+                "indicators": ["IPCA", "IGP-M", "PIB"],
+                "date_format": "%Y-%m-%d",
+                "cache_duration": 86400,
+                "params": {
+                    "format": "json",
+                    "filter_template": "Indicador eq '{indicator}' and DataReferencia eq '{ref_date}'"
+                }
+            }
         },
         "ibge": {
             "base_url": "https://servicodados.ibge.gov.br/api/v3/agregados",
             "pib": {
                 "api_url": "https://apisidra.ibge.gov.br/values/t/1620/n1/all/v/3135/p/all",
                 "title": "PIB Trimestral do Brasil",
-                "subtitle": "Em milh\u00f5es de reais a pre\u00e7os correntes",
+                "subtitle": "Em milhões de reais a preços correntes",
                 "api_params": {}
             }
         },

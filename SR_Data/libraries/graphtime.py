@@ -52,8 +52,8 @@ def draw_graph_time(fig, annot, date_ini, date_end, glist, debug=None):
             df['data'] = df['data'] + pd.to_timedelta(df['dias'], unit='D')
             # date_min = df.loc[0, 'data']
             # date_max = df.iloc[-1]['data']
-            date_min = datetime(day=1, month=1, year=2021)
-            date_max = datetime(day=31, month=12, year=2060)
+            date_min = dt(day=1, month=1, year=2021)
+            date_max = dt(day=31, month=12, year=2060)
             date_ini = date_min
             date_end = date_max
         elif gname == 'IPCA':
@@ -89,7 +89,7 @@ def draw_graph_time(fig, annot, date_ini, date_end, glist, debug=None):
             if gname.lower() == 'diesel': df = load_diesel().copy()
             if gname.lower() == 'etanol': df = load_etanol().copy()
             df.index.name = 'data'
-            if gvar.get('ipca_on'):
+            if gvar.get('ipca_on', False):  # Add default False value for ipca_on check
                 df['valor'] = df['infla_br']
             df.reset_index(inplace=True)
         elif gname.lower() == 'brentr':
@@ -156,7 +156,7 @@ def draw_graph_time(fig, annot, date_ini, date_end, glist, debug=None):
         if perc > perc_max:
             perc_max = perc
 
-    if gvar['grapht_val']:
+    if gvar.get('grapht_val', False):
         vprecis = 2
         if df.iloc[0]['valor'] > 1000: vprecis = 0
 
@@ -182,7 +182,7 @@ def draw_graph_time(fig, annot, date_ini, date_end, glist, debug=None):
             line_color = ['#557799', 1, 3,  '#000044', '#000077', '#0000CC', '#444444', '#666666', '#999999']
         line_color += [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
-        if gvar['grapht_val']:
+        if gvar.get('grapht_val', False):
             y_values = df.valor
             yaxis_tickformat = f',.{vprecis}f'
         else:
@@ -243,7 +243,7 @@ def draw_graph_time(fig, annot, date_ini, date_end, glist, debug=None):
     #     title='Vitórias'
     )
 
-    if gvar['grapht_val']:
+    if gvar.get('grapht_val', False):
         subtit = 'Valores entre'
     else:
         subtit = 'Acumulado em % entre'

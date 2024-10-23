@@ -6,7 +6,7 @@ import json
 import locale
 import requests
 import json
-from datetime import datetime, date
+from datetime import datetime as dt, date
 from os.path import exists, getmtime
 from .gvar import *
 
@@ -33,8 +33,8 @@ def check_today_file(file_name):
     if exists(file_name):
         # And if date is today
         ts = getmtime(file_name)
-        dt = datetime.fromtimestamp(ts)
-        if dt.date() >= datetime.today().date():
+        dt_obj = dt.fromtimestamp(ts)
+        if dt_obj.date() >= dt.today().date():
             return True
     return False
 
@@ -46,13 +46,13 @@ def check_date_file(file_name, same='day'):
             return True
         # And if date is the same
         ts = getmtime(file_name)
-        dt = datetime.fromtimestamp(ts)
-        now = datetime.today()
+        dt_obj = dt.fromtimestamp(ts)
+        now = dt.today()
         if same == 'day':
-            if dt.date() >= now.date():
+            if dt_obj.date() >= now.date():
                 return True
         if same == 'month':
-            if dt.year*10000+dt.month*100 >= now.year*10000+now.month*100:
+            if dt_obj.year*10000+dt_obj.month*100 >= now.year*10000+now.month*100:
                 return True
     return False
 
@@ -91,7 +91,7 @@ def json_to_def(data):
 
     datet, dtime = [], []
     for ts in tstamp:
-        dt_obj = datetime.fromtimestamp(ts)
+        dt_obj = dt.fromtimestamp(ts)
         datet.append(dt_obj)
         dtime.append(dt_obj.strftime('%d/%m/%Y %H:%M'))
 
@@ -137,7 +137,7 @@ def get_coin_to_usd(coin_code):
 
     datet, dtime, dtformat = [], [], []
     for ts in tstamp:
-        dt_obj = datetime.fromtimestamp(ts)
+        dt_obj = dt.fromtimestamp(ts)
         datet.append(dt_obj)
         dtime.append(dt_obj.strftime('%d/%m/%Y %H:%M'))
         # dtformat.append(dt_obj.strftime(date_format[period]))
@@ -150,10 +150,10 @@ def get_coin_to_usd(coin_code):
     return df
 
 def get_coins_data(df, date_ini, date_end):
-    date_ini = datetime.fromisoformat(date_ini)
-    date_end = datetime.fromisoformat(date_end + ' 23:59:59')
-    date_ini = datetime.timestamp(date_ini)
-    date_end = datetime.timestamp(date_end)
+    date_ini = dt.fromisoformat(date_ini)
+    date_end = dt.fromisoformat(date_end + ' 23:59:59')
+    date_ini = dt.timestamp(date_ini)
+    date_end = dt.timestamp(date_end)
 
     df2 = pd.DataFrame({
             'code':[], 'open':[], 'close':[], 'pdiff':[], 'perc':[]
@@ -182,7 +182,7 @@ def get_coins_data(df, date_ini, date_end):
 
 
 def money_format(val):
-    decimal = gvar.get('decimal', 2)
+    decimal = gvar.get('decimal', 2) if 'decimal' in gvar else 2
     return locale.format_string(f'%0.{decimal}f', val, grouping=True)
 
 def get_value_txt(val, bold=False):

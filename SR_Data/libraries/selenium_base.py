@@ -200,5 +200,6 @@ def sel_conn(connURL, beta=False, headless=False):
     # Global var with conn
     gvar['conn'  ] = conn
     gvar['driver'] = conn.driver
+    gvar['ONLINE'] = True  # Set online mode when connection is established
 
     return conn
