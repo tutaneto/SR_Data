@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import kaleido  # Used for saving images
 import locale
-from datetime import timedelta, datetime
+from datetime import timedelta, datetime as dt
 import shutil
 
 # Custom module imports (Assumed to be available)
@@ -56,8 +56,8 @@ def prepare_template(tp_num):
 template_num = 2  # Default template number
 save_file_scale = prepare_template(template_num)
 year_prev = 2022
-today = datetime.today()
-date_ini = datetime(day=31, month=12, year=2021)
+today = dt.today()
+date_ini = dt(day=31, month=12, year=2021)
 date_end = today
 
 drawgraph.set_date_ini(date_ini)
@@ -148,4 +148,3 @@ if __name__ == '__main__':
             continue
 
         # Additional processing logic...
-
