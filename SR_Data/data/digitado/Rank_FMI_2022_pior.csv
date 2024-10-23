@@ -1,0 +1,17 @@
+title;Projeções para crescimento dos países em 2022
+subtit;Relatório de Abril/22 ({quantity} países)
+dfont;FMI
+vtype;rvalue
+decimal;1
+group;name
+blk_dx;80
+type;rank
+;
+;
+;
+;
+;
+;
+;
+data;begin
+RANK_FMI_2022.csv

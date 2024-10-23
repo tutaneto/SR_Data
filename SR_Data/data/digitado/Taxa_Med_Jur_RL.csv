@@ -1,0 +1,15 @@
+title;Juros do cartão de crédito
+subtit;Taxa média do rotativo para pessoas físicas, em % ao ano, RL
+dfont;Bacen
+decimal;2
+group;name
+yref;20
+ylines;30,40,50
+blk_dx;8
+type;line
+xstep;12
+;
+;
+;
+data;begin
+BC_20717

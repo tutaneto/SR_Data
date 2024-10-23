@@ -1,0 +1,7 @@
+Marcadores definidos no 'subtit' dos digitados  (* depois extender para todos textos (strings))
+
+PARÂMETRO               .py             TROCA POR:
+
+{filter_text}           rank            Texto referente ao filtro usado (arquivo data/filter/filters.csv)
+{last_month}            util            Último mês do gráfico por extenso
+{quantity}              rank            Total de países comparados no ranking

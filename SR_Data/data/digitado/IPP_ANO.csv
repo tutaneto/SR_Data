@@ -1,0 +1,11 @@
+title;IPP   Índice de Preços ao Produtor
+subtit;Acumulado no ano, em %
+dfont;IBGE
+;
+decimal;1
+blk_dx;80
+blk_dx_inb;74
+;
+;
+data;begin
+IBGE_6904,1395,543,33586

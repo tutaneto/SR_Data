@@ -1,0 +1,60 @@
+code,name
+Gasolina_Defasagem,Gasolina Defasagem PPI
+Diesel_Defasagem,Diesel Defasagem PPI
+TSLA,Tesla Inc.
+TSLA,Tesla
+TWTR,Twitter Inc.
+TWTR,Twitter
+NFLX,Netflix Inc.
+NFLX,Netflix
+inv_comm_iron,Iron
+inv_comm_iron,Ferro
+ZW=F,Trigo
+ZS=F,Soja
+GC=F,Ouro USD
+GC=F,Ouro
+IFIX.SA,IFIX
+BTC-USD,Bitcoin
+BTC-USD,Btc
+BTC-USD,Bit
+ETH-USD,Ethereum
+ETH-USD,Eth
+BRL=X,USD
+EURBRL=X,EURO
+^BVSP,Ibovespa
+^BVSP,IBOV
+^BVSP,BOVESPA
+^BVSP,BVSP
+^IXIC,NASDAQ Composite
+^IXIC,NASDAQ
+^IXIC,IXIC
+^DJI,DJI
+^GSPC,S&P 500
+^GSPC,SP500
+^GSPC,GSPC
+BZ=F,Petróleo Brent
+BZ=F,Petróleo
+BZ=F,BRENT
+ITUB4.SA,Itaú Unibanco
+ITUB4.SA,ITAU
+ITUB4.SA,ITUB4
+BBDC4.SA,BRADESCO
+BBDC4.SA,BBDC4
+SANB11.SA,SANTANDER
+SANB11.SA,SANB11
+BBAS3.SA,B.BRASIL
+BBAS3.SA,BBAS3
+BIDI4.SA,INTER
+BIDI4.SA,BIDI4
+IGPM,IGPM
+IGPM,IGP-M
+GASOLINA,Gasolina
+GASOLINA,Gasol
+DIESEL,Diesel
+ETANOL,Etanol
+BRENTR,Brent em R$
+BRENTR,BRENTR
+anfavea_Prod_Qtd,Anfavea Produção
+anfavea_Prod_Qtd,Anf Prod
+anfavea_Venda_Qtd,Anfavea Venda
+anfavea_Venda_Qtd,Anf Venda

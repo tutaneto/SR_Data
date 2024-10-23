@@ -1,0 +1,13 @@
+title;Inflação das Passagens Aéreas
+subtit;Variação acumulada em 12 meses, em %
+dfont;IBGE
+group;12
+decimal;2
+ylines;
+blk_dx;80
+;
+;
+;
+;
+data;begin
+IBGE_7060,63,315,7634

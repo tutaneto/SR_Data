@@ -1,0 +1,16 @@
+title;Inflação nos EUA
+subtit;CPI (preços ao consumidor) acumulado em 12 meses, em %
+dfont;U.S. BLS
+decimal;1
+group;12
+blk_dx;80
+blk_dx_inb;74
+period;month
+;
+;
+;
+;
+;
+;
+data;begin
+CPI_US.csv

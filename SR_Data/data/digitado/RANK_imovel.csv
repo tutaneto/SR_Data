@@ -1,0 +1,26 @@
+title;Países mais acessíveis para se comprar um imóvel
+subtit; Quanto o valor m2 representa da renda média familiar
+dfont;Compare the Market
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+Turkey;4
+united states;6.30
+Mexico;7.10
+South Africa;7.50
+Brazil;9.10
+south korea;59.40
+Israel;30.60
+Luxembourg;28.90
+Switzerland;28.20
+Japan;20.40

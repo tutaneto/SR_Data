@@ -1,0 +1,603 @@
+SR_Data  VERSÕES:
+
+*** ATENÇÃO, removida atualização automática do FOCUS (v044g)
+             VOLTAR quando Boletim FOCUS retornar
+
+
+v045d:  2022-08-??
+. Backup (diario), copia PBI (10 min)                           ibope, youtube_live_count, util_generic
+. Imagens em formato .jpg (era .png)                            JP_ibope
+. Exception local em erro no envio para o Plassion              JP_ibope
+. Modificação de como pega o GA para evitar caída               JP_ibope
+. Hora 24:00  convertida para 23:59 p/ evitar erros             JP_ibope
+. Pega $ do Youtube                                             yt-on-dem
+. Imagem gerada como 'vid' (jp1, jp2)                           sr_data.py
+
+v045c:  2022-08-04
+. Exibe quantas pessoas no site (Google Analytics(GA))          JP_ibope
+. Reconexão e, 90s (era 60s ou 5s no Exception)                 JP_ibope
+. TASKKILL no chrome.exe                                        JP_ibope
+. 'jpg' nos 3 arquivos que sobem para o Plassion                JP_ibope
+. Espera  15s após exception (era 5s)                           JP_ibope
+. Templates JP online                                           sr_data.py
+. Libera template de acordo com usuário (jp, invnews, ...)      sr_data.py
+
+v045b:  2022-07-29  (versão com robô dno sr_data.py)
+. bar_val_fs, xaxis_fs no 'digitado' não afeta JP3              (digitado)
+. Cor das barras (multipla)                                     (jp_merc_fin, jp_merc_fin_3)
+. Valores default para send_message e send_groups_num           (util)
+. Função get_prices  saiu  do  tables                           (tables, get_prices)
+. get_some_error também pega gvar['ERROR']                      (drawgraph)
+. jp2 passou para fundo estático                                (video)
+. configs da tela passa para digitado com sufixo _jp3           (SR_Data)
+. Auto, aceita nome do arquivo via linha de comando no robô     (sr_data.py)
+. Envia arquivos de imagem pelo Telegram                        (sr_data.py)
+. Youtube + SmartTV                                             (JP_ibope)
+. Cópia feita na  pasta  do PowerBI                             (ibope)
+
+v045_:  2022-07-26
+. Novo template JP3                                             (jp_merc_fin_3, pres_template, set_template, digitado)
+. blk_w, blk_dx no 'digitado' não afeta JP3                     (digitado)
+. gridcolor de acordo com a cor do fundo                        (focus)
+. Aceita: (rect),  .png/.jpg,  {var}  no 'label'                (graphics)
+. Só atualiza valores de assets após 50s (era 10s)              (tables)
+. Funcão 'get_perc'                                             (util)
+. dir_remote foi para util.py                                   (video, util)
+
+v045: 2022-07-18
+. Diretório remoto ('U:/Samy_Dana')                             (video)
+. FOCUS: tenta atualizar as 8h, voltou zip, cores para o JP1    (focus, jp_merc_fin)
+. Selenium: novas funções, Beta, headless                       (selenium_base)
+. Novo formato de data para conversão                           (util)
+. Função para mostrar exception                                 (util)
+. Alterações OK para funcionar jp-ibope, jp-youtube             (drawgraph, graphics, rank, util)
+. Alterações DURAS para jp-ibope, jp-youtube (precisa arrumar)  (drawpizza, )
+. Novo template                                                 (jp_ibopeg, pres_template, set_template)
+
+
+v044g: 2022-06-03
+. Grupos diferentes para enviar imagens                         (templates, util)
+. Envia mensagem antes das imagens (opcional)                   (SR_Data, util)
+. rectangle_line corrigido expessura da linha                   (graphics)
+. Correeção no import random                                    (focus)
+. Ajuste de cores e ícones do Focus p/ o JP1                    (focus, jp_merc_fin)
+
+v044f: 2022-06-02
+. Seta gvar['online']                                           (SR_Data, sr_data.py)
+. Import do Selenium, somente se não for versão online          (util)
+. Salva dados de saída do gráfico na pasta 'data/out'           (drawgraph)
+. Monta dataframe a partir de vários 'FILES'                    (digitado)
+
+v044e: 2022-06-01
+. gvar['bar_xc'], contendo x cetral de cada barra               (drawgraph)
+. Procura por nome no Whatsapp ao inves de localizar            (util)
+. prefixo 'p' para a coluna do label (num da barra)             (util)
+. pega gvar do módulo gvar.py (estava criando dentro)           (selenium_base)
+. Ajustes nos nomes dos grupos                                  (templates)
+. Fecha browser mudou de posicao                                (SR_Data)
+
+v044d: 2022-05-31
+. Telegram e WhatsApp, grupos para envio                        (templates)
+. Envio por Whatsapp                                            (util)
+. Fecha browser usado no envio                                  (SR_Data)
+
+v044c:  2022-05-30
+. Vê se existe botão "next" antes de ver se ele está habilit.   (SBcom_Sure.py)
+. Não envia Odds do brasileirão                                 (SBcom_Sure.py)
+. Saída em .pdf (era .txt)                                      (SBcom_Sure.py)
+. Removidas apostas em 'round' das 'Artes Marciais'             (SBcom_Sure.py)
+. Remove 'market' ou 'help' se forem iguais                     (SBcom_Sure.py)
+
+v044b:  2022-05-27
+. Import do gvar do módulo gvar (pegava do útil)                (assets, coins, screen, symbols)
+. Força gvar['decimal']=2, para caso não tenha config           (drawgraph)
+. money_format, get_value_txt removidas (usa da util.py)        (ingraph, tables)
+. Trocado valores duros por constantes                          (tables)
+. Novas cores e tamanhos de fontes para o _JP1                  (ingraph, ingpos, jp_merc_fin)
+. _JP1, aumentou tamanho do gráfico de barras final (p/ 880)    (video)
+. _JP1, mexeu um pouco no posição da imagem final               (video)
+. _JP1, 'VID' solta imagem ao invés de vídeo                    (video)
+. Seleção (check) dos vídeos de cada template                   (SR_Data)
+. Opção auto para escolher vários symbols de uma vez            (SR_Data)
+. Opção de enviar imagens geradas pelo Telegram                 (SR_Data)
+
+v044:  2022-05-25
+. Versão as pressas para o Samy, modificações relatadas acima
+
+
+v043g:  2022-05-25
+. Novo módulo para conter o gvar (saiu do util)                 (gvar)
+. 'Black' não funcionou para Linux na fonte                     (jp_merc_fin)
+. 'template_num' pode vir do código                             (pres_template)
+. send_to_cipboard não executa no online                        (util)
+. send_by_telegram                                              (util)
+. Envia vídeo pelo Telegram                                     (video)
+. val_max=0, quando toda série é menor que 0                    (drawgraph)
+. MERC_FIN_AUTO_ROBO                                            (sr_data.py)
+
+v043f:  2022-05-20
+. Acerta nome digitado no GT (caps)                             (graphtime)
+. symbol_list subiu, p/ testar se existe antes de outros nomes  (graphtime)
+. GT, exibe leg quando tem mais de 1 ou quando exibe % acum.    (graphtime)
+. Função nova "get_original_txt"                                (util)
+. Copia arquivo atualizado para pasta "wwwsec"                  (util)
+. Video CHEIA2 (TELAO), desceu 100p (de -50 p/ +50)             (video)
+
+v043e:  2022-05-13
+. VOL_SERV passou para o digitados                              (indexes, symbols)
+. Mais tipos de datas aceitas no semi-automático                (util)
+
+v043d:  2022-05-10
+. Pega lista de símbolos do semi-automático no Plassion         (util)
+. Data da última infomação no subtit dos 'GRAPH'                (drawgraph, graphcomp)
+. VENDAS_COM passou para o digitados                            (indexes, symbols)
+
+v043c:  2022-05-04
+. Erro no to_csv ('line_terminator' para '\n')                  (indexes, rank, graphcomp)
+
+v043b:  2022-05-03
+. 'toperc' para qualquer group, e acumula como %                (getdata)
+. 'perc' ou 'toperc' apresenta %                                (coins)
+. Dados do _BC trocam se data baixada for igual                 (indexes)
+. PROD_IND, IPC-Fipe passou para o digitados                    (indexes, symbols)
+. IPC-Fipe incluído update_last_val                             (util)
+. Correção, estava apagando legendas extras                     (drawgraph)
+. Força legenda em branco para o _INB                           (graphics)
+. Salva .csv com '\n' (deixar igual Linux)                      (indexes, rank, graphcomp)
+
+v043:  2022-05-02
+. JP1 com todas fontes em bold                                  (jp_merc_fin)
+. Linha pontilhada do Yahoo na mesma cor da positiva            (jp_merc_fin)
+. Não procurar por constantes no globals                        (drawgraph, water, templates)
+. IPCA-15 início do csv na mão (não apaga ao baixar do IBGE)    (indexes)
+. Atualiza último automático pelo Plassion (IGP por enquanto)   (util, drawgraph)
+. Atualiza template sem precisar reiniciar (falta 001 e tables) (set_template, SR_Data)
+. Variáveis para dentro de função (falta 001 e tables)          (drawgraph)
+. Gráfico tipo bar2V, com 2 valores no fim da barra             (drawgraph)
+. Variáveis extra (template)                                    (sr_data.py)
+. URL do FOCUS com 'rnd' para evitar cache                      (focus)
+. Group '12m_mean' e 'year_mean' para IBC-Br                    (getdata)
+
+
+v042c:  2022-04-26
+. Variável ONLINE entrou no gvar                                (drawgraph)
+. FOCUS: online não auto-atualiza, seta 2 casas decimais        (focus)
+. FOCUS: corrigido logo e tamanho para _IN                      (drawgraph, focus)
+. FOCUS: movido para pasta 'digitado'                           (symbol)
+. 001 no JP1, mudou cor da linha positiva para Verde Escuro     (jp_merc_fin)
+. 001 engrossou linha                                           (graphtime)
+. Inverteu posição dos textos de Preço, Perc, Variação          (ingraph)
+
+v042b:  2022-04-25
+. Removido blk_w do default (ir removendo outras)               (symbols, digitado)
+. Novo gráfico do tipo barP (barras Paralelas/Agrupadas)        (drawgraph)
+. JP1, 'CHEIA2' com 30% de Preto, e saida mudou para '_TELAO'   (video)
+
+v042:  2022-04-20
+. Novo tipo 'toperc' no vtype, para o group='manual'            (getdata)
+  'perc' seria o default, pois age diferente de acordo com a
+  origem (usando 'toperc', não precisa do 'index_to_perc')
+. 'quant' assume 13, se vier 0 no group='manual'                (getdata)
+. Posição x,y nos labels foi invertida (era y,x)                (graphics)
+. Nome das colunas (legenda)                                    (getdata)
+. Novo gráfico do tipo barS (barra empilhada)                   (drawgraph)
+. Iniciado gráfico de pizza                                     (drawpizza)
+. 001 no tempo variável pega max, se for mais de 5 anos         (assets)
+. Invest New Black com textos brancos no ranking                (invest_news_black)
+. Número seq. e horário no arquivos de erros do servidor        (sr_data.py)
+
+
+v041c:  2022-04-13
+. Removido o arredondamento antecipado de números (v028)        (getdata)
+. Cor diferente para os textos nas barras (up, dn, mid, end)    (drawgraph)
+. Cor dos textos nas barras pode entrar como int ou lista       (templates)
+. T_COLOR_4 escureceu no jp1                                    (jp_merc_fin)
+. Mudanças em códigos do IBGE                                   (indexes)
+
+v041b:  2022-04-10
+. Pega series completa do IBGE usando -10000 ao invés de datas  (indexes)
+. Aceita cor #RRGGBBAA em alguns lugares                        (util)
+. Retângulos nas tabelas                                        (drawtable)
+. Focus só baixa e adiciona o final dos dados                   (focus)
+
+v041:  2022-04-07
+. Datahead com strip (dava erro se tinha linha nova embaixo)    (digitado)
+. Variável do digitado pode entrar vazia                        (digitado)
+. Aceita xtep para bar também                                   (drawgraph)
+. Começado sistema de aceitar qualquer formato de data          (util, getdata, graphtime)
+. Dados do IBGE, pegos até início do plano real                 (getadata, indexes)
+. Utiliza todas vars do digitado (estava errado só nos textos)  (getdata)
+. Sistema de configurar vars na tela (similar ao site)          (SR_Data)
+
+
+v040b:  2022-04-06
+. Correção do problema de gráficos somente com ano              (drawgraph)
+. Alguns tratamentos de erros                                   (util, drawtable, digitado)
+. Variável quant no samemonth                                   (getdata)
+. Corrigido uso da variável yref                                (drawgraph)
+. Avanço na geração de tables                                   (drawtable)
+. Variável 'bg_img' para colocar imagem no fundo                (drawgraph)
+
+v040:  2022-04-04
+. Correção de erro de tentar pegar dados que não existia        (digitado)              * PRECISA TRATAR OU DAR MENSAGEM
+. decimal pego do digitado, corrigido para alguns gráficos      (digitado, coins)
+. Usa texto do filter se subtit original estiver vazio          (rank)
+. Novos parâmetros no subtit: {quantity}, {filter_text}         (rank)
+. Mensagem de erro do servidor                                  (drawgraph)
+. Corr. no eixo x, graph 2 colunas, float por causa do NaN      (drawgraph)
+. GT com opção de valor                                         (graphtime)
+. GT com oção do Investing                                      (graphtime)
+
+
+v039d:  2022-04-01
+. Correção de bug de não atualizar title, subtit, dfont         (drawgraph)
+. Correção de bug na indicação de mais dados do que existia     (getdata)
+. Correção de bug na sobreposição de dados digitados do ibge    (indexes)
+
+v039c:  2022-03-29
+. Último mês pode ser configurado para aparecer na linha do subtit
+. IGPM, IGPDI e IPP foram para os digitados
+
+v039b:  2022-03-28
+. Vídeo na direita do TELAO
+. Subido 4 pixels no cabeçalho do FOCUS_Dados (todos templates)
+. Trocado cor do cabeçalho do FOCUS_Dados para o jp_merc_fin (escureceu)
+. Timestamp no subit da Tabela de Moedas
+
+v039:  2022-03-27
+. Opção de montar texto datilografado em cima de vídeo.
+. show_perc no 'digitado' exibe símbolo de % após o número
+. Cor e tamnaho do subtit, dfont configuráveis no 'digitado'
+. Gráfico etanol
+. 'GT' com opção de IPCA para os cumbustível (precisa fazer um checkbox para o IPCA)
+. get_xy_anchors pegando também posições relativas
+
+
+v038d:  2022-03-24
+. Índices de Confiança FGV passou para o 'digitados'
+
+v038c:  2022-03-24
+. Corrigido problema no RANK (havia criado variável com mesmo nome no Python)
+. Data Inicial variável para o _001
+. config_var.csv mudou para dentro do digitado
+
+v038b:  2022-03-23
+. GT aceita 'digitado' com BC e IBGE desde que já baixado
+
+v038:   2022-03-23
+. Melhora na comparação/conversão dos nomes entrados
+. GT pode usar dados de arquivo dos digitados
+
+
+v037e:  2022-03-22
+. FONTE dos dados no 'GT'
+. Aumentou tamanho da Legenda no 'GT', aumentou margens da direita e baixo.
+
+v037c/d:  2022-03-21
+. FOCUS_Dados_2 com apenas anos 2022 e 2023
+. FOCUS_Dados exibe data que pegou os dados
+. Ajustados alguns países (nomes, bandeiras)
+. Aceita sufixo '_jp2' no digitados
+. Filtro do país no nome do arquivo de 'RANK'
+. Exibição do '%' configurável no 'RANK'
+. Elimina espaços (strip) da coluna 'x' do digitados
+. Mudanças de constantes nos templates
+. Arquivo para salvar os erros ('ERROR.txt')
+
+v037b:  2022-03-20
+. Centralizado title em gráficos que estavam faltando
+. Mais opções de variáveis no digitados
+. Centralização automática nos gráficos de barras agrupadas
+graphics        set_graph_center, quando recebe número negativos, subtrai do centro atual
+jp_merc_fin_2   CAPS para todos subtit, Aumentou um pouco as fontes, ajustou algumas posições
+video           Novo vídeo de background
+
+v037:  2022-03-18
+. Pegando variáveis no digitado
+. Opção de movimentar verticalmente o gráfico e ajustar altura das barras
+. Lista no digitado: separação mudou de "\" para "," e precisa ter uma "," no final
+. Novo Template para Jovem (JP2), Título centralizado
+digitado
+drawgraph
+
+
+v036b:  2022-03-17
+. Opção: cor diferente na última barra ('last_diff')
+. Opção: cor da fonte do título ('title_fc')
+. Opção: tamanho da fonte do título ('title_fs')
+. Opção: cor da fonte usada acima das barras (pode ser lista)
+drawgraph   last_diff, title_fc, title_fs, bar_val_fc
+graphics    Funções transferidas para util
+rank        Labels para o rank de digitados
+
+
+v036:   2022-03-16
+. Melhora na busca por asset
+. blk_dx e blk_cor multiplos
+. Adição de labels
+. Aceita digitado com mais de 20 linhas de configuração
+. Gráficos ajustados para o Invest News
+SR_Data
+assets      Compara asset ignorando case e acentos
+coins       Novas variáveis de config
+digitado    Blk, Labels, Variáveis tipo lista ccom '\' separando valores
+drawgraph   Barras com distanciamento e cores diferentes, labels
+getdata     skiprows variável
+graphcomp   Novas constantes de template
+ingraph     Novas constantes de template
+ingpos      Novas constantes de template
+util        Algumas funções transferidas para util
+
+
+v035:
+. Opção de procurar symbol
+. Opção de movimentar horizontalmente o gráfico
+. Alterações para rodar online
+. IPCA e Caged movido para digitados
+. Timestamp no Bolsas_Mundo
+SR_Data     Opção de procurar
+drawgraph   Opção ONLINE
+getdata     Caged entrou
+indexes     Caged saiu
+
+
+v034b:
+. Correções
+getdata     Correção do yearlyv
+indexes     IBGE somente até 12/2023 (gerava erro até 2029)
+
+
+v034:
+. Prefixo do Template nos nomes dos arquivos
+. Seleção dos vídeos que serão gerados
+. Barra sobreposta outra cor (v3)
+. Começou Tables para Invest News
+SR_Data     Seleção dos vídeos
+digitado    Lê 20 linhas (era 19), preenches dados faltantes
+drawgraph   Ajusta size v2 e v3, barra v3
+graphics    draw_circle com png
+templates   Dados para Tables
+symbols     Frases alteradas pela jornalista
+tables      Uilizando constantes dos templates
+util        Create imagem de shape
+
+
+v033c:
+. Opção de acrescentar IPCA ao valor
+getdata     vtype=ipca
+
+
+v033b:
+. Opção de acrescentar IPCA ao valor
+getdata     vtype=ipca
+
+
+v033:
+. Exibe v2 do 'digitado'
+drawgraph   v2 como annotation para gráfico de barras
+getdata     v2
+graphcomp   corrigido exibição de US$ na gasolina e diesel
+
+
+v032c:
+. Sufixos _in e _inb para o digitados (Invest_News / Black)
+digitado    Sufixos _in e _inb
+drawgraph   Gambiarra para o 'vstep' != 1
+getdata     Gambiarra para o 'vstep' != 1
+graphcomp   Gasol e Diesel sem IPCA (precisa arrumar)
+indexes     PIB transferido para o digitado
+symbols     PIB transferido para o digitado
+
+
+v032:
+. Tabela com Bolsas do Mundo, adicionado Brasil e opção em US$
+. High e Low para o Ranking de Moedas
+. Botão update para o Ranking, aprox. 8 minutos para atualizar
+drawgraph   Bolsa Mundo em USD
+graphcomp   USD baixado do Investing, ao invés do Bacen
+rank        Otimização da atualização, atualiza via botão. High e Low para moedas.
+tables      USD e Brasil
+
+
+v031b:
+.           Correção atualização via botão "dig" (digitado.csv)
+symbols     Deepcopy do symbol_list para retornar valores
+SR_Data     Correção problema no digitado.csv
+
+
+v031:
+. Edição do title, subtit, dfont via botão "dig"
+. Opção de escolha do tipo para a data final (Close, Low, High, Open)
+SR_Data     Tipo para a data final
+digitado    Opção para ler "digitado.csv"
+drawgraph   "data end type" e botão "dig"
+rank        "data end type"
+
+
+v030:
+. g001 para Inv_News
+. Constantes para g001
+. Rank Moedas e Mundo com seleção de países separado
+. Resolvido pequenos problemas no Ranking e g001
+SR_Data     Unificado chamada a draw_graph
+drawgraph   g001 para Inv_News
+graphics    g001 para Inv_News
+graphtime   g001 para Inv_News, ytick_max corrigido (close anterior pode estar longe)
+ingraph     g001 para Inv_News e constantes para templates diferentes, usando assets_codes.csv
+ingpos      Constantes para templates diferentes, block_info com posições diferentes
+rank        Resolvido problema de União Européia, Estados Unidos 2
+symbols     dfont de "InvestNews" para "Investing"
+templates   g001, testes com Necton
+water       g001
+
+
+v029:
+. Copy para clipboard apenas no Windows
+. Menu superior, melhor ajustado
+. Ajustes no Inv_News e Inv_News_Black
+. Começando a fazer template Necton
+SR_Data     Reposicionamento do menu
+drawgraph   Inv_News 895 x 540, mudanças para o Inv_News_Black
+util        Clipboard somente no Windows
+
+
+v028:
+. Aceita Ranking invertido ('rankI') na configuração
+. Formato da coluna de data em 2 formatos diferentes
+digitado    Variaveis de configuração em minúsculas
+getdata     Aceita também data em formato yyyy-mm-dd, arredonda 'valor' internamente, config 'quant'
+rank        Orderna descendente ou ascendente, config 'quant'
+
+
+v027:
+. Progama 007_ passou a se chamar SR_Data
+. Periodo para o 001_
+. Gráfico tipo Ranking no digitados
+. Escolha dos países para o Rank do digitados
+Arquivos:
+countries   Dados para tradução passados para o countries.csv
+drawgraph   Rank no digitados, periodo no 001
+getdata     Filtro para os países, converte data para mes/ano se group='name'
+graphtime   Opção de setar o periodo no 001_
+indexes     VENDAS_COM_ANUAL
+symbols     VENDAS_COM_ANUAL
+rank        Rank e filtros dos países
+
+
+v026:
+. Gráfico de linha
+. Gera vídeo na esquerda (além do antigo no centro)
+. Dados diretos do BC e IBGE no 'digitados'
+. Gráficos de combustível até data atual
+Arquivos:
+drawgraph   Não exibe valor em gráfico de linha, melhorou 'xstep'
+getdata     Dados do BC e IBGE no 'digitados'
+graphcomp   IPCA até data atual repetindo o último
+indexes     Removido IPCA-15 do código (agora no digitados)
+invest_news Ranking mais para direita (50 pixels)
+rank        Ranking um pouco mais pra cima (10 pixels)
+symbols     Removido IPCA-15 e IBC-BR_Saz do código (agora no digitados), nova variável 'convert'
+video       Video na esquerda
+
+
+v025:
+. Gráficos da Selic em escada
+. Gráficos e tabela de petróleo
+. Correções e novas variáveis no digitados
+Arquivos:
+tables      Petroleo
+symbols     Novos gráficos e novas variáveis para os dados
+rank        Comecei a mexer no rank vindo do digitados
+indexes     Novos gráficos
+graphtime   Comecei a mexer para a curva de juros 'PRE'
+graphcomp   Dados de petroleo
+getdata     'yearly' corrigido, pega somente os anos que existem / 'yearlyV' comecei a implementar
+drawgraph   graph_type configurável ('bar', 'step', 'line' esse precisa fazer), Petroleo
+digitado    Trata novas variáveis para os dados
+countries   Tradução de nome do país
+
+
+v024:
+. Voltou Cyan para linha do gráfico positivo
+. Arrumado problema de não exibir linha pontilhada do fechamento (ytick_min)
+. FOCUS tabelas, com escolha do ano para começar (default 2022)
+. Aceita yline e rvalue no digitados
+. Começo do INVEST_NEWS_BLACK
+Arquivos:
+digitado	trata dados em yline
+getdata		vtype == rvalue, nao converte de indice para valor
+graphtime	usa IGPM_BR, ytick_min calculado para mostrar fechamento anterior
+ingpos		voltou cor CYAN
+ingraph		retirou calculo do close_price (agora corrige no ytick_min)
+templates(3) mudanças
+symbols		IGPM_ANUAL com * (obs. sobre só ter JAN/2022)
+water		usando constantes para posicionar
+focus		seta ano inicial
+graphics	layer na draw_line e draw_rectangle
+drawgraph	constantes, INVEST_NEWS_BLACK, obs para o 'yearly' do IGPM, ano inicial no Focus
+
+
+v023:
+. Exibe versão do programa na tela
+. Rank, mostra posiçao do Brasil e total de países/moedas
+. Rank, foi ajustado posicionamento do gráfico
+. Cor Verde para linha do gráfico positivo (era ciano)
+. IPCA-15 agora pega no IBGE (pegava no BC)
+
+
+v022:
+. Import kaleido, para gerar erro caso esteja faltando
+. Transparencia é desligada para o jpg (estava salvando com fundo preto)
+. Corrigido tamanho do gráfico no GT, tinha introduzido erro na v020
+. Zoom feito no graph001 (antigo 001_)
+. Marca d'agua no meio do InvestNews
+. Refatoração do código (partes do 007_ passadas para .py na pasta libraries)
+
+
+v021:
+. Download automático do Focus
+. Opção de salvar transparente as imagens
+. IGP10 no digitado (modificação no codigo para aceitar)
+
+
+V020:
+. 002_ incluido no 007_
+. Apaga arquivo antes de salvar, para ficar com data recente
+. Imagem transparente para vídeo é salva com outro nome e é apagada
+. 001 para 1 dia incluido no 007_
+. Batch para gerar gráficos e vídeos do dia a dia
+
+
+V019:
+. Vídeo atrás para o: 001, 002, 007
+
+
+v018:
+. Tabelas assets_codes, para poder digitar/exibir nome de forma mais simples
+. Ao salvar PNG ou JPG também copia para o Clipboard
+. IGP-DI corrigigo para entrar apenas com o índice manualmente (pode colocar 0 no % mensal)
+. Dados do Bacen podem ser entrados manualmente, só salva o download se tem dado mais novo
+. Criação de gráficos com dados entrados manualmente
+. Opção de gerar vídeo com os gráficos
+
+
+v017a:
+. Tamanho da legenda corrigido para ficar proporcional a escala
+
+
+
+
+
+VERSION CHANGES
+
+
+011:
+2021/12/15
+focus.py - show_focus_graph():
+. Reovido range do yaxes e xaxes
+
+
+-----------------------------------------------------------------------------
+001_Assets_Graph:
+* v016:
+. Graph line larger (2(default) -> 3 or 4)          change_data
+. Down block info, numbers (green -> white)         block_annotation_labels
+. Down block info, inc. dist. text/number (4)       block_annotation_labels
+. Close line larger (1 -> 3)                        show_close_line
+. Percent over first price (it was over last)       update_labels
+
+
+-----------------------------------------------------------------------------
+002_
+* v0
+
+
+-----------------------------------------------------------------------------
+003_
+* v0
+
+
+-----------------------------------------------------------------------------
+004_
+
+

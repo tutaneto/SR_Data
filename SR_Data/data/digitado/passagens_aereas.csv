@@ -1,0 +1,13 @@
+title;Inflação das Passagens Aéreas
+subtit;Variação sobre o mês anterior, em %
+dfont;IBGE
+;
+decimal;2
+ylines;
+blk_dx;80
+;
+;
+;
+;
+data;begin
+IBGE_7060,63,315,7634

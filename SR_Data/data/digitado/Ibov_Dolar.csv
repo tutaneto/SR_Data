@@ -1,0 +1,51 @@
+title;
+subtit;
+dfont;
+group;name
+type;table
+;
+bg_img;images/bg_images/BG_Merc_Fin_2_Indicadores.jpg
+;
+;x1;200
+;x2;900
+;y1;410
+;x1t;810
+;
+;label;(rect),x1,y1,660,120,#FFFFFF33
+;label;(rect),x2,y1,360,120,#FFFFFF33
+;
+;yellow_triang;images/tables/JP/triangulo_DO_RETANGULO.png
+;label;yellow_triang,x1t,410,50,120
+;
+;
+arrow_up;images/tables/JP/SETA_SOBE.png
+arrow_dn;images/tables/JP/SETA_DESCE.png
+txt_color;white
+;
+fs_item;80
+fs_nperc;60
+fs_perc;48
+;
+arrow_y;704
+;
+label;MERCADO FINANCEIRO, 140, 64,#EF9B0A,60,
+label;ECONOMIA,           140,130,white,40,
+;
+label;Ibovespa,           460, 425,txt_color,fs_item,
+label;PONTOS,             940, 580,txt_color,36,
+label;{^BVSP},           r920, 550,txt_color,80,
+label;%,                  960, 680,txt_color,fs_perc,
+label;{^BVSP_perc},      r955, 670,txt_color,fs_nperc,
+label;{^BVSP_arrow},      780,arrow_y,81,62,arrow_up,arrow_dn,
+;
+label;Dólar,             1150, 425,txt_color,fs_item,
+label;R$,                1200, 580,txt_color,36,
+label;{USDBRL=X},        1250, 550,txt_color,80,
+label;%,                 1360, 680,txt_color,fs_perc,
+label;{USDBRL=X_perc},  r1355, 670,txt_color,fs_nperc,
+label;{USDBRL=X_arrow},  1180,arrow_y,81,62,arrow_up,arrow_dn,
+;
+;
+;
+data;begin
+x;y

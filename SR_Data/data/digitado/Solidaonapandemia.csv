@@ -1,0 +1,21 @@
+title;Solidão na Pandemia
+subtit;Percentual de pessoas
+dfont;Ipsos
+vtype;rvalue
+group;name
+blk_dx;100
+type;rankI
+;
+;
+;
+data;begin
+x;y
+Brazil;50
+Turkey;46
+India;43
+Italy;41
+South Africa;40
+Chile;38
+France;36
+Argentina;35
+United States;31

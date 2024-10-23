@@ -1,0 +1,6 @@
+{
+    "api_url": "https://apisidra.ibge.gov.br/values/t/1620/n1/all/v/3135/p/all",
+    "title": "PIB Trimestral do Brasil",
+    "subtitle": "Em milhões de reais a preços correntes",
+    "api_params": {}
+}

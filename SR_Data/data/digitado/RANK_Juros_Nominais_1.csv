@@ -1,0 +1,187 @@
+title;Juros reais em 2022
+subtit;Ranking com as taxas descontadas pela inflação , em % ao ano
+dfont;Trading Economics
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rank
+;
+;
+txt_atualiz;Atualizado em 02/08/2022<br>Considerando as atuais taxas nominais de juros e expectativas de inflação de cada país para 2022.
+label_jp;txt_atualiz,120,170,4,24,
+label_inb;txt_atualiz,16,260,5,24,
+;
+;
+;
+data;begin
+x;y
+Afghanistan;15.0
+Albania;1.25
+Algeria;3.0
+Angola;20.0
+Argentina;52.0
+Armenia;9.5
+Australia;1.85
+Austria;0.5
+Azerbaijan;7.75
+Bahamas;4.0
+Bahrain;3.25
+Bangladesh;4.75
+Belarus;12.0
+Belgium;0.5
+Benin;4.0
+Bhutan;7.16
+Bolivia;3.9
+Bosnia and Herzegovina;3.03
+Botswana;2.15
+Brazil;13.25
+Brunei;5.5
+Bulgaria;0.0
+Burkina Faso;4.0
+Burundi;6.9
+Cambodia;1.02
+Cameroon;4.0
+Canada;2.5
+Cape Verde;0.25
+Central African Republic;4.0
+Chad;4.0
+Chile;9.75
+China;3.7
+Colombia;9.0
+Comoros;0.92
+Congo;7.5
+Costa Rica;7.5
+Croatia;2.5
+Cuba;2.25
+Cyprus;0.5
+Czech Republic;7.0
+Denmark;-0.1
+Djibouti;11.2
+Dominican Republic;7.25
+Ecuador;7.11
+Egypt;11.25
+El Salvador;4.39
+Equatorial Guinea;4.0
+Estonia;0.5
+Ethiopia;7.0
+Euro Area;0.5
+Fiji;0.25
+Finland;0.5
+France;0.5
+Gabon;4.0
+Gambia;11.0
+Georgia;11.0
+Germany;0.5
+Ghana;19.0
+Greece;0.5
+Guatemala;2.25
+Guinea;11.5
+Guinea Bissau;4.0
+Guyana;5.0
+Haiti;17.0
+Honduras;3.0
+Hong Kong;2.75
+Hungary;10.75
+Iceland;4.75
+India;4.9
+Indonesia;3.5
+Iran;18.0
+Iraq;4.0
+Ireland;0.5
+Israel;1.25
+Italy;0.5
+Ivory Coast;4.0
+Jamaica;5.5
+Japan;-0.1
+Jordan;3.75
+Kazakhstan;14.5
+Kenya;7.5
+Kuwait;2.5
+Kyrgyzstan;14.0
+Laos;3.1
+Latvia;0.5
+Lebanon;7.75
+Lesotho;4.75
+Liberia;20.0
+Libya;3.0
+Lithuania;0.5
+Luxembourg;0.5
+Macau;2.75
+Macedonia;1.75
+Madagascar;9.5
+Malawi;14.0
+Malaysia;2.25
+Maldives;7.0
+Mali;4.0
+Malta;0.5
+Mauritania;5.0
+Mauritius;2.25
+Mexico;7.75
+Moldova;18.5
+Mongolia;10.0
+Morocco;1.5
+Mozambique;15.25
+Myanmar;7.0
+Namibia;4.75
+Nepal;8.5
+Netherlands;0.5
+New Caledonia;0.25
+New Zealand;2.5
+Nicaragua;8.66
+Niger;4.0
+Nigeria;14.0
+Norway;1.25
+Oman;3.0
+Pakistan;15.0
+Panama;1.36
+Papua New Guinea;3.0
+Paraguay;8.0
+Peru;6.0
+Philippines;3.25
+Poland;6.5
+Portugal;0.5
+Qatar;3.75
+Republic of the Congo;4.0
+Romania;4.75
+Russia;8.0
+Rwanda;5.0
+Sao Tome and Principe;9.0
+Saudi Arabia;3.0
+Senegal;4.0
+Serbia;2.75
+Seychelles;2.0
+Sierra Leone;15.0
+Singapore;1.56
+Slovakia;0.5
+Slovenia;0.5
+South Africa;5.5
+South Korea;2.25
+South Sudan;12.0
+Spain;0.5
+Sri Lanka;14.5
+Sudan;23.8
+Suriname;10.0
+Swaziland;4.5
+Sweden;0.75
+Switzerland;-0.25
+Taiwan;1.5
+Tajikistan;13.25
+Tanzania;5.0
+Thailand;0.5
+Togo;4.0
+Trinidad and Tobago;3.5
+Tunisia;7.0
+Turkey;14.0
+Uganda;8.5
+Ukraine;25.0
+United Arab Emirates;3.75
+United Kingdom;1.25
+United States;2.5
+Uruguay;9.75
+Uzbekistan;15.0
+Venezuela;56.18
+Vietnam;4.0
+Yemen;27.0
+Zambia;9.0
+Zimbabwe;200.0

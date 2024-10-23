@@ -1,0 +1,11 @@
+title;IPP   Índice de Preços ao Produtor
+subtit;Variação acumulada em 12 meses, em %
+dfont;IBGE
+group;12
+decimal;1
+blk_dx;80
+blk_dx_jp;86
+blk_dx_inb;74
+;
+data;begin
+IBGE_6904,1396,543,33586

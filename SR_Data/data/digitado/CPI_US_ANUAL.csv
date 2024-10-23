@@ -1,0 +1,21 @@
+title;Inflação nos EUA
+subtit;Acumulado no ano do CPI (preços ao consumidor), em %
+dfont;U.S. BLS
+vtype;perc
+decimal;1
+mult;1
+divshow;1
+group;yearly
+yref;0
+ylines;
+blk_dx;80
+blk_dx_inb;74
+period;month
+;
+;
+;
+;
+;
+;
+;
+CPI_US.csv

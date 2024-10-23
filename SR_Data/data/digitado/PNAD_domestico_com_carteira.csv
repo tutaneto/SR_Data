@@ -1,0 +1,14 @@
+title;PNAD - Trabalhador doméstico com carteira
+subtit;Volume de empregados (em milhares)
+dfont;IBGE
+vtype;value
+decimal;1
+divshow;1000
+divshow;
+ylines;
+blk_dx;76
+;
+;
+;
+data;begin
+IBGE_6320,4090,11913,31725

@@ -1,0 +1,33 @@
+
+==============================================================================================================
+Ranking (Tabela, Table)
+
+A opção de 'Low' e 'High' refere-se somente ao ÚLTIMO DIA, não ao menor valor e maior valor
+no período completo.
+
+
+==============================================================================================================
+Petroleo (Tabela, Table)
+
+Brent
+No momento não está sendo pego o dado mais recente. Deve setar data final para dia anterior ou antes.
+Obs: Precisa corrigir isso para se ter valor atual.
+
+Preços na Bomba de Gasolina e Diesel
+Não se tem esses dados de datas recentes para pegar.
+
+Dados são atualizados semanalmente no site da ANP
+Devem ser pegos MANUALMENTE no site:
+https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis
+
+Os dados referentes as últimas semanas devem ser baixados e adicionados manualmente ao arquivo
+do semestre atual: (Exemplo: ca-2022-01.csv)
+
+Depois dos dados adicionados, chamar o programa combustivel_download.ipynb que prepara os dados
+para o programa gerador de gráficos.
+
+
+https://www.fipe.org.br/pt-br/indices/ipc/#indice-mensal
+https://www.fipe.org.br/pt-br/indices/ipc/#indice-mensal
+
+https://www.fipe.org.br/pt-br/indices/ipc/#indice-mensal

@@ -1,0 +1,15 @@
+title;Prévia da inflação (IPCA-15)
+subtit;Mês de {last_month} em cada ano, em %
+dfont;IBGE
+vtype;perc
+decimal;2
+group;samemonth
+;ylines;0, 0.5, 1
+blk_dx;74
+blk_dx_jp2;84
+date_type;yyyymmdd
+;
+;
+;
+data;begin
+IBGE_3065,355,0,0

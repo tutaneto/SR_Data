@@ -1,0 +1,21 @@
+title;Prévia da inflação (IPCA-15)
+subtit;Variação acumulada em 12 meses, em %
+dfont;IBGE
+vtype;perc
+decimal;2
+mult;1
+divshow;1
+group;1
+yref;0
+ylines;0, 4, 8
+blk_dx;80
+blk_dx_inb;74
+period;month
+;
+;
+;
+;
+;
+;
+;
+IBGE_3065,1120,0,0

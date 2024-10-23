@@ -1,0 +1,17 @@
+title;Transações correntes (Despesas)
+subtit;em US$ (milhões)
+dfont;BCB-DSTAT
+vtype;rvalue
+decimal;1
+mult;1000000
+divshow;1000000000
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+data;begin
+BC_22703

@@ -1,0 +1,50 @@
+title; Melhores Índices de Custo para 200kWh residenciais
+subtit;Ajustado por renda per capta (33 países)
+dfont;ABRACE
+vtype;rvalue
+show_percent;0
+decimal;3
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+Norway;0.020
+Luxembourg;0.033
+United States;0.038
+Canada;0.041
+Switzerland;0.048
+Ireland;0.051
+Netherlands;0.056
+south korea;0.059
+Sweden;0.059
+Australia;0.067
+Finland;0.078
+New Zealand;0.079
+Austria;0.088
+Denmark;0.090
+France;0.095
+United Kingdom;0.102
+Estonia;0.106
+Slovenia;0.120
+Belgium;0.124
+Hungary;0.125
+Japan;0.125
+Germany;0.136
+Lithuania;0.138
+Czech Republic;0.157
+Spain;0.180
+Slovakia;0.185
+Latvia;0.191
+Poland;0.196
+Portugal;0.198
+Chile;0.215
+Turkey;0.218
+Brazil;0.342
+Colombia;0.504

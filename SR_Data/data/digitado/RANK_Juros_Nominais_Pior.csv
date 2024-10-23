@@ -1,0 +1,16 @@
+title;Juros reais em 2022
+subtit;Ranking com as maiores taxas de juros, em % ao ano
+dfont;Trading Economics
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+data;begin
+RANK_Juros_Nominais.csv

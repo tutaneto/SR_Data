@@ -1,0 +1,12 @@
+Links:
+https://coding-stream-of-consciousness.com/2018/11/12/read-only-protected-jupyter-notebooks/
+https://discourse.jupyter.org/t/prevent-users-from-viewing-source-code-of-an-imported-module/1519/6
+
+
+Obfuscation:
+https://pyarmor.readthedocs.io/en/latest/usage.html
+
+Poderia fazer um programa para ofuscar Jupyter notebooks
+    - Joga código em um .py, ofusca, e põe de volta
+    - Apaga markdowns e comentários do código
+

@@ -1,0 +1,12 @@
+title;Monitor do PIB
+subtit;Mês de {last_month} em cada ano, em %
+dfont;FGV
+group;samemonth
+decimal;2
+blk_dx;80
+blk_dx_inb;74
+;
+date_type;mm_yyyy
+;
+data;begin
+MONITOR_PIB_FGV_INDICE.csv

@@ -1,0 +1,33 @@
+title;Ranking dos juros reais
+subtit;Taxas com desconto da inflação, em % ao ano
+dfont;Trading Economics (177 países analisados)
+vtype;rvalue
+decimal;2
+mult;1
+divshow;1
+group;1
+yref;0
+ylines;40,80
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+1-Libéria;11.84 
+2-Afeganistão;10.26 
+3-Djibouti;9.02 
+4-Moçambique;8.37 
+5-Georgia;7.28 
+6-Gana;7.01 
+7-Tajiquistão;6.04 
+8-Serra Leoa;5.79 
+9-Haiti;5.41 
+10-Gâmbia;5.26 
+11-Madagascar;4.99 
+12-Brazil;4.98 

@@ -1,0 +1,17 @@
+title;Investimento Estrangeiro Direto
+subtit;Anual em US$ (bilhões)
+dfont;Banco Central
+vtype;rvalue
+decimal;1
+mult;1000000
+divshow;1000000000
+blk_dx;80
+period;year
+;
+;
+;
+;
+;
+;
+data;begin
+BC_24424

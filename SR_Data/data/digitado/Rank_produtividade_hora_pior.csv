@@ -1,0 +1,79 @@
+title;Piores Produtividades em USD por hora
+subtit;Comparação entre 62 países (2022)
+dfont;worldpopulationreview.com
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+show_perc;0
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+Norway;75.08
+Luxembourg;73.22
+United States;67.32
+Belgium;60.98
+Netherlands;60.06
+France;59.24
+Germany;57.36
+Ireland;56.05
+Australia;55.87
+Denmark;55.75
+Sweden;55.28
+Austria;54.83
+United Kingdom;51.38
+Canada;50.29
+Iceland;50.01
+Switzerland;49.88
+Spain;49.59
+Finland;48.79
+Barbados;46.19
+Italy;45.04
+Japan;43.77
+Singapore;41.46
+Hong Kong;41.3
+Trinidad And Tobago;40.04
+Taiwan;39.97
+Slovenia;39.78
+Israel;38.99
+New Zealand;36.83
+Malta;36.02
+Slovakia;33.44
+Greece;32.77
+South Korea;32.31
+Czech Republic;31.23
+Cyprus;31.18
+Lithuania;27.53
+Portugal;27.23
+Poland;25.81
+Hungary;24.37
+Estonia;23.5
+Turkey;22.83
+Latvia;21.15
+Russia;19.7
+Chile;19.55
+Saint Lucia;18.58
+Uruguay;18.16
+Costa Rica;17.81
+Bulgaria;16.48
+Malaysia;16.47
+Mexico;16.23
+Romania;15.46
+Venezuela;15.05
+Argentina;13.84
+Ecuador;13.81
+Jamaica;12.95
+Colombia;11.26
+Peru;10.99
+Brazil;10.78
+Armenia;10
+Thailand;8.54
+Sri Lanka;6.85
+India;3.4
+Bangladesh;1.98

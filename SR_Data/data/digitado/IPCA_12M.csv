@@ -1,0 +1,14 @@
+title;IPCA Inflação oficial acumulada
+subtit;Variação acumulada em 12 meses, em %
+dfont;IBGE
+;
+decimal;2
+ylines;0, 4, 8
+blk_dx;80
+blk_dx_inb;74
+show_perc;0
+;
+;
+;
+data;begin
+IBGE_1737,2265,0,0

@@ -1,0 +1,13 @@
+title;IPCA   Inflação oficial mensal
+subtit;Variação sobre o mês anterior, em %
+dfont;IBGE
+;
+decimal;2
+ylines;0, 0.5, 1
+blk_dx;74
+;
+;
+;
+;
+data;begin
+IBGE_1737,63,0,0

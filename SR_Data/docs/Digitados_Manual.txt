@@ -1,0 +1,103 @@
+Criando Gráfico Manual
+
+1. Abrir um arquivo qualquer que fica dentro da pasta "data/digitados"
+   Por exemplo: 'FipeZap.csv' (Sempre usar algum parecido com o que quer fazer novo)
+
+
+2. Salvar com outro nome (Ex: "serie1.csv")
+    Usar Excell ou editor de textos para editar o arquivo .csv
+    Salvar com campo delimitador = ;   e  delimitador de texto = "
+    Conjunto de caracteres: UTF-8
+    Se precisar usar o ; em algum texto, coloque o texto inteiro entre aspas (ex: "palavra; palavra")
+    vtype:
+
+
+3. Modificar o arquivo:
+    Sufixos para alteração específica no template:
+    _jp, _in, _inb, _nec
+
+    title  = título
+    subtit = subtítulo
+    dfont  = fonte dos dados
+    vtype  = tipo de apresentação do valor
+        perc   = exibe %, (esse virou o default, age de acordo com a origem) (v042)
+        value  = exibe sem % (se 'group' for diferente de name, converte valor de índice para diferença)
+        rvalue = não converte valor de índice para diferença entre valores
+        toperc = converte de índice para percentual (v042)
+    decimal;0 = número de casas decimais
+    mult;1 (deixar em 1, se colocar 1000 ele pegará o dado e multiplicará por mil, ex 4 vira 4000)
+    divshow;1 (deixar em 1, se colocar 1000 significa que o gráfico exibirá 4000 como 4k)
+    group;
+        name = exibe exatamente o texto no eixo x
+        1 = Usado para dado mensal
+        12 = acumula dados dos últimos 12 meses
+        yearly = acumula dados mensais para gerar anual
+        yearlyv = pega dado de Dezembro e compara com ano anterior
+        samemonth = pega mesmo mês nos anos anteriores
+        12m_mean = 12meses comparação pela média (IBC-Br)
+        year_mean = Até o mês atualcomparação pela média (IBC-Br)
+    yref;0 (deixar em 0)
+    ylines;(valores das linhas adicionais, ex: se quiser uma linha em 100 e outra em 500 usar 100,500 e deixar depois do;)
+    blk_x;0     posição horizontal do início das barras
+    blk_y;600   posição vertical do início das barras
+    blk_w;50    largura da barra
+    blk_h;400   altura do gráfico
+    blk_dx;70   espaço entre as barras
+    period;month (somente  month por enquanto, ignorado quando 'group'=name)
+    quant;0 (quantidade de colunas que será apresentada, default: 0=todas)
+    type;
+        bar  = gráfico de barras (tipo default)
+        barS = barra empilhada com Somatório
+        barP = barras Paralelas
+        barV = barra Vertical com sobreposição de valores (BBB), colocar sempre o maior primeiro
+        step = gráfico de escada (Selic)
+        line = gráfico de linha
+        rank = ranking de países
+        rankI = ranking de países invertido
+        table, tableV = tabelas
+    show_leg;1=legenda separada  (default),  2=legenda embaixo da barra,  0=sem legenda  (BarP, barS),  only_name=não exibe valor % (GT)
+    leg_x; posição X para legenda
+    leg_y; posição Y para legenda
+    xformat;
+        year = Exibe somente ano no eixo X
+    xstep;1 (qtde. de espaços entre cada valor no eixo x, ex: 6 (exibe texto no eixo x a cada 6 ítens))
+    vstep;1 (tamanho do espaço entre cada valor que será usado no eixo x, ex:3 (usa 1 valor a cada 3))
+    last_diff;1  Indica se último valor do gráfico deve ser exibido diferente (0 = não)
+
+    convert; *** NÃO USAR MAIS ESSE, USAR vtype;toperc (v042) (RETIRAR ESSE DO CÓDIGO) ***
+        index_to_perc = quando group=name, converte valor de índice para diferença %
+
+    FONT_SIZE: (_fs)
+    title_fs;título
+    bar_val_fs;valor da barra, 25(jp), 22(inv)
+    xaxis_fs;texto no eixo x
+    tab_fs;table
+
+
+    FONT_COLOR: (_fc)
+    title_fc;título
+    bar_val_fc;valor da barra
+    tab_fc;table
+
+    label;texto,x,y,fc,fs,[rect]  (x e y, podem conter prefixos para o alinhamento)
+        no lugar de texto  pode utilizar: (rect),  .png/.jpg,  {var}
+
+
+4. Para a área de dados do arquivo .csv, use um dos seguintes tipos:
+    x;y       -> abaixo coloca os dados
+    name.csv  -> os dados são pegos de outro .csv (para não precisar ficar copiando)
+    BC_codigo -> codigo = código da tabela no BC (ex: 'IBC-BR_Saz.csv')
+    IBGE_a,v,c1,c2 -> a = agregados, v = variaveis, c1,c2 = classificação (0,0 se não houver) (ex: 'IPCA-15.csv')
+    FILES -> sequencia de arquivos de onde pegará os dados (ex: 'PIB-Otica-ProducaoTris.csv')
+
+    Dados do IBGE:
+        https://servicodados.ibge.gov.br/api/docs/agregados?versao=3)
+        URL gerada:
+        https://servicodados.ibge.gov.br/api/v3/agregados/3653/periodos/-6/variaveis/4139?localidades=N1[all]&classificacao=544[129314]
+        agregados = 3653
+        variaveis = 4139
+        classificacao = 544,129314
+
+    Dados do BC:
+        https://www3.bcb.gov.br/sgspub/localizarseries/localizarSeries.do?method=prepararTelaLocalizarSeries
+

@@ -1,0 +1,21 @@
+title;IGP-M   Preços do Mercado
+subtit;Mês de {last_month} em cada ano, em %
+dfont;FGV
+group;samemonth
+decimal;2
+;
+blk_dx;37
+blk_w;32
+xaxis_fs;15
+bar_val_fs;18
+;
+blk_dx_jp;47
+blk_w_jp;35
+xaxis_fs_jp;18
+;
+date_type;mm_yyyy
+quant;28
+xstep;2
+;
+data;begin
+IGPM.csv

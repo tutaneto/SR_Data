@@ -1,0 +1,44 @@
+title;FMI Previsões
+subtit;FMI Previsões
+dfont;FMI
+vtype;rvalue
+group;name
+decimal;1
+quant;20
+;
+blk_y;600
+blk_h;380
+blk_w;40
+blk_dx;50,70,50,100,
+;
+blk_y_inb;900
+blk_h_inb;500
+blk_w_inb;45
+blk_dx_inb;45,65,45,90,
+;
+blk_cor;1,2,
+;
+bar_val_fs;19
+xaxis_fs;19
+;
+;label;Janeiro/22
+;label;Abril/22
+;
+data;begin
+x;y
+Jan      Abr           Jan    Abr<br>2022                    2023<br>Mundo;                 4.4
+;                      3.6
+;                      3.8
+;                      3.6
+Jan      Abr           Jan    Abr<br>2022                    2023<br>Países Desenvolvidos;  3.9
+;                      3.3
+;                      2.6
+;                      2.4
+Jan      Abr           Jan    Abr<br>2022                    2023<br>Países Emergentes;      4.8
+;                      3.8
+;                      4.7
+;                      4.4
+Jan      Abr           Jan    Abr<br>2022                    2023<br>Brasil;                0.3
+;                      0.8
+;                      1.6
+;                      1.4

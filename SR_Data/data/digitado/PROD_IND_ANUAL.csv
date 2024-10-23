@@ -1,0 +1,25 @@
+title;Produção industrial
+subtit;Variação sobre o ano anterior, em %
+dfont;IBGE
+vtype;rvalue
+decimal;1
+group;name
+ylines;-8,-4,0,4,8
+blk_dx;74
+;
+;
+;
+data;begin
+x;y
+2010;10.2
+2011;0.4
+2012;-2.3
+2013;2.1
+2014;-3.0
+2015;-8.3
+2016;-6.4
+2017;2.5
+2018;1.0
+2019;-1.1
+2020;-4.5
+2021;3.9

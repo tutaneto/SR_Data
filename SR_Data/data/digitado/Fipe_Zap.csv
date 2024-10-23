@@ -1,0 +1,34 @@
+title;Preços dos imóveis
+subtit;Variação acumulada em 12 meses, em %
+dfont;FipeZap
+vtype;value
+decimal;1
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+2009;21.1
+2010;26.9
+2011;26.4
+2012;13
+2013;13.7
+2014;6.7
+2015;1.3
+2016;0.6
+2017;-0.5
+2018;-0.2
+2019;0
+2020;3.7
+2021;5.3

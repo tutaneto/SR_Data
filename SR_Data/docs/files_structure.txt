@@ -1,0 +1,37 @@
+Alterar nomes de ativos:
+data/config/assets_codes.csv
+Esquerda = símbolo original
+Direita = primeiro nome é o que será exibido
+Direita = todos nomes em um mesmo símbolo são usados para a busca
+
+
+
+
+
+
+
+
+
+
+
+
+
+007_Indexes_Dynamic
+    - Notebook programa principal
+
+
+libraries:
+pres_template       Seleciona o template atual
+drawgraph           Gráfico de barras  e  Chama as funções que exibem outros gráficos
+getdata             Pega dados
+focus               FOCUS
+rank                Ranking (Bolsas e Moedas)
+tables
+graphtime           Comparação entre 2 índices e 001_
+video               Gera vídeo do gráfico
+water               Marca d'agua
+
+indexes             BC e IBGE
+digitados           Arquivos feitos a mão
+
+assets              Usado pelo 001_ e ...

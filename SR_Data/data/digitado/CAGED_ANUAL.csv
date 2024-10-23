@@ -1,0 +1,33 @@
+title;Criação de empregos formais
+subtit;Acumulado por ano no Brasil
+dfont;Ministério do Trabalho
+vtype;rvalue
+decimal;2
+divshow;1000000
+group;name
+blk_x_inb;110
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+2010;2629827
+2011;2026571
+2012;1372594
+2013;1138562
+2014;420690
+2015;-1534989
+2016;-1326558
+2017;-11964
+2018;546445
+2019;644079
+2020;-191455
+2021;2730597

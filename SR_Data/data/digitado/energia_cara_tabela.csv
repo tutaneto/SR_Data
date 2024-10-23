@@ -1,0 +1,38 @@
+title;Contas mais caras do mundo
+subtit;Ajustada pela renda
+dfont;ABRACE
+vtype;rvalue
+group;name
+type;tableV
+;
+;
+;
+;bg_img;C:/Users/Rogerup/Downloads/Samy_Proj_Files/JM1_TABELA_SAMY.png
+tab_x;        c280
+tab_y;        m220
+;tab_tit_fs;  34
+tab_fs;       33
+tab_tit_fc;   bold_white
+tab_fc;       bold_4
+tab_tit_dy;   50
+tab_dy;       46
+tab_dx;       344
+tab_tit_rect; 320,44,#283C50D9,
+tab_rect;     320,40,#283C504D,
+;
+tab_tit_fs_in;24
+tab_fs_in;    26
+tab_dx_in;    280
+tab_tit_rect_in; 270,44,#283C50D9,
+tab_rect_in;     270,40,#283C504D,
+;
+;rgba(40,60,80,217),
+;
+;
+;
+data;begin
+x;y;v2;v3;v4;v5
+CONTA MAIS CARA;  COLÔMBIA;  BRASIL;  TURQUIA;  CHILE;  PORTUGAL
+RENDA (EM US$); 5892;7441;9406;16799;24457
+VALOR POR MWh; 148,48;132,21;102,68;180,38;242,29
+

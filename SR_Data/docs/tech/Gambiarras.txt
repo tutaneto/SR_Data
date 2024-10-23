@@ -1,0 +1,16 @@
+GAMBIARRAS:
+===========
+
+graphtime
+    LINHA: elif gname in symbol_list and exists(f'data/digitado/{gname}.csv'):
+    Essa parte "and exists(f'data/digitado/{gname}.csv')", foi colocada (v038b)
+    porque quando aperta o "DIG" cria um symbol no Symbol_list mesmo que não exista
+    na pasta digitados, "^BVSP" por exemplo. Então só entra se exitir o arquivo,
+    do contrário vai para o else
+
+getdata
+    LINHA: while n < len(col_names) and col_names[n].strip().lower()[:7] not in ['',
+           'date', 'valor', 'dt64', 'year', 'month', 'data', 'setor', 'unnamed']:
+    Precisa melhorar isso para pegar somente as colunas que vêm do .csv após as duas
+    primeiras colunas. Não pode ficar confiando nesses nomes, se criar mais algum
+    nome vai dar problema se não colocar nessa lista.

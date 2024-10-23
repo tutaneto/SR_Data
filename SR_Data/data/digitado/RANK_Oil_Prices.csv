@@ -1,0 +1,185 @@
+title;Litro da gasolina (mais caros em US$)
+subtit;
+dfont;globalpetrolprices.com
+title_fs_jp2;46
+vtype;rvalue
+show_perc;0
+decimal;2
+group;name
+blk_dx;80
+type;rank
+;
+;
+;
+data;begin
+x;y
+Venezuela ;0.025
+Libya ;0.032
+Iran ;0.051
+Syria ;0.316
+Algeria;0.322
+Angola ;0.34
+Kuwait;0.345
+Kazakhstan ;0.393
+Nigeria ;0.4
+Turkmenistan ;0.428
+Russia;0.431
+Malaysia;0.488
+Iraq ;0.514
+Bahrain ;0.531
+Bolivia;0.545
+Qatar;0.577
+Azerbaijan ;0.588
+Egypt;0.604
+Saudi Arabia;0.621
+Oman;0.621
+Ethiopia ;0.624
+Colombia;0.625
+Kyrgyzstan;0.634
+Haiti ;0.635
+Belarus;0.656
+Ecuador;0.674
+Tunisia;0.753
+Pakistan;0.837
+Togo;0.847
+Trinidad & Tobago ;0.848
+United Arab Emirates;0.849
+Liberia ;0.858
+Chad ;0.865
+Uzbekistan ;0.883
+Yemen ;0.887
+Indonesia;0.899
+Afghanistan ;0.907
+Dominica ;0.918
+Guyana;0.925
+Suriname;0.933
+Lebanon;0.94
+Maldives ;0.945
+Sudan ;0.951
+Argentina;0.97
+Mongolia ;0.995
+Benin;1.006
+Gabon ;1.01
+Madagascar;1.021
+Sierra Leone;1.024
+Burkina Faso;1.031
+Bangladesh ;1.035
+DR Congo ;1.038
+Cameroon;1.052
+Ivory Coast;1.065
+Swaziland ;1.078
+Mozambique;1.081
+Botswana ;1.088
+Tanzania;1.097
+Puerto Rico;1.098
+Mexico;1.103
+Sri Lanka;1.111
+Guinea ;1.119
+Mali ;1.125
+Bhutan ;1.128
+Saint Lucia;1.136
+Namibia;1.138
+El Salvador;1.143
+Georgia;1.157
+Cambodia;1.16
+Taiwan;1.16
+Burma;1.161
+Panama;1.167
+Kenya;1.176
+Nicaragua;1.199
+Zambia;1.204
+Ghana;1.205
+Ukraine;1.208
+Grenada;1.221
+Honduras;1.224
+Nepal;1.226
+Rwanda;1.23
+Lesotho;1.231
+United States;1.239
+Cuba ;1.26
+Paraguay ;1.27
+Costa Rica;1.271
+Fiji;1.289
+Senegal ;1.299
+Brazil;1.305
+Philippines;1.319
+Vietnam;1.326
+Morocco ;1.334
+Burundi ;1.34
+India;1.345
+Chile;1.352
+China;1.358
+Guatemala;1.373
+Curacao ;1.375
+Mauritius;1.381
+Turkey;1.386
+Uganda ;1.389
+Bahamas ;1.396
+Hungary;1.405
+Dominican Republic;1.411
+South Africa;1.413
+Australia;1.421
+Thailand;1.422
+Malawi;1.426
+Peru;1.436
+Aruba;1.45
+Japan;1.452
+Cayman Islands;1.452
+Malta;1.466
+Moldova;1.48
+Jamaica;1.492
+Jordan;1.53
+Northern Macedonia;1.539
+Seychelles ;1.541
+Bulgaria;1.557
+South Korea;1.564
+Canada;1.568
+Cyprus;1.573
+Cape Verde;1.577
+Poland;1.582
+Serbia;1.591
+Bosnia & Herz.;1.616
+Laos;1.624
+Slovenia;1.645
+Belize;1.68
+Andorra;1.74
+Uruguay;1.757
+Romania;1.764
+Slovakia;1.807
+Croatia;1.819
+Wallis and Futuna ;1.878
+Luxembourg;1.894
+Montenegro;1.904
+Mayotte;1.904
+Lithuania;1.925
+New Zealand;1.972
+Albania ;1.978
+Central African Rep. ;2.004
+Spain;2.014
+San Marino ;2.029
+Czech Republic;2.045
+Barbados;2.064
+Latvia;2.065
+Estonia;2.078
+Switzerland;2.089
+Ireland;2.1
+United Kingdom;2.129
+Belgium;2.13
+Singapore;2.149
+Zimbabwe;2.153
+Sweden;2.17
+Austria;2.175
+France;2.175
+Israel;2.212
+Portugal;2.219
+Iceland;2.22
+Denmark;2.245
+Greece;2.309
+Norway;2.334
+Italy;2.4
+Germany;2.41
+Liechtenstein ;2.423
+Finland;2.431
+Netherlands;2.432
+Monaco ;2.477
+Hong Kong;2.879

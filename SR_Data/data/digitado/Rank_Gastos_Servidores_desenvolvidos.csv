@@ -1,0 +1,24 @@
+title;Gastos com Servidores
+subtit;em % do PIB
+dfont;Tesouro Nacional e FMI
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+Brazil;12.9
+Sweden;12.6
+France;11.8
+SPAIN;10.4
+United States;8.7
+Germany;7.6 
+Japan;5.2
+

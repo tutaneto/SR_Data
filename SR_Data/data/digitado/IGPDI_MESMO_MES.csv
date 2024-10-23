@@ -1,0 +1,12 @@
+title;IGP-DI   Índice Geral de Preços
+subtit;Mês de {last_month} em cada ano, em %
+dfont;FGV
+group;samemonth
+decimal;2
+blk_dx_jp2;80
+;
+;
+date_type;mm_yyyy
+;
+data;begin
+IGPDI.csv

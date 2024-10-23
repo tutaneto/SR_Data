@@ -1,0 +1,35 @@
+title;Dias trabalhados para pagar impostos
+subtit;Comparação Mundial
+dfont;Deloitte
+vtype;rvalue
+show_perc;0
+group;name
+decimal;0
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+Brazil;149
+France;209
+Germany;198
+Italy;185
+Netherlands;168
+Portugal;166
+Canada;164
+Norway;164
+Spain;152
+England;148
+Switzerland;127
+Australia;107
+China;164
+Colombia;142
+South Africa;131
+Mexico;127
+Chile;127

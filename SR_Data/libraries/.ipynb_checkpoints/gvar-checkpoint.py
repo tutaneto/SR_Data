@@ -1,0 +1,2 @@
+# GLOBAL VARS
+gvar = {}

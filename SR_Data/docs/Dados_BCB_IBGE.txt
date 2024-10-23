@@ -1,0 +1,47 @@
+https://eventos.ibge.gov.br/downloads/smi2018/apresentacoespdf/ST3%20-%20Tiago%20Mendes.pdf
+
+
+Acessar dados BCB:
+https://www3.bcb.gov.br/sgspub/localizarseries/localizarSeries.do?method=prepararTelaLocalizarSeries
+https://www.youtube.com/watch?v=7rFsu48oBn8
+https://www.google.com/search?q=apis+sgs+bcb&oq=apis+sgs+bcb&aqs=chrome..69i57j0i13.4683j0j7&sourceid=chrome&ie=UTF-8
+https://dadosabertos.bcb.gov.br/dataset/20542-saldo-da-carteira-de-credito-com-recursos-livres---total/resource/6e2b0c97-afab-4790-b8aa-b9542923cf88
+
+
+Acessar dados IBGE:
+https://servicodados.ibge.gov.br/api/docs/
+
+
+Focus:
+https://www.youtube.com/watch?v=nkRcSKd6HD0
+http://wilsonfreitas.github.io/posts/rbcb-como-usar.html
+https://github.com/wilsonfreitas/rbcb#market-expectations
+https://warren.com.br/blog/boletim-focus/
+https://www.bcb.gov.br/publicacoes/focus
+https://dadosabertos.bcb.gov.br/dataset/expectativas-mercado/resource/d420a704-75a7-4f45-8f4b-0fca813c70f0
+https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1
+https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/aplicacao#!/recursos
+https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/documentacao
+
+
+API's:
+https://mkt.pluggy.ai/  (Open Finance)
+https://www.marketdatacloud.com.br/ (Stocks)
+
+
+Texto em imagem:
+https://www.geeksforgeeks.org/python-pil-image-crop-method/
+https://www.geeksforgeeks.org/how-to-extract-text-from-images-with-python/
+https://github.com/UB-Mannheim/tesseract
+
+
+Cambio:
+https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/aplicacao#!/recursos
+
+
+BC, BCB, Bacen, Banco Central
+https://dadosabertos.bcb.gov.br/dataset
+
+
+Selic:
+https://www.bcb.gov.br/controleinflacao/historicotaxasjuros

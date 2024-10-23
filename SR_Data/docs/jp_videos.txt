@@ -1,0 +1,21 @@
+
+===========================================================
+JP1 (Mercado Financeiro)
+
+SELECT      NOME FINAL      NOME INTERNO    ARQUIVO BASE
+1           _CHEIA          CHEIA           BG_GRAFICOS_LOOP.mp4
+2           _TELAO          CHEIA2          BG_GRAFICOS_LOOP_30P.mp4
+M           _TELAO_MEIO     TELAO_MEIO      BG_GRAFICOS_LOOP.mp4
+L           _TELAO_ESQ      TELAO_ESQ       BG_TELAO_LEFT.mp4
+R           _TELAO_DIR      TELAO_DIR       BG_TELAO_RIGHT.mp4
+
+
+
+===========================================================
+JP2 (Jornal da Manhã)
+
+SELECT      NOME FINAL      NOME FINAL      ARQUIVO BASE
+1           _CHEIA          CHEIA           BG_LOOP_01.mp4
+2           _CHEIA2         CHEIA2          BG_LOOP_01.mp4
+M           _TELAO_MEIO     TELAO_MEIO      BG_LOOP_01.mp4
+

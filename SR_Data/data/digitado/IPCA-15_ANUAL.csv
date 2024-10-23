@@ -1,0 +1,21 @@
+title;Prévia da inflação (IPCA-15)
+subtit;Variação acumulada em cada ano, em %
+dfont;IBGE
+vtype;perc
+decimal;2
+mult;1
+divshow;1
+group;yearly
+yref;0
+ylines;0, 4, 8
+blk_dx;80
+blk_dx_inb;74
+period;month
+;
+;
+;
+;
+;
+;
+;
+IBGE_3065,355,0,0

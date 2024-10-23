@@ -1,0 +1,29 @@
+title;PIB Americano
+subtit;anualizado com ajuste sazonal (em %)
+dfont;Bureau of Economic Analysis
+group;name
+vtype;rvalue
+decimal;1
+blk_dx;76
+blk_dx_inb;74
+;
+;
+;
+data;begin
+x;y
+Q2/2018;3.4
+Q3/2018;1.9
+Q4/2018;0.9
+Q1/2019;2.4
+Q2/2019;3.2
+Q3/2019;2.8
+Q4/2019;1.9
+Q1/2020;-5.1
+Q2/2020;-31.2
+Q3/2020;33.8
+Q4/2020;4.5
+Q1/2021;6.3
+Q2/2021;6.7
+Q3/2021;2.3
+Q4/2021;6.9
+Q1/2022;-1.4

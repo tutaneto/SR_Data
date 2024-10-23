@@ -1,0 +1,18 @@
+
+title;Índice Geral de Preços (IGP-10)
+subtit;Mês de {last_month} em cada ano, em %
+dfont;FGV
+group;samemonth
+decimal;1
+blk_dx;47
+blk_w;35
+bar_val_fs;18
+xaxis_fs;18
+quant;28
+xstep;2
+type;step
+;
+date_type;mm_yyyy
+;
+data;begin
+IGP10.csv

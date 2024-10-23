@@ -1,0 +1,13 @@
+title;'Prévia do PIB' (IBC-Br)
+subtit;Variação do índice de Atividade Econômica do BC, em %
+dfont;BCB-Depec
+vtype;toperc
+decimal;2
+;
+blk_dx;80
+blk_dx_inb;74
+ylines;1.4, 0.8, 0, -0.8, -1.4
+;
+;
+data;begin
+BC_24364

@@ -1,0 +1,9 @@
+title;PNAD  -  Salário médio
+subtit;Resultado por trimestre móvel, em R$
+dfont;IBGE
+vtype;value
+date_type;yyyymmdd
+;
+;
+data;begin
+IBGE_6390,5933,0,0

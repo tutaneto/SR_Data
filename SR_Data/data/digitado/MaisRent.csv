@@ -1,0 +1,30 @@
+title;Investimentos mais rentáveis em 2022
+subtit;% acumulado até 23/03
+dfont;Bacen e Yahoo Finance
+vtype;rvalue
+decimal;2
+mult;1
+divshow;1
+group;1
+yref;0
+ylines;
+blk_dx;110
+blk_dx_inb;74
+blk_w;80
+period;month
+group;name
+;
+;
+;
+;
+;
+data;begin
+x;y
+BTC;-21.4
+Dólar;-13.09
+Poupança;1.06
+IMA;1.54
+CDI;2.11
+IPCA;2.42
+IHFA;4.36
+IBOV;13.02

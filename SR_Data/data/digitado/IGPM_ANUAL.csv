@@ -1,0 +1,13 @@
+title;IGP-M   Preços do Mercado
+subtit;Variação acumulada em cada ano, em %
+dfont;FGV
+group;yearly
+decimal;2
+ylines;0,10,20
+blk_dx;80
+blk_dx_inb;74
+;
+date_type;mm_yyyy
+;
+data;begin
+IGPM.csv

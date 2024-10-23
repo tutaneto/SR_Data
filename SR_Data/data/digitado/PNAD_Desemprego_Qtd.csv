@@ -1,0 +1,14 @@
+title;PNAD  -  Desemprego
+subtit;Volume de desempregados (por trimestre móvel)
+dfont;IBGE
+vtype;value
+decimal;1
+mult;1000
+divshow;1000000
+ylines;0,6000,12000
+blk_dx;76
+;
+;
+;
+data;begin
+IBGE_6438,1641,604,31750

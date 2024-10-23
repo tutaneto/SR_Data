@@ -1,0 +1,10 @@
+title;Vendas do Comércio
+subtit;Acumulado em 12 meses, em %
+dfont;IBGE
+decimal;1
+blk_dx;74
+;
+;
+;
+data;begin
+IBGE_8185,11711,11046,56734

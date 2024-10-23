@@ -1,0 +1,28 @@
+'gvar' dicionário global definido em util.py
+
+CHAVE:                  SETADA EM:      USADO EM:       CONTEÚDO
+
+bar_xc                  drawgraph       util            x central de cada barra
+date_end                drawgraph                       data final do gráfico
+date_ini                drawgraph       assets          data inicial do gráfico
+decimal                 digitado        coins           qtde de casas decimais
+dig_mode                SR_Data.py      getdata         pressionou botão 'dig' (alterações locais)
+ERROR                   util                            mensagem de erro
+gcomp_date_end          graphcomp       drawgraph       data final do 'GRAPH_'
+gheight                 drawgraph       util            altura do gráfico
+grapht_val              SR_Data.py      graphtime       GT do tipo valor (True or False)
+gwidth                  drawgraph       util            largura do gráfico
+ipca_on                 ipynb           graphtime       true/false para atualizar valores usando IPCA
+is_SR_Data              YOUTUBE         varios          está rodando program SR_Data
+JP_Ibope                IBOPE           rank            está rodando programa do Ibope
+last_month_num          getdata         util            último mês do gráfico
+legend                  getdata         drawgraph       legenda para os gráficos empilhados (talvez paralelos depois)
+ONLINE                  drawgraph                       indicação se está rodando no Site (SR_Data.py)
+scr_???                 screen                          variáveis usadas no módulo
+send_by_telegram        SR_Data         util            indica se é para enviar arquivo pelo Telegram
+send_groups_num         SR_Data         util            numero dos grupos p/ os quais serão enviados
+send_message            SR_Data         util            mensagem para ser enviada antes das imagens
+server_error_msg        SR_Data.py      drawgraph       mensagem de erro do servidor
+symbol_data             symbols                         dados do symbol mais recente
+template_num            SR_Data.py      pres_template   número do template, caso queira forçar (ignora o num que vem do config)
+val_suffix              IBOPE           rank            sufixo ('K') para o gráfico de ranking

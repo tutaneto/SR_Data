@@ -1,0 +1,12 @@
+title;Rentabilidade da Poupança
+subtit;em % a.m
+dfont;Banco Central
+vtype;rvalue
+decimal;2
+;
+blk_dx;80
+blk_dx_inb;74
+;
+;
+data;begin
+BC_196

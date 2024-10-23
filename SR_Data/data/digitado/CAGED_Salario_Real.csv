@@ -1,0 +1,27 @@
+title;Saláro Médio Real de Admissão no Brasil
+subtit;em R$
+dfont;Ministério do Trabalho e Previdência
+vtype;value
+group;name
+blk_dx;74
+blk_dx_jp2;80
+blk_dx_jp;90
+blk_dx_jp3;124
+;
+date_type;mmm_yy
+;
+data;begin
+x;y
+ago/21;1951.30
+set/21;1930.06
+out/21;1907.27
+nov/21;1874.56
+dez/21;1874.38
+jan/22;1987.93
+fev/22;1913.21
+mar/22;1895.36
+abr/22;1910.44
+mai/22;1892.44
+jun/22;1905.31
+jul/22;1920.57
+ago/22;1949.84

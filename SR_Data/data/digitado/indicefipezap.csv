@@ -1,0 +1,32 @@
+title;Preços dos imóveis
+subtit;Variação acumulada desde 2012
+dfont;FipeZap
+vtype;value
+decimal;1
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+2012;100
+2013;113.74
+2014;121.36058
+2015;122.9625397
+2016;123.6634261
+2017;123.00801
+2018;122.7496932
+2019;122.7496932
+2020;127.2546069
+2021;133.9863756
+2022*;141.6369976

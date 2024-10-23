@@ -1,0 +1,51 @@
+title;Crescimento Real do PIB
+subtit;Alteração percentual anual
+dfont;Fundo Monetário Internacional
+title_fs_jp;44
+title_fs_in;40
+decimal;2
+group;name
+blk_x;140
+blk_y_jp;580
+blk_y_inb;860
+blk_dx;70,120,
+blk_cor;6,1,
+xaxis_dy;74
+xaxis_fs;24
+xaxis_fc;1
+show_perc;1
+last_diff;0
+;
+refcor1;4
+refcor1_in;#00CCFF
+refcor1_inb;#00CCFF
+refcor1_nec;6
+bar_val_fc;refcor1,1,
+;
+refy1;200
+refy2;240
+refy1_inb;300
+refy2_inb;340
+refx;400
+refx_inb;560
+label;2020+2021,refx,refy1,refcor1,,square
+label;2020+2021+2022,refx,refy2,1,,square
+;
+data;begin
+x;y
+América<br>do Sul       ;-0.7158000000000109
+                        ;1.5677365999999804
+Brasil                  ;0.8868000000000098
+                        ;2.400102000000004
+Europa                  ;-0.7856000000000085
+                        ;3.3814047999999985
+América<br>Central      ;0.05330000000001167
+                        ;4.655751800000019
+Países<br>Desenvolvidos ;0.46600000000001085
+                        ;4.986970000000013
+África<br>(Continente)  ;3.418399999999999
+                        ;7.451717599999985
+Mundo                   ;2.6170999999999944
+                        ;7.645337899999993
+Países<br>Emergentes    ;4.165600000000014
+                        ;9.478045600000007

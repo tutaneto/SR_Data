@@ -1,0 +1,56 @@
+title;Índice Primário de Sentimento
+subtit;do Consumidor do Brasil
+dfont;Thomson Reuters/Ipsos
+vtype;perc
+decimal;1
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;
+period;month
+quant;13
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+ago/19	;49.11
+set/19	;47.08
+out/19	;50.11
+nov/19	;49.89
+dez/19	;48.7
+jan/20	;51.64
+fev/20	;50.26
+mar/20	;50.6
+abr/20	;46.2
+mai/20	;36.38
+jun/20	;36.53
+jul/20	;39.31
+ago/20	;40.1
+set/20	;42.71
+out/20	;44.96
+nov/20	;44.35
+dez/20	;43.09
+jan/21	;43.27
+fev/21	;41.87
+mar/21	;41.15
+abr/21	;37.24
+mai/21	;39.63
+jun/21	;42.14
+jul/21	;44.48
+ago/21	;44.04
+set/21	;42.85
+out/21	;41.66
+nov/21	;41.53
+dez/21	;44.35
+jan/22	;45.74
+fev/22	;45.14
+
+
+
+

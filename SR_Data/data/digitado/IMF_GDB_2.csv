@@ -1,0 +1,67 @@
+title;Crescimento Real do PIB
+subtit;Alteração percentual anual
+dfont;Fundo Monetário Internacional
+title_fs_jp;44
+title_fs_in;40
+decimal;2
+group;name
+blk_x;140
+blk_y_jp;600
+blk_y_inb;860
+blk_dx;70,120,
+blk_cor;6,1,
+show_perc;1
+last_diff;0
+;
+refcor1;4
+refcor1_in;#00CCFF
+refcor1_inb;#00CCFF
+refcor1_nec;6
+;
+bar_val_fc;refcor1,1,
+;
+;
+laby;650
+laby_in;630
+laby_inb;870
+lab_color;#1C5966
+lab_color_inb;white
+label;Brasil,laby,c200,lab_color,,
+label;África,laby,c390,lab_color,,
+label;América Central,laby,c580,lab_color,,
+label;Europa,laby,c770,lab_color,,
+label;América do Sul,laby,c960,lab_color,,
+label;Desenvolvidos,laby,c1150,lab_color,,
+label;Emergentes,laby,c1340,lab_color,,
+label;Mundo,laby,c1530,lab_color,,
+
+;
+refy1;200
+refy2;240
+refy1_inb;300
+refy2_inb;340
+refx;800
+refx_inb;160
+label;2020+2021,refy1,refx,refcor1,,square
+label;2020+2021+2022,refy2,refx,1,,square
+;
+;
+;
+data;begin
+x;y;v4
+;0.8868000000000098
+;2.400102000000004
+;3.418399999999999
+;7.451717599999985
+;0.05330000000001167
+;4.655751800000019
+;-0.7856000000000085
+;3.3814047999999985
+;-0.7158000000000109
+;1.5677365999999804
+;0.46600000000001085
+;4.986970000000013
+;4.165600000000014
+;9.478045600000007
+;2.6170999999999944
+;7.645337899999993

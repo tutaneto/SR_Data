@@ -1,0 +1,175 @@
+# título do gráfico;
+title;Índice de atividade dos gerentes de compras (PMI) 
+#subtitulo do gráfico;
+subtit;Serviços Markit
+#fonte dos dados;
+dfont;Markit Economics
+#tipo de dado (perc   = exibe %,  value  = calcula a diferença em %,  rvalue = usa valor nominal );
+vtype;rvalue
+#número de casas decimais;
+decimal;1
+# Multiplica o dado (deixar em 1, se colocar 1000 ele pegará o dado e multiplicará por mil, ex 4 vira 4000);
+mult;1
+#Divide o dado (deixar em 1, se colocar 1000 significa que o gráfico lerá 4000 como 4k);
+divshow;1
+#grupo (name = exibe exatamente o texto no eixo x, 1 = mensal  12 = acumula 12, yearly acumula dados mensais e gera anual, yearlyv pega dado de Dezembro e compara com ano anterior, samemonth = pega mesmo mês nos anos anteriores);
+group;1
+#posição do eixo Y (na dúvida, deixar em 0);
+yref;0
+#valores das linhas adicionais, ex: se quiser uma linha em 100 e outra em 500 usar 100,500 e deixar depois do;);
+ylines;
+#posição horizontal do início das barras;
+blk_x;0 
+#posição vertical do início das barras;
+blk_y;600  
+#  largura da barra;
+blk_dx;80
+blk_dx_inb;74
+#altura do gráfico;
+blk_h;400  
+#espaço entre as barras;
+blk_dx;70   
+#periodicidade month (somente  month por enquanto, ignorado quando 'group'=name) quant;0 (quantidade de colunas que será apresentada, default: 0=todas);
+period;month
+#tipo( bar  = gráfico de barras (tipo default), step = gráfico de escada (Selic),  line = gráfico de linha,  rank = ranking de países, rankI = ranking de países invertido);
+type;bar
+#xformat (year = Exibe somente ano no eixo X), default é exibir tudo;
+xformat;
+#(qtde. de espaços entre cada valor no eixo x, ex: 6 (exibe texto no eixo x a cada 6 ítens));
+xstep;1 
+# (tamanho do espaço entre cada valor que será usado no eixo x, ex:3 (usa 1 valor a cada 3));
+vstep;1
+#  convert (index_to_perc = quando group=name, converte valor de índice para diferença %, last_diff;1  Indica se último valor do gráfico deve ser exibido diferente (0 = não);
+convert;
+# tamanho das fontes do título;
+title_fs;25
+# tamanho das fontes da barra ();
+tab_fs;25
+;
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+06/2012;53
+07/2012;48.9
+08/2012;48.1
+09/2012;52.8
+10/2012;50.4
+11/2012;52.5
+12/2012;53.5
+01/2013;54.5
+02/2013;52.1
+03/2013;50.3
+04/2013;51.3
+05/2013;51
+06/2013;51
+07/2013;50.3
+08/2013;49.7
+09/2013;50.7
+10/2013;52.1
+11/2013;52.3
+12/2013;51.7
+01/2014;49.6
+02/2014;50.8
+03/2014;51
+04/2014;50.4
+05/2014;50.6
+06/2014;51.4
+07/2014;50.2
+08/2014;49.2
+09/2014;51.2
+10/2014;48.2
+11/2014;48.5
+12/2014;49.1
+01/2015;48.4
+02/2015;52.3
+03/2015;47.9
+04/2015;44.6
+05/2015;42.5
+06/2015;39.9
+07/2015;39.1
+08/2015;44.8
+09/2015;41.7
+10/2015;43
+11/2015;45.5
+12/2015;43.5
+01/2016;44.4
+02/2016;36.9
+03/2016;38.6
+04/2016;37.4
+05/2016;37.3
+06/2016;41.4
+07/2016;45.6
+08/2016;42.7
+09/2016;45.3
+10/2016;43.9
+11/2016;44.4
+12/2016;45.1
+01/2017;45.1
+02/2017;46.4
+03/2017;47.7
+04/2017;50.3
+05/2017;49.2
+06/2017;47.4
+07/2017;48.8
+08/2017;49
+09/2017;50.7
+10/2017;48.8
+11/2017;46.9
+12/2017;47.4
+01/2018;50
+02/2018;52.7
+03/2018;50.4
+04/2018;50
+05/2018;49.5
+06/2018;47
+07/2018;50.4
+08/2018;46.8
+09/2018;46.4
+10/2018;50.5
+11/2018;51.3
+12/2018;51.9
+01/2019;52
+02/2019;52.2
+03/2019;52.7
+04/2019;49.9
+05/2019;47.8
+06/2019;48.2
+07/2019;52.2
+08/2019;51.4
+09/2019;51.8
+10/2019;51.2
+11/2019;50.9
+12/2019;51
+01/2020;52.7
+02/2020;50.4
+03/2020;34.5
+04/2020;27.4
+05/2020;27.6
+06/2020;35.9
+07/2020;42.5
+08/2020;49.5
+09/2020;50.4
+10/2020;52.3
+11/2020;50.9
+12/2020;51.1
+01/2021;47
+02/2021;47.1
+03/2021;44.1
+04/2021;42.9
+05/2021;48.3
+06/2021;53.9
+07/2021;54.4
+08/2021;55.1
+09/2021;54.6
+10/2021;54.9
+11/2021;53.6
+12/2021;53.6
+01/2022;52.8
+02/2022;54.7
+03/2022;58.1	
+04/2022;60.6	

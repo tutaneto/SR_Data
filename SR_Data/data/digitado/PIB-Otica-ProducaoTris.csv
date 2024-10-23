@@ -1,0 +1,28 @@
+title;PIB - Sob a ótica da produção
+subtit;Variação contra o trimestre anterior (%)
+dfont;Contas Nacionais Trimestrais
+vtype;rvalue
+group;name
+decimal;1
+quant;18
+blk_dx;45,45,45,45,45,130,
+blk_dx_jp;60,60,60,60,60,130,
+blk_dx_inb;44,44,44,44,44,100,
+blk_w;40
+blk_w_inb;35
+blk_h;380
+blk_h_inb;500
+;
+refy;165
+refy_inb;300
+ref_fs;30
+label;Indústria,    p2.5,refy,1,ref_fs,
+label;Serviço,      p8.5,refy,1,ref_fs,
+label;Agropecuária,p14.5,refy,1,ref_fs,
+;
+;
+data;begin
+FILES
+PIB-Industria;6
+PIB-Servicos;6
+PIB-Agro;6

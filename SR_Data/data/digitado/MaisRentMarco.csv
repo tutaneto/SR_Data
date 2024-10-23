@@ -1,0 +1,23 @@
+title;Principais desempenhos em março
+subtit; por classe de investimento em %
+dfont;Bacen e Yahoo Finance
+vtype;rvalue
+decimal;2
+blk_dx;110
+blk_dx_inb;100
+blk_w;70
+group;name
+;
+;
+;
+;
+;
+data;begin
+x;y
+Dólar;-8.16
+BTC;-5.71
+Poupança;0.50
+CDI;0.84
+IPCA;0.95
+IBOV;4.19
+IMA;4.68

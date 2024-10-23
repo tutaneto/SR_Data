@@ -1,0 +1,17 @@
+title;Nova Selic - Investimentos
+subtit;Rentabilidades com a nova Selic para investimentos de 1 ano
+dfont;Samy Dana
+vtype;perc
+decimal;2
+group;name
+blk_x;140
+blk_dx;150
+show_perc;1
+;
+data;begin
+x;y;v3
+SELIC;11.75
+Inflação;12.31
+Poupança;8.34
+80% CDI;9.00
+100% CDI;11.0

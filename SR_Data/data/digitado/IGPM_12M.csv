@@ -1,0 +1,13 @@
+title;IGP-M   Preços do Mercado
+subtit;Variação acumulada em 12 meses, em %
+dfont;FGV
+group;12
+decimal;2
+blk_dx;80
+blk_dx_jp;86
+blk_dx_inb;74
+;
+date_type;mm_yyyy
+;
+data;begin
+IGPM.csv

@@ -1,0 +1,21 @@
+title;PIB-Consumo das Famílias
+subtit;Variação sobre o ano anterior, em %
+dfont;IBGE
+vtype;perc
+decimal;1
+mult;1
+divshow;1
+group;1
+yref;0
+ylines;
+blk_dx;74
+period;trim
+;
+;
+;
+;
+;
+;
+;
+data;begin
+IBGE_5932,6564,11255,93404

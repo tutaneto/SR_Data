@@ -1,0 +1,10 @@
+Expessura da linha close pntilhada      show_close_line (ingraph)
+Expessura da linha                      GT_TRACE_WIDTH
+Fonte Timestamp                         GT_TIME_FS
+Fonte da "fonte"                        GT_DFONT_FS
+Fonte do bloco embaixo (texto)          GT_BLOCK_LBL_FS
+Fonte do bloco embaixo (numero)         GT_BLOCK_NUM_FS
+
+ingraph:
+Fonte preço                             pres_price_label
+Fonte asset (nome)                      asset_label

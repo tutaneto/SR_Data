@@ -1,0 +1,43 @@
+title;PIB - Sob a ótica da produção
+subtit;Variação contra o trimestre anterior (%)
+dfont;Contas Nacionais Trimestrais
+vtype;rvalue
+group;name
+decimal;1
+quant;18
+blk_dx;45,45,45,45,45,130,
+blk_dx_jp;60,60,60,60,60,130,
+blk_dx_inb;44,44,44,44,44,100,
+blk_w;40
+blk_w_inb;35
+blk_h;380
+blk_h_inb;500
+;
+refy;165
+refy_inb;300
+ref_fs;30
+label;Indústria,    p2.5,refy,1,ref_fs,
+label;Serviço,      p8.5,refy,1,ref_fs,
+label;Agropecuária,p14.5,refy,1,ref_fs,
+;
+;
+data;begin
+x;y
+2016;-4.6
+2017;-0.5
+2018;0.7
+2019;-0.7
+2020;-3.4
+2021;4.5
+2016;-2.2
+2017;0.8
+2018;2.1
+2019;1.5
+2020;-4.3
+2021;4.7
+2016;-5.2
+2017;14.2
+2018;1.3
+2019;0.4
+2020;3.8
+2021;-0.2

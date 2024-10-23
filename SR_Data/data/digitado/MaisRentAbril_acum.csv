@@ -1,0 +1,30 @@
+title;Principais desempenhos no ano
+subtit; por classe de investimento em %
+dfont;Bacen e Yahoo Finance
+vtype;rvalue
+group;name
+decimal;2
+ylines;-25,-15,-5,0,5
+;ylines;-30,-25,-20,-15,-10,-5,0,5,10
+;ylines_in;-30,-20,-10,0,5
+;ylines_inb;-30,-20,-10,0,5
+;
+blk_dx;110
+blk_w;70
+;
+blk_x_in;160
+blk_x_inb;160
+blk_dx_inb;120
+xaxis_fs_inb;20
+;
+;
+;
+data;begin
+x;y
+BTC;-29.71
+Dólar ;-10.91
+Ibovespa;1.63
+Poupança;2.23263
+IMA;3.13
+CDI;3.324251
+IPCA;4.31

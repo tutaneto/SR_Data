@@ -1,0 +1,14 @@
+title;Índice de Aluguéis Residenciais (IVAR)
+subtit;Variação sobre o mês anterior, em %
+dfont;FGV
+group;samemonth
+decimal;2
+blk_x_jp2;500
+blk_dx;70
+blk_dx_jp2;80
+;
+;
+date_type;mm_yyyy
+;
+data;begin
+IVAR.csv

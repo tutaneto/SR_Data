@@ -1,0 +1,16 @@
+title;Barras horizontais
+subtit;Barras horizontais
+dfont;Secreta
+vtype;rvalue
+group;name
+decimal;1
+;
+;
+;
+data;begin
+x;y
+2017;79.2
+2018;85.3
+2019;88.7
+2020;64.1
+2021;75.3

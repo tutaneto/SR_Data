@@ -1,0 +1,13 @@
+title;IPCA   Inflação oficial anual
+subtit;Variação acumulada em cada ano, em %
+dfont;IBGE
+group;yearly
+decimal;2
+ylines;0, 4, 8
+blk_dx;80
+blk_dx_inb;74
+;
+;
+;
+data;begin
+IBGE_1737,63,0,0

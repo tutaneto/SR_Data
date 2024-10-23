@@ -1,0 +1,26 @@
+title;Criação de empregos em 2021
+subtit;Total acumulado e dividido por setor
+dfont;Ministério do Trabalho
+vtype;rvalue
+group;name
+blk_x_in;200
+blk_x_inb;200
+blk_dx;140
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+Agropecuária;140927
+Indústria;475141
+Construção;244755
+Comércio;643754
+Serviços;1226026

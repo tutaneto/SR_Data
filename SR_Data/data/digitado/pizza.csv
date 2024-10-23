@@ -1,0 +1,60 @@
+title;Princípio da pizza
+subtit;Fatia de Pizza costumava ter o mesmo preço do metrô
+dfont;Bloomberg, MTA, Yahoo Finance
+decimal;2
+group;name
+blk_x;140
+blk_x_inb;100
+blk_y_jp;580
+blk_y_inb;920
+blk_dx;45,60,
+blk_dx_inb;44,52,
+blk_w;35
+blk_w_inb;30
+blk_h_inb;560
+blk_cor;6,1,
+bar_val_fs_inb;17
+xaxis_fs;24
+xaxis_fc;1
+show_perc;1
+last_diff;0
+show_perc;0
+;
+refcor1;4
+refcor1_in;#00CCFF
+refcor1_inb;#00CCFF
+refcor1_nec;6
+bar_val_fc;refcor1,1,
+;
+refy1;240
+refy2;280
+refy1_inb;420
+refy2_inb;460
+refx;300
+refx_inb;280
+ref_fs;20
+label;FATIA DE PIZZA,refx,refy1,refcor1,ref_fs,square
+label;PASSAGEM DE METRÔ,refx,refy2,1,ref_fs,square
+;
+data;begin
+x;y
+1960;0.15
+;0.15
+1970;0.35
+;0.35
+1980;0.9
+;0.9
+1990;1.1
+;1.1
+1995;1.35
+;1.25
+2000;1.75
+;1.5
+2010;3
+;2.5
+2014;2.3
+;2.5
+2018;2.75
+;2.75
+2022;3.14
+;2.75

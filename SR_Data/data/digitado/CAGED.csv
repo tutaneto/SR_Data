@@ -1,0 +1,15 @@
+title;Criação de empregos formais no Brasil
+subtit;Diferença mensal entre os resultados do Caged
+dfont;Ministério do Trabalho
+vtype;value
+blk_dx;80
+blk_dx_jp;102
+blk_dx_jp3;124
+divshow_inb;1000
+divshow_jp3;1000
+blk_x_inb;120
+;
+;
+;
+data;begin
+caged.csv

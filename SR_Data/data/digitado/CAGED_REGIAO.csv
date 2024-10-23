@@ -1,0 +1,16 @@
+title;Criação de empregos formais no Brasil
+subtit;Por região, em {last_month} de 2022
+dfont;Ministério do Trabalho
+vtype;value
+group;name
+blk_x_in;300
+blk_x_inb;250
+blk_dx;140
+blk_x_jp3;300
+blk_y_jp3;900
+blk_dx_jp3;300
+;
+;
+;
+data;begin
+caged.csv

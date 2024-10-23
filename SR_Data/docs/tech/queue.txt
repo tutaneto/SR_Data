@@ -1,0 +1,57 @@
+==========================================================
+Estrutura:
+1 arquivo de fila (queue.txt) contendo:
+    2 campos:
+        pos_in
+        pos_out
+
+
+==========================================================
+PHP: (cliente, ao clicar botão gerar)
+
+1) Incrementa pos_in (*)
+
+2) Salva arquivo .csv do pedido:
+    out_{pos_in}.csv
+
+3) Aguarda arquivo ser criado pelo servidor:
+    OU timeout
+    OU exibe arquivo
+
+(*) Arquivo de fila:
+    open, lock
+    read,
+    pos_in++
+    (o ítem 2 poderia entrar aqui, vale a pena???)
+    write, flush
+    unlock, close
+
+
+==========================================================
+Python: (servidor, aguardando pedidos)
+
+1) pos_in > pos_out:  (*)
+    não:
+        sleep, goto 1
+
+2) Verifica se arquivo out_{pos_out}.csv existe:
+    sim:
+        goto 3
+    não:
+        estourou timeout (2s):
+            sim:
+                gera erro de timeout e esquece pedido
+            não:
+                sleep, goto 2
+
+3) Gera gráfico
+
+(*) Arquivo de fila:
+    open, lock
+    read,
+    pos_in > pos_out:
+        pos_out++, save, flush
+    unlock, close
+
+
+==========================================================

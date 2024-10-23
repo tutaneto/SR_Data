@@ -1,0 +1,34 @@
+title;Preços dos aluguéis
+subtit;Variação acumulada em 12 meses, em %
+dfont;FGV
+vtype;value
+decimal;2
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+12/2020;4.08
+01/2021;3.8
+02/2021;0.41
+03/2021;0.84
+04/2021;0.93
+05/2021;4.14
+06/2021;3.7
+07/2021;4.45
+08/2021;4.48
+09/2021;3.77
+10/2021;1.32
+11/2021;0.7
+12/2021;-0.61

@@ -1,0 +1,25 @@
+title;Alta dos Combustíveis
+subtit;Variação dos preços em %
+dfont;Petrobrás
+vtype;perc
+group;name
+blk_x_in;200
+blk_x_inb;200
+blk_dx;140,300
+blk_cor;0,1
+decimal;2
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+Gasolina;18.77
+Diesel;24.93
+Gasolina;11.60
+Diesel;18.34

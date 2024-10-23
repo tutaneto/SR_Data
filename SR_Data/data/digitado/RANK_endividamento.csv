@@ -1,0 +1,28 @@
+title; Dívida da população 
+subtit;% em relação ao PIB do país
+dfont; CNC
+vtype;rvalue
+group;name
+decimal;0
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+South Korea;106
+United Kingdom;87
+United States;78
+Japan;69
+France;68
+China;62
+Germany;58
+Brazil;36
+Chile;41
+Mexico;17
+

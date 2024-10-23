@@ -1,0 +1,30 @@
+title;Previsões para o PIB 2023 (em %)
+subtit;Previsões feitas em Abr/2022   vs   previsões feitas em Jul/2022
+dfont;FMI
+vtype;rvalue    
+group;name
+decimal;1
+last_diff;0
+;
+blk_w;70
+blk_dx;90,150,
+blk_dx_jp3;120,220,
+blk_w_jp3;90
+
+
+blk_cor;1,2,
+;
+bar_val_fs;30
+xaxis_fs;24
+
+;
+data;begin
+x;y
+Abr/22    Jul/22<br>Mundo;                  3.6
+;                                           2.9
+Abr/22    Jul/22<br>Países Desenvolvidos;   2.4
+;                                           1.4
+Abr/22    Jul/22<br>Países Emergentes;      4.4
+;                                           3.9
+Abr/22    Jul/22<br>Brasil;                 1.4
+;                                           1.1

@@ -1,0 +1,256 @@
+country;port;isoa3;curr_code
+afghanistan;Afeganistão;AFG;AFN
+aland islands;Ilhas Åland;ALA;EUR
+albania;Albânia;ALB;ALL
+algeria;Algéria;DZA;DZD
+american samoa;Samoa Americana;ASM;USD
+andorra;Andorra;AND;EUR
+angola;Angola;AGO;AOA
+anguilla;Anguilla;AIA;XCD
+antarctica;Antártica;ATA;000
+antigua and barbuda;Antígua e<br>Barbuda;ATG;XCD
+argentina;Argentina;ARG;ARS
+armenia;Armênia;ARM;AMD
+aruba;Aruba;ABW;AWG
+australia;Austrália;AUS;AUD
+austria;Áustria;AUT;EUR
+azerbaijan;Azerbaijão;AZE;AZN
+bahamas;Bahamas;BHS;BSD
+bahrain;Bahren;BHR;BHD
+bangladesh;Bangladesh;BGD;BDT
+barbados;Barbados;BRB;BBD
+belarus;Bielorrússia;BLR;BYN
+belgium;Bélgica;BEL;EUR
+belize;Belize;BLZ;BZD
+benin;Benin;BEN;XOF
+bermuda;Bermuda;BMU;BMD
+bhutan;Butão;BTN;BTN
+bolivia;Bolívia;BOL;BOB
+bonaire;Bonaire;BES;USD
+bosnia and herzegovina;Bósnia e Herzegovina;BIH;BAM
+botswana;Botsuana;BWA;BWP
+bouvet island;Ilha Bouvet;BVT;NOK
+brazil;Brasil;BRA;BRL
+british indian ocean territory;Território do Oceano Índico Britânico ;IOT;USD
+brunei;Brunei;BRN;BND
+bulgaria;Bulgária;BGR;BGN
+burkina faso;Burkina Faso;BFA;XOF
+burundi;Burundi;BDI;BIF
+cambodia;Cambodja;KHM;KHR
+cameroon;Camarões;CMR;XAF
+canada;Canadá;CAN;CAD
+cape verde;Cabo Verde;CPV;CVE
+cayman islands;Ilhas Cayman;CYM;KYD
+central african republic;República Centro-Africana;CAF;XAF
+chad;Chade;TCD;XAF
+chile;Chile;CHL;CLP
+china;China;CHN;CNY
+christmas island;Ilha Christmas ;CXR;AUD
+cocos islands;Ilhas Cocos;CCK;AUD
+colombia;Colômbia;COL;COP
+comoros;Comores;COM;KMF
+cook islands;Ilhas Cook;COK;NZD
+costa rica;Costa Rica;CRI;CRC
+cote d'ivoire;Costa do Margim;CIV;XOF
+croatia;Croácia;HRV;HRK
+cuba;Cuba;CUB;CUC
+curacao;Curaçao;CUW;ANG
+cyprus;Chipre;CYP;EUR
+czech republic;República<br>Tcheca;CZE;CZK
+democratic congo;República<br>Dem. do Congo;COD;CDF
+denmark;Dinamarca;DNK;DKK
+djibouti;Djibouti;DJI;DJF
+dominica;Dominica;DMA;XCD
+dominican republic;República<br>Dominicana;DOM;DOP
+east timor;Timor Leste;TLS;USD
+ecuador;Equador;ECU;USD
+egypt;Egito;EGY;EGP
+el salvador;El Salvador;SLV;SVC
+england;Inglaterra;ENG;===
+equatorial guinea;Guiné<br>Equatorial;GNQ;XAF
+eritrea;Eritreia;ERI;ERN
+estonia;Estônia;EST;EUR
+ethiopia;Etiópia ;ETH;ETB
+european union;União<br>Européia;EUR;EUR
+falkland islands;Ilhas Falkland;FLK;FKP
+faroe islands;Ilhas Faroé;FRO;DKK
+fiji;Fiji;FJI;FJD
+finland;Finlândia;FIN;EUR
+france;França;FRA;EUR
+french guiana;Guiana Francesa;GUF;EUR
+french polynesia;Polinésia Francesa;PYF;XPF
+french southern territories;Terras Austrais e Antárticas Francesas;ATF;EUR
+gabon;Gabão;GAB;XAF
+gambia;Gâmbia;GMB;GMD
+georgia;Geórgia;GEO;GEL
+germany;Alemanha;DEU;EUR
+ghana;Gana;GHA;GHS
+gibraltar;Gibraltar;GIB;GIP
+greece;Grécia;GRC;EUR
+greenland;Groenlândia;GRL;DKK
+grenada;Granada;GRD;XCD
+guadeloupe;Guadalupe;GLP;EUR
+guam;Guam;GUM;USD
+guatemala;Guatemala;GTM;GTQ
+guernsey;Guernsey;GGY;GBP
+guinea;Guiné;GIN;GNF
+guinea-bissau;Guiné-Bissau;GNB;XOF
+guyana;Guiana;GUY;GYD
+haiti;Haiti;HTI;HTG
+heard island and mcdonald islands;Ilha Heard e Ilhas McDonald e Guiné-Bissau;HMD;===
+honduras;Honduras;HND;HNL
+hong kong;Hong Kong;HKG;HKD
+hungary;Hungria;HUN;HUF
+iceland;Islândia;ISL;ISK
+india;Índia;IND;INR
+indonesia;Indonésia;IDN;IDR
+iran;Irã;IRN;IRR
+iraq;Iraque;IRQ;IQD
+ireland;Irlanda;IRL;EUR
+isle of man;Ilha de Man;IMN;GBP
+israel;Israel;ISR;ILS
+italy;Itália;ITA;EUR
+jamaica;Jamaica;JAM;JMD
+japan;Japão;JPN;JPY
+jersey;Jersey;JEY;GBP
+jordan;Jordânia;JOR;JOD
+kazakhstan;Cazaquistão;KAZ;KZT
+kenya;Quênia;KEN;KES
+kiribati;Quiribati;KIR;AUD
+north korea;Coreia do Norte;PRK;KPW
+south korea;Coréia<br>do Sul;KOR;KRW
+kosovo;Kosovo;XKX;===
+kuwait;Kuwait;KWT;KWD
+kyrgyzstan;Quirguistão;KGZ;KGS
+laos;Laos;LAO;LAK
+latvia;Letônia;LVA;EUR
+lebanon;Líbano;LBN;LBP
+lesotho;Lesoto;LSO;LSL
+liberia;LibériaLBR;LRD
+libya;Líbia;LBY;LYD
+liechtenstein;Liechtenstein;LIE;CHF
+lithuania;Lituânia;LTU;EUR
+luxembourg;Luxemburgo;LUX;EUR
+macau;Macau;MAC;MOP
+macedonia;Macedónia Antiga;MKD;MKD
+madagascar;Madagáscar;MDG;MGA
+malawi;Malawi;MWI;MWK
+malaysia;Malásia;MYS;MYR
+maldives;MaldivAs;MDV;MVR
+mali;Mali;MLI;XOF
+malta;Malta;MLT;EUR
+marshall islands;Ilhas Marshal;MHL;USD
+martinique;Martinica;MTQ;EUR
+mauritania;Mauritânia;MRT;MRU
+mauritius;Maurícia;MUS;MUR
+mayotte;Maiote;MYT;EUR
+mexico;México;MEX;MXN
+micronesia;Micronésia;FSM;USD
+moldova;Moldávia;MDA;MDL
+monaco;Mônaco;MCO;EUR
+mongolia;Mongólia;MNG;MNT
+montenegro;Montenegro;MNE;EUR
+montserrat;Monserrate;MSR;XCD
+morocco;Marrocos;MAR;MAD
+mozambique;Moçambique;MOZ;MZN
+myanmar;Myanmar;MMR;MMK
+namibia;Namíbia;NAM;NAD
+nauru;Nauru;NRU;AUD
+nepal;Nepal;NPL;NPR
+netherlands;Holanda;NLD;EUR
+new caledonia;Nova Caledónia;NCL;XPF
+new zealand;Nova<br>Zelândia;NZL;NZD
+nicaragua;Nicarágua;NIC;NIO
+niger;Níger;NER;XOF
+nigeria;Nigéria;NGA;NGN
+niue;Niuê;NIU;NZD
+norfolk island;Ilha Norfolk;NFK;AUD
+northern mariana islands;Marianas Setentrionais;MNP;USD
+norway;Noruega;NOR;NOK
+oman;Omã;OMN;OMR
+pakistan;Paquistão;PAK;PKR
+palau;Palau;PLW;USD
+palestine;Palestina;PSE;000
+panama;Panamá;PAN;PAB
+papua new guinea;Papua-Nova Guiné;PNG;PGK
+paraguay;Paraguai;PRY;PYG
+peru;Peru;PER;PEN
+philippines;Filipinas;PHL;PHP
+pitcairn islands;Ilhas Pitcairn;PCN;NZD
+poland;Polônia;POL;PLN
+portugal;Portugal;PRT;EUR
+puerto rico;Porto Rico;PRI;USD
+qatar;Qatar;QAT;QAR
+congo;ongo;COG;XAF
+reunion;Ilha da Reunião;REU;EUR
+romania;Romênia;ROU;RON
+russia;Rússia;RUS;RUB
+rwanda;Ruanda;RWA;RWF
+saint barthelemy;São Bartolomeu;BLM;EUR
+saint helena;Saint Helena;SHN;SHP
+saint kitts and nevis;São Cristóvão<br>e Néviss;KNA;XCD
+saint lucia;Santa Lúcia;LCA;XCD
+saint martin;Ilha de São Martinho;MAF;EUR
+saint pierre and miquelon; São Pedro e Miquelão;SPM;EUR
+saint vincent and the grenadines;São Vicente e Granadinas;VCT;XCD
+samoa;Samoa;WSM;WST
+san marino;San Marino;SMR;EUR
+sao tome and principe;São Tomé e Príncipe;STP;STN
+saudi arabia;Arábia<br>Saudita;SAU;SAR
+scotland;Escócia;SCT;===
+senegal;Senegal;SEN;XOF
+serbia;Sérvia;SRB;RSD
+seychelles;Seicheles;SYC;SCR
+sierra leone;Serra Leoa;SLE;SLL
+singapore;Cingapura;SGP;SGD
+sint maarten;Sint Maarten;SXM;ANG
+slovakia;Eslováquia;SVK;EUR
+slovenia;Eslovênia;SVN;EUR
+solomon islands;Ilhas Salomão;SLB;SBD
+somalia;Somália;SOM;SOS
+south africa;África<br>do Sul;ZAF;ZAR
+south georgia and the south sandwich islands;Ilhas Geórgia do Sul e Sandwich do Sul;SGS;000
+south sudan;Sudão<br>do Sul;SSD;SSP
+spain;Espanha;ESP;EUR
+sri lanka;Sri Lanka;LKA;LKR
+sudan;Sudão;SDN;SDG
+suriname;Suriname;SUR;SRD
+svalbard and jan mayen;Svalbard e Jan Mayen;SJM;NOK
+swaziland;Suazilândia;SWZ;SZL
+sweden;Suécia;SWE;SEK
+switzerland;Suiça;CHE;CHF
+syria;Síria;SYR;SYP
+taiwan;Taiwan;TWN;TWD
+tajikistan;Tajiquistão;TJK;TJS
+tanzania;Tanzânia;TZA;TZS
+thailand;Tailândia;THA;THB
+togo;Togo;TGO;XOF
+tokelau;Tokelau;TKL;NZD
+tonga;Tonga;TON;TOP
+trinidad and tobago;Trindade e Tobago;TTO;TTD
+tunisia;Tunísia;TUN;TND
+turkey;Turquia;TUR;TRY
+turkmenistan;Turcomenistão;TKM;TMT
+turks and caicos islands;Turks e Caicos;TCA;USD
+tuvalu;Tuvalu;TUV;AUD
+uganda;Uganda;UGA;UGX
+ukraine;Ucrânia;UKR;UAH
+united arab emirates;Emirados<br>Árabes Unidos;ARE;===
+dubai;Dubai;ARE;AED
+united kingdom;Reino Unido;GBR;GBP
+united states;EUA;USA;USD
+uruguay;Uruguai;URY;UYI
+ussr;USRR;SUN;===
+uzbekistan;Uzbequistão;UZB;UZS
+vanuatu;Vanuatu;VUT;VUV
+vatican city;Vaticano;VAT;EUR
+venezuela;Venezuela;VEN;VES
+vietnam;Vietnã;VNM;VND
+virgin islands british;Ilhas Virgens Britânicas;VGB;USD
+virgin islands us;Ilhas Virgens Americanas;VIR;USD
+wales;País de Gales;WLS;===
+wallis and futuna;Wallis e Futuna;WLF;XPF
+western sahara;Saara Ocidental;ESH;MAD
+yemen;Iêmen;YEM;YER
+zambia;Zâmbia;ZMB;ZMW
+zimbabwe;Zimbábue;ZWE;ZWL

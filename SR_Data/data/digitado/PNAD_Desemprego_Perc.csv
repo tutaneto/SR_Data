@@ -1,0 +1,11 @@
+title;PNAD  -  Taxa de desemprego
+subtit;Resultado por trimestre móvel, em %
+dfont;IBGE
+decimal;1
+ylines;0,6,12
+blk_dx;76
+;
+;
+;
+data;begin
+IBGE_6381,4099,0,0

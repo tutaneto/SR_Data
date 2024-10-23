@@ -1,0 +1,17 @@
+- Entrar no servidor
+
+- Copiar arquivo yt_anuncios_{ANUNCIANTE}.xlsx     ( {ANUNCIANTE} = bob   por exemplo )
+
+- Abrir terminal (DOS)
+
+- Ir para pasta do codigo  =>  cd  \Projects\JP\
+
+- python  youtube_anuncios.py          {ANUNCIANTE}  {DATA_INICIAL}  {DATA_FINAL}
+  exemplo:  python  youtube_anuncios.py     bob        16/07/2022     15/08/2022
+
+- Aguardar terminar
+
+- Arquivo gerado dentro da pasta  C:\Projects\JP\data\jp\
+  JP_Anuncios_{ANUNCIANTE}_{DATA_INICIAL}_a_{DATA_FINAL}
+  exemplo:  JP_Anuncios_bob_2022-07-16_a_2022-08-15_Completo.xlsx
+

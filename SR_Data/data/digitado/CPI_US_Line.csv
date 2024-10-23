@@ -1,0 +1,15 @@
+title;Inflação nos EUA
+subtit;Variação mensal do CPI (preços ao consumidor), em %
+dfont;U.S. BLS
+decimal;1
+yref;-1
+ylines;-1,-0.5,0,0.5,1
+blk_dx;10
+quant;120
+type;line
+xstep;12
+;
+;
+;
+data;begin
+CPI_US.csv

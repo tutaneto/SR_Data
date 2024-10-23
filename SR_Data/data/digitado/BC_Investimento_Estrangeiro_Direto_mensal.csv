@@ -1,0 +1,17 @@
+title;Investimento Estrangeiro Direto
+subtit;Mensal em US$ (bilhões)
+dfont;Banco Central
+vtype;rvalue
+decimal;1
+mult;1000000
+divshow;1000000000
+blk_dx;80
+period;month
+;
+;
+;
+;
+;
+;
+data;begin
+BC_22885

@@ -1,0 +1,45 @@
+https://latam.sinch.com/blog/bot-no-telegram-passo-a-passo-da-criacao-em-python/
+
+Bot:  Sport_Dicas
+User: @Apo_Sport_bot
+Token: 5386350950:AAGYTdg7RXxkC6j6OyOLpJbaFSlBaIR1EDw
+
+
+
+You will find it at t.me/Apo_Sport_bot.
+You can now add a description, about section and profile picture for your bot, see /help for a list of commands.
+By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it.
+Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+5386350950:AAGYTdg7RXxkC6j6OyOLpJbaFSlBaIR1EDw
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+
+
+
+Multi:
+https://www.courier.com/blog/three-ways-to-send-emails-using-python-with-code-tutorials/
+
+
+
+Bots:
+https://api.telegram.org/bot5383195715:AAHqAtnu74hMDH7qWfN7Eu_BH_c2KO_PWZA/getUpdates
+
+
+
+
+Bots:
+5386350950:AAGYTdg7RXxkC6j6OyOLpJbaFSlBaIR1EDw      @Apo_Sport_bot      (Sport_Dicas)
+5385503021:AAFf9SxalAXwQINTmXm5_qgQUrZZpca5glw      @GeniusBetBR_bot    (GeniusBet)
+5383195715:AAHqAtnu74hMDH7qWfN7Eu_BH_c2KO_PWZA      @xyz_SR_Data_bot    (SR_Data_Bot)
+
+Grupos:
+-1001296286944      Genius_Bet_Intern_Test (antes: Ex_Genius_Bet)
+-1001784740941      GeniusBetGroupTest
+-601995029          SR_Testes
+-1001787168682      SR_Data
+-1001769268544      Audiência JP  Direção
+-692440616          Audiência JP  Jornalismo
+-1001613370831      Audiência JP  Comercial

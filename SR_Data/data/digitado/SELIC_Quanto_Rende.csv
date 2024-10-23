@@ -1,0 +1,38 @@
+title;Quanto rendem as aplicações com a Selic em 13,75%
+subtit;RENTABILIDADE EM 12 MESES
+dfont;Samy Dana
+vtype;rvalue
+group;name
+decimal;2
+show_perc;1
+last_diff;0
+;
+;
+title_fs_jp;44
+title_fs_in;40
+blk_x;140
+blk_y_inb;860
+blk_dx;70,120,
+bar_val_fs;24
+xaxis_fs;24
+;
+
+premissas;Premissas:<br>a) Selic ficará estável em 13,75% por 12 meses<br>b) CDI ficará estável em 13,65% por 12 meses<br>c) Inflação estimada para os próximo 12 meses é de 5.33% (Focus)<br>d) TR estimada para os próximos 12 meses é de 0,10% a.m
+nota1x;20
+nota1y;b1020
+nota1fs;15
+label_inb;premissas,nota1x,nota1y,white,nota1fs,
+;
+;
+type;barP
+leg_x;180
+leg_y;170
+leg_y_inb;300
+;
+data;begin
+x;Ganho Nominal Bruto;Ganho Real Líquido
+Poupança                     .;7.44;2.01
+CDB 80% CDI;10.92;3.49
+CDB 100% CDI;13.65;5.63
+CDB 120% CDI;16.68;7.77
+LCI 100% CDI;13.65;7.90

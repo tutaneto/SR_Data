@@ -1,0 +1,11 @@
+title;Produção de veículos
+subtit;Variação sobre o mês anterior, em %
+dfont;Anfavea
+decimal;1
+;
+;
+;
+date_type;mmm_yy
+;
+data;begin
+anfavea_Prod_Qtd.csv

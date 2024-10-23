@@ -1,0 +1,15 @@
+title;Juros do cartão de crédito
+subtit;Taxa média para pessoas físicas, em % ao ano
+dfont;Bacen
+decimal;2
+group;name
+yref;200
+ylines;250,300,350,400,450,500
+blk_dx;8
+type;line
+xstep;12
+;
+;
+;
+data;begin
+BC_22022

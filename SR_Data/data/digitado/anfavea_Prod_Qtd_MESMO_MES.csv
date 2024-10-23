@@ -1,0 +1,11 @@
+title;Produção de veículos
+subtit;Total de unidades por mês
+dfont;Anfavea
+vtype;rvalue
+divshow;1000
+group;samemonth
+;
+;
+;
+data;begin
+anfavea_Prod_Qtd.csv

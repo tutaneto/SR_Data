@@ -1,0 +1,21 @@
+title;PIB trimestral
+subtit;Em R$
+dfont;IBGE
+vtype;value
+decimal;0
+decimal_inb;1
+mult;1000000
+divshow;1000000000
+divshow_inb;1000000000000
+group;1
+yref;0
+ylines;0,800000,1600000
+blk_dx;80
+blk_dx_inb;74
+period;trim
+divyaxis;1000000000000
+;
+;
+;
+;
+IBGE_2072,933,0,0

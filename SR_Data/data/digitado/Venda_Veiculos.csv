@@ -1,0 +1,29 @@
+title;Venda de veículos no Brasil
+subtit;Números de emplacamentos por mês
+dfont;Fenabrave
+vtype;value
+decimal;0
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;
+blk_dx;120
+period;month
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+2014;3497805
+2015;2568932
+2016;2050240
+2017;2239359
+2018;2566003
+2019;2787618
+2020;2058315
+2021;2119554

@@ -1,0 +1,11 @@
+title;Volume de Serviços
+subtit;Comparação com o ano anterior, em %
+dfont;IBGE
+decimal;1
+blk_dx;74
+group;yearlyv
+ylines;-4,0,4,8
+date_type;yyyymmdd
+;
+data;begin
+IBGE_8161,11626,11046,56726

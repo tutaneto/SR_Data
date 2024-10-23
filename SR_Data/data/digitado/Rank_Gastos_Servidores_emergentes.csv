@@ -1,0 +1,22 @@
+title;Gastos com Servidores
+subtit;em % do PIB
+dfont;Tesouro Nacional e FMI
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+;
+;
+;
+data;begin
+x;y
+Brazil;12.9
+Turkey; 8.7
+Chile;7.1
+Peru;5.7
+Colombia;6.8
+

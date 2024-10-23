@@ -1,0 +1,13 @@
+title;'Prévia do PIB' (IBC-Br)
+subtit;Até {last_month}, comparação com mesmo período do ano anterior
+dfont;BCB-Depec
+;
+decimal;2
+group;year_mean
+blk_dx;80
+blk_dx_inb;74
+;
+;
+;
+data;begin
+BC_24363

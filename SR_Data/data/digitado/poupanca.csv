@@ -1,0 +1,19 @@
+title;Poupança
+subtit;rentabilidade %
+dfont;Banco Central
+vtype;perc
+decimal;2
+mult;1
+divshow;1
+group;1
+yref;0
+blk_dx;80
+period;month
+date_type;dd_mm_yyyy
+;
+;
+;
+;
+;
+data;begin
+BC_195

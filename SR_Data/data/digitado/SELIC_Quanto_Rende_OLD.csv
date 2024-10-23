@@ -1,0 +1,61 @@
+title;Quanto rendem as aplicações com a Selic em 11,75%
+subtit;RENTABILIDADE EM 12 MESES
+dfont;Samy Dana
+title_fs_jp;44
+title_fs_in;40
+decimal;2
+group;name
+blk_x;140
+blk_y_inb;860
+blk_dx;70,120,
+blk_cor;6,1,
+show_perc;1
+last_diff;0
+;
+refcor1;4
+refcor1_in;#00CCFF
+refcor1_inb;#00CCFF
+refcor1_nec;6
+;
+bar_val_fc;refcor1,1,
+;
+laby;650
+laby_in;630
+laby_inb;870
+lab_color;#1C5966
+lab_color_inb;white
+label;Poupança,laby,c200,lab_color,,
+label;CDB 80% CDI,laby,c390,lab_color,,
+label;CDB 100% CDI,laby,c580,lab_color,,
+label;CDB 120% CDI,laby,c770,lab_color,,
+label;LCI 100% CDI,laby,c960,lab_color,,
+;
+refy1;200
+refy2;240
+refy1_inb;300
+refy2_inb;340
+refx;200
+refx_inb;160
+label;Ganho Nominal Bruto,refx,refy1,refcor1,,square
+label;Ganho Real Líquido,refx,refy2,1,,square
+;
+premissas;Premissas:<br>a) Selic ficará estável em 11,75% por 12 meses<br>b) CDI ficará estável em 11,65% por 12 meses<br>c) Inflação estimada para os próximo 12 meses é de 5,67% (FOCUS)<br>d) TR estimada para os próximos 12 meses é de 0,05% a.m
+nota1x;20
+nota1y;b1020
+nota1fs;15
+label_inb;premissas,nota1y,nota1x,white,nota1fs,
+;
+;
+;
+data;begin
+x;y
+;6.80
+;1.07
+;9.32
+;1.91
+;11.65
+;3.73
+;13.98
+;5.55
+;11.65
+;5.66

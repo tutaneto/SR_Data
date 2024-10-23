@@ -1,0 +1,15 @@
+title;Litro da gasolina (mais baratos em US$)
+subtit;
+dfont;globalpetrolprices.com
+title_fs_jp2;46
+vtype;rvalue
+show_perc;0
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+data;begin
+RANK_Oil_Prices.csv

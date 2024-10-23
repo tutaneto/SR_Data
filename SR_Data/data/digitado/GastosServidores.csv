@@ -1,0 +1,22 @@
+title;Gastos dos Servidores Federais
+subtit;em Bilhões de reais
+dfont;Ministério da Economia
+vtype;rvalue
+group;name
+decimal;0
+;
+blk_dx;150
+blk_w;100
+blk_dx_inb;74
+;
+;
+;
+data;begin
+x;y
+2008;137.5
+2011;188.5 
+2013;226.0
+2016;265.6
+2019;319.5
+2021;337.6
+2022;342.7

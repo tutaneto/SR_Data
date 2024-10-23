@@ -1,0 +1,59 @@
+title;PROJEÇÕES 2022
+subtit;
+dfont;Boletim Focus
+title_fc;white
+title_fs;80
+dfont_fc;#EEEEEE
+group;name
+type;table
+;
+;
+tit1; IPCA
+val1; 4,7%
+;
+tit2; para
+val2; 7,1%
+;
+tit3; Meta
+val3; 3,5%
+;
+tit4; Teto da Meta
+val4; 5%
+;
+tit5; PIB
+val5; 1%
+;
+titfc; bold_#EEEEEE
+valfc; bold_yellow
+;
+tit1fs; 60
+tit1x; c0.20
+tit1y; m0.30
+val1y; m0.40
+;
+tit2y; m0.60
+val2y; m0.70
+;
+tit3x; c0.50
+;
+tit5x; c0.80
+tit5y; m0.45
+val5y; m0.55
+;
+label; tit1,tit1y,tit1x,titfc,tit1fs,
+label; val1,val1y,tit1x,valfc,tit1fs,
+;
+label; tit2,tit2y,tit1x,titfc,tit1fs,
+label; val2,val2y,tit1x,valfc,tit1fs,
+;
+label; tit3,tit1y,tit3x,titfc,tit1fs,
+label; val3,val1y,tit3x,valfc,tit1fs,
+;
+label; tit4,tit2y,tit3x,titfc,tit1fs,
+label; val4,val2y,tit3x,valfc,tit1fs,
+;
+label; tit5,tit5y,tit5x,titfc,tit1fs,
+label; val5,val5y,tit5x,valfc,tit1fs,
+;
+data;begin
+x;y

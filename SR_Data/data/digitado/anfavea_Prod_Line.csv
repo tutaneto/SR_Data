@@ -1,0 +1,21 @@
+title;Produção de veículos
+subtit;Em total de unidades, por mês
+dfont;Anfavea
+vtype;value
+decimal;0
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;0,50000,100000,150000,200000,250000,300000
+blk_dx;12
+period;month
+quant;0
+type;line
+xstep;6
+;
+;
+;
+;
+data;begin
+anfavea_Prod_Qtd.csv

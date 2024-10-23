@@ -1,0 +1,27 @@
+title;Alta nos Combustíveis
+subtit;Variação dos preços em %
+dfont;Petrobrás
+group;name
+blk_x_in;400
+blk_x_inb;200
+blk_dx;80,80,150
+blk_cor;0,1,gradient_purple_down.png
+decimal;2
+txt1;Refinarias
+txt2;Expectativa do consumidor
+label;txt1,660,450,black,,
+label;txt2,660,706,black,,
+;
+;
+;
+;
+;
+;
+;
+x;y
+Gasol.;18.77
+Diesel;24.93
+GLP;16.00
+Gasol.;15.02
+Diesel;19.94
+GLP;12.80

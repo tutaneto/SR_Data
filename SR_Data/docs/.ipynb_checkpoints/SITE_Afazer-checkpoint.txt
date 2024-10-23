@@ -1,0 +1,41 @@
+- Download do .csv
+- Download com nome melhor para o arquivo baixado, ao invés do número sequencial
+- Ver se dá para desistir se estiver demorando muito.
+- Limitar número de barras, quando estiver no "name".
+
+
+
+Números nos campos:
+- Testar cinza clarinho nos default
+- Preencher com número default quando clicar
+- Mostrar valor default no help
+- Fazer um modelo com tudo preenchido para ver como fica (TUDO_PREENCHIDO.csv)
+- Fazer um modelo com tudo vazio para ver como fica (TUDO_LIMPO.csv)
+
+
+Legendas:
+Criar novos campos para legendas adicionais.
+OU MELHOR, clica na tela e entra com texto na posição,
+depois pode arrastar, mudar cor, tamanho
+
+
+Server:
+- Copiar arquivo com mesmo nome sequencial para a pasta digitados. Se 2 pessoas criarem
+o mesmo gráfico ao mesmo tempo, pode dar cagada se houver mais de um servidor atendendo.
+- Se campo (x) não contiver tipo de data reconhecível, pode pedir para arrumar
+  "tipo de data não reconhecido, use Agrupado por "Outros", ou trocar automático
+
+
+
+
+RESOLVIDOS
+==========
+
+Ok- out_158.txt salvou com nome do Grafico Errado ('IGPM'), deveria ser 'MaisRentMarco'
+    Deve ter sido causado pelo problema de selecionar sem apertar ENTER (depois corrigido)
+
+Ok- Achar erro: "G Error: not enough values to unpack (expected 2, got 1)"
+    Estava faltando group;name em arquivo sem datas
+
+Ok- Salvar mais info sobre o erro (número, symbol e data)
+    Feito

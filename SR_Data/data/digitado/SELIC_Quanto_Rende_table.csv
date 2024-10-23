@@ -1,0 +1,52 @@
+title;Quanto rende R$1.000 em um ano?
+subtit;Comparação entre rendimentos obtidos com a taxa Selic antiga e a atual
+subtit_inb;Rendimentos obtidos com a taxa Selic antiga e a atual
+dfont;Samy Dana
+vtype;rvalue
+decimal;2
+group;name
+type;table
+show_coin;R$
+;
+;
+tit1;Selic em 9,25%**
+tit2;Selic em 10,75%**
+tit1y;m320
+tit1x;c500
+tit2x;c800
+tit1x_inb;c530
+tit2x_inb;c860
+label;tit1,tit1x,tit1y,white,32,
+label;tit2,tit2x,tit1y,white,32,
+;
+tab_x;l200,c500,c800,
+tab_y;m280
+tab_dy;36
+tab_fs;32
+tab_fc;bold_1,1,1,
+;
+tab_x_inb;l100,c530,c860,
+tab_y_inb;m380
+tab_dy_inb;50
+tab_fs_inb;36
+;
+nota1;*Cálculo leva em conta a alíquota de 17,5% que incide sobre os ganhos<br>caso o dinheiro fiquei aplicado entre 361 dias e 720 dias, além de inflação anual de 5,29%<br>**Rentabilidade anual líquida
+nota1x;20
+nota1y;b1020
+nota1fs;15
+;
+label;nota1,nota1x,nota1y,white,nota1fs,
+;
+data;begin
+x;y;v3
+SELIC   ;22.24 ;33.09
+90% CDI ;13.68 ;24.05
+100% CDI;20.79 ;32.30
+110% CDI;27.89 ;40.56
+120% CDI;34.99 ;48.81
+150% CDI;56.30 ;73.58
+200% CDI;91.82 ;114.85
+250% CDI;127.33;156.13
+LCI 100%;37.61 ;51.86
+LCI 150%;78.90 ;99.84
+POUPANÇA;8.34  ;8.34

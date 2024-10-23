@@ -1,0 +1,38 @@
+1) Abre o Microsoft Store:
+Procure por "Python" e instale a versão mais atualizada (3.10 atualmente)
+
+
+2) Instale o Visual Studio Code (VSC):
+https://code.visualstudio.com/
+
+
+3) Com o VSC aberto:
+Vá no Menu: View - Extensions
+Procure e adicione a extensão:
+"Python" (Microsoft) (normalmente aparece como primeiro da lista)
+
+
+4) Se tentar rodar, e der problema de faltar biblioteca:
+Abra o prompt de comando (Command Prompt)
+Utilize: pip install <biblioteca>
+numpy
+pandas
+requests
+plotly
+ipywidgets                  7.6.3
+pillow
+kaleido
+xlrd
+openpyxl
+moviepy
+investpy
+pyTelegramBotAPI
+google-api-python-client
+
+Obs: Se tiver mais de uma versão de Python, precisa instalar
+as bibliotecas na versão usada,
+
+
+5) Quando for rodar aparece uma telinha "Widgets..." pedindo
+   para instalar, pode clicar Ok.
+

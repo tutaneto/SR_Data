@@ -1,0 +1,25 @@
+Assunto
+    Esporte
+        Futebol
+            Competições
+                Brasileirão 2022
+                    Jogo
+                        Time_Casa
+                            $camp_brasil_2022
+                        Time_Visitante
+                            $camp_brasil_2022
+                        Data
+                        Hora
+                    Tabela
+                Estadual
+            Times
+        Volei
+    Politica
+        Presidente
+        Internacional
+
+
+$camp_brasil_2022
+    Flamengo
+    Corinthians
+    Bahia

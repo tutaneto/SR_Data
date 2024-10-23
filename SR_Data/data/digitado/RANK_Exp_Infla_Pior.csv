@@ -1,0 +1,16 @@
+title;Inflação projetada para 2022
+subtit;Ranking com as maiores expectativas para inflaçã, em % ao ano
+dfont;Trading Economics
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rank
+;
+;
+;
+;
+;
+;
+data;begin
+RANK_Exp_Infla.csv

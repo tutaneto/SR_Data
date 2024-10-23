@@ -1,0 +1,8 @@
+- Utilizando "anos" no "x" a pessoa marca como "Data" em "Dado agrupado por:"
+
+- Esqueceram de colocar x e y em cima dos "Dados:"
+
+- Precisou colocar 0,0 em "Linhas no eixo y" para não aparecer nenhuma linha (0 = automático)
+
+- Na entrada de dados, às vezes usa ',' no lugar de '.', ou usa %, tem que limpar tudo.
+

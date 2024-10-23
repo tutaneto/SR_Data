@@ -1,0 +1,15 @@
+title;Criação de empregos formais no Brasil
+subtit;Acumulado em 12 meses
+dfont;Ministério do Trabalho
+vtype;value
+blk_dx;80
+blk_dx_jp;90
+blk_dx_inb;74
+group;12
+divshow;1000000
+decimal;1
+;
+;
+;
+data;begin
+caged.csv

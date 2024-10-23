@@ -1,0 +1,49 @@
+MANUAL
+
+Dados para gráficos entrados na mão:
+    Pasta: 'data\digitados'
+    Usar Excell ou editor de textos para editar o arquivo .csv
+    Salvar com campo delimitador = ;   e  delimitador de texto = "
+    Conjunto de caracteres: UTF-8
+    Se precisar usar o ; em algum texto, coloque o texto inteiro entre aspas (ex: "palavra; palavra")
+    vtype:
+        perc   = exibe %,
+        value  = exibe sem % (se group for diferente de name, converte valor de índice para diferença)
+        rvalue = não converte valor de índice para diferença entre valores
+
+
+Conversão de entre códigos e nomes nos ativos:
+    Arquivo: '\data\config\assets_codes.csv'
+    Coluna 'code': Código usado no Yahoo, pode ser repetido para nomes diferentes.
+    Coluna 'name': Nome para ser digitado e/ou aparecer na tela (deve ser único).
+                   Quando nomes diferentes são associados a um mesmo código, no
+                   caso da exibição, será selecionado o primeiro nome.
+
+
+Entrada de novo dado manualmente:
+    IGP-M, IGP-DI:
+        https://extra-ibre.fgv.br/autenticacao_produtos_licenciados/
+        Selecione no lado esquerdo da tela:
+            SÉRIES INSTITUCIONAIS FGV (Consultas Gratuitas)
+            ÍNDICES GERAIS DE PREÇOS - IGP
+            Índice Geral de Preços do Mercado - IGP-M
+            Índice Geral de Preços - IGP-DI
+            Escolha a opção de consulta
+                Último dado
+        Arquivo: 'data/fgv/IGPM_BR.csv':
+            date,dayup,nindex,valor
+            mm/aaaa, dia_da_divulgação, índice_divulgado, variação_perc_no_mês[colocar 0]
+        Arquivo: 'data/fgv/IGPDI.csv':
+            date,nindex,valor
+            mm/aaaa, índice_divulgado, variação_perc_no_mês[colocar 0]
+
+
+
+Posicionamento da Legenda:
+Alterar no arquivo data/digitado/config_var.csv
+
+
+
+- Selecione o ítem
+- Clique em adicionar dado
+- Entre com o valor

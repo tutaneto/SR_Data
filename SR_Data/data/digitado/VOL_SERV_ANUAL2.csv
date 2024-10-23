@@ -1,0 +1,21 @@
+title;Setor de serviços - comparação anual
+subtit;Variação mensal do volume, em %
+dfont;IBGE
+vtype;perc
+decimal;1
+mult;1
+divshow;1
+group;yearlyV
+yref;0
+ylines;-4,0,4,8
+blk_dx;80
+period;month
+date_type;yyyymmdd
+;
+;
+;
+;
+;
+;
+data;begin
+IBGE_8161,8677,11046,90670

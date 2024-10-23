@@ -1,0 +1,17 @@
+title;IPCA  Inflação oficial
+subtit;Mês de {last_month} em cada ano, em %
+dfont;IBGE
+group;samemonth
+decimal;2
+ylines;0, 0.5, 1, 1.5
+blk_dx;47
+blk_w;35
+blk_dx_in;35
+blk_w_in;30
+bar_val_fs;18
+date_type;yyyymmdd
+quant;30
+xstep;2
+;
+data;begin
+IBGE_1737,63,0,0

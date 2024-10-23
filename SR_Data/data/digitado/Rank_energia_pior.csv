@@ -1,0 +1,17 @@
+title; Piores Índices de Custo para 200kWh residenciais
+subtit;Ajustado por renda per capta (33 países)
+dfont;ABRACE
+vtype;rvalue
+show_percent;0
+decimal;3
+group;name
+blk_dx;80
+type;rank
+;
+;
+;
+;
+;
+;
+data;begin
+Rank_energia.csv

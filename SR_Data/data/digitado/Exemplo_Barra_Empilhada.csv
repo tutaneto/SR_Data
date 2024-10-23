@@ -1,0 +1,22 @@
+title;Soma de Faturamento
+subtit;Faturamento nas praias em cada ano
+dfont;Prefeituras
+vtype;rvalue
+group;name
+;
+;
+ylines;0,200,400,600,800,1000
+;
+blk_x;300
+blk_dx;200
+blk_w;100
+bar_val_fs;24
+xaxis_fs;24
+;
+type;barS
+;
+data;begin
+x;Praia do Forte;Porto Seguro;Itacaré
+2012;400;200;200
+2013;450;300;250
+2014;400;350;150

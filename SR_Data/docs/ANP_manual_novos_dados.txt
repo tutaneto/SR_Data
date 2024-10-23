@@ -1,0 +1,15 @@
+Site para pegar os dados:
+https://preco.anp.gov.br/
+
+Entrar no ítem:
+"SEMANAL - RESUMO I"
+
+Pegar os valores da coluna "PREÇO MÉDIO":
+
+Copiar no final dos arquivos na pasta data/anp/
+
+GASOLINA COMUM      -> gasol_mes_media_pond.csv
+OLEO DIESEL         -> diesel_mes_media_pond.csv
+ETANOL HIDRATADO    -> etanol_mes_media_pond.csv
+
+OBS: Atentar para só adicionar DADOS NOVOS (quando estiverem disponíveis), e no formato CORRETO.

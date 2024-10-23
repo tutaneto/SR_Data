@@ -1,0 +1,29 @@
+title;Principais desempenhos em abril
+subtit; por classe de investimento em %
+dfont;Bacen e Yahoo Finance
+vtype;rvalue
+group;name
+decimal;2
+ylines;-10,-5,0,5
+;
+;
+;
+blk_dx;110
+blk_w;70
+;
+blk_x_in;160
+blk_x_inb;160
+blk_dx_inb;120
+xaxis_fs_inb;20
+;
+;
+;
+data;begin
+x;y
+BTC;-11.63
+Ibovespa;-10.1
+IMA;0.54
+Poupança;0.5558
+CDI;0.834321
+IPCA;1.73
+Dólar;3.79

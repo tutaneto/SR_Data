@@ -1,0 +1,22 @@
+Corrigir:
+
+
+indexes.py
+    ibge_get_json - arrumar essa forçada (tem que indicar em algum lugar que é trimestral)
+        if agreg == 2072 or agreg == 5932 or agreg == 1846:
+            period_txt = trimonth_period(period_ini, period_end)
+
+
+IPC-Fipe - Último número adicionando na mão
+    - Precisa pegar direto  OU  fazer uma entradinha para colocar na mão
+    - Conferir no site se o índice é baseado no mensal (igual IPCA), ou se tem mais preciso (igual IGP-M)
+
+
+CAGED - precisa pegar direto do Ministerio do Trabalho (BC demora)
+
+
+PIB - Verificar se tem no IBGE pegar um valor que bata com o %
+      Parece que o % é corrigido pela inflação ou US$, ou qualquer coisa
+      E o valor bruro é NOMINAL
+
+

@@ -1,0 +1,5 @@
+
+- login.php pode mudara para index.php
+o arquivo que chama o login.php não deveria estar DURO, e sim salvar o nome de quem o chamou, e chamar de volta
+isso resolveria o problema de trocar de nome o chamador.
+

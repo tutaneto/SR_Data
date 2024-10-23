@@ -1,0 +1,35 @@
+MVP – Site
+
+1)	Um login com senha
+2)	Padrão Investnews (2) que é o de fundo branco em PNG
+3)	Dois tipos de gráfico
+a.	Sem parametrização (os que são puxados automaticamente IBGE, Bacen etc)
+b.	Parametrizados (vamos começar apenas com gráfico de barras de uma única série o que implica sem a necessidade de legenda) O que o usuário pode mexer:
+i.	Digitar os dados, usuário define se:
+•	Dados no tempo: diários, mensais, trimestrais, quadrimestrais, semestrais , anuais
+•	Dados soltos : nome de países, regiões do pais e até datas sem periocidade definida (como estamos falando de gráfico de barras, não há problema no eixo x)
+•	A tela de digitação , se der, pode se parecer com um excel ou google planilhas recebendo copiar ou colar. Se não, vai um csv
+•	Legal ter um previews que vá aparecendo a medida que a pessoa digita ou um botão atualizar
+ii.	Quantidade de barras que serão feitas
+iii.	Largura das barras
+iv.	Título
+•	Tamanho de letra do título
+v.	Subtítulo
+•	Tamanho de letra do subtitulo
+vi.	Fonte (de onde vieram os dados)
+•	Tamanho de letra do Fonte
+vii.	Largura das barras
+viii.	Altura das barras
+ix.	Posicionamento vertical de quando começa o gráfico
+x.	Posicionamento horizontal de quando começa o gráfico
+xi.	 decimal = número de casas decimais
+xii.	mult;1 (deixar em 1, se colocar 1000 ele pegará o dado e multiplicará por mil, ex 4 vira 4000)
+xiii.	divshow;1 (deixar em 1, se colocar 1000 significa que o gráfico lerá 4000 como 4k)
+xiv.	group;
+xv.	        name = exibe exatamente o texto no eixo x
+xvi.	        1 = Usado para dado mensal
+xvii.	        12 = acumula dados dos últimos 12 meses
+xviii.	        yearly = acumula dados mensais para gerar anual
+xix.	        yearlyv = pega dado de Dezembro e compara com ano anterior
+xx.	    yref;0 (deixar em 0)
+xxi.	    ylines;(valores das linhas adicionais, ex: se quiser uma linha em 100 e outra em 500 usar 100,500 e deixar depois do;)

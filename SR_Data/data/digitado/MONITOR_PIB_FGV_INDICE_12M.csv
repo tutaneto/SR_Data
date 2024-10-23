@@ -1,0 +1,12 @@
+title;Monitor do PIB
+subtit;Variação acumulada em 12 meses, em %
+dfont;FGV
+group;12
+decimal;1
+blk_dx;80
+blk_dx_inb;74
+;
+date_type;mm_yyyy
+;
+data;begin
+MONITOR_PIB_FGV_INDICE.csv

@@ -1,0 +1,11 @@
+title;IGP-DI   Índice Geral de Preços
+subtit;Acumulado em 12 meses, em %
+dfont;FGV
+group;12
+decimal;1
+blk_dx;76
+;
+date_type;mm_yyyy
+;
+data;begin
+IGPDI.csv

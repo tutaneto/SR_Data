@@ -1,0 +1,185 @@
+title;Juros reais em 2022
+subtit;Ranking com as taxas descontadas pela inflação , em % ao ano
+dfont;Trading Economics
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rank
+;
+;
+txt_atualiz;Atualizado em 02/08/2022<br>Considerando as atuais taxas nominais de juros e expectativas de inflação de cada país para 2022.
+label_jp;txt_atualiz,120,170,4,24,
+label_inb;txt_atualiz,16,260,5,24,
+;
+;
+;
+data;begin
+x;y
+Afghanistan;10.26
+Albania;-1.69
+Algeria;-5.07
+Angola;9.09
+Argentina;3.55
+Armenia;4.27
+Australia;-2.71
+Austria;-3.57
+Azerbaijan;-0.87
+Bahamas;1.66
+Bahrain;2.46
+Bangladesh;-0.9
+Belarus;1.82
+Belgium;-2.64
+Benin;2.45
+Bhutan;2.35
+Bolivia;0.57
+Bosnia and Herzegovina;-2.97
+Botswana;-8.27
+Brazil;9.28
+Brunei;3.43
+Bulgaria;-6.54
+Burkina Faso;-3.69
+Burundi;-0.98
+Cambodia;-3.14
+Cameroon;-0.95
+Canada;-0.24
+Cape Verde;-6.13
+Central African Republic;0.0
+Chad;0.58
+Chile;4.79
+China;1.62
+Colombia;3.91
+Comoros;-3.43
+Congo;1.61
+Costa Rica;2.23
+Croatia;-2.84
+Cuba;-11.09
+Cyprus;-3.57
+Czech Republic;-0.93
+Denmark;-1.32
+Djibouti;3.35
+Dominican Republic;3.05
+Ecuador;4.79
+Egypt;2.53
+El Salvador;3.18
+Equatorial Guinea;0.29
+Estonia;-5.73
+Ethiopia;-13.71
+Euro Area;-2.08
+Fiji;-1.72
+Finland;-2.46
+France;-3.11
+Gabon;0.97
+Gambia;4.87
+Georgia;2.68
+Germany;-3.57
+Ghana;3.39
+Greece;-2.64
+Guatemala;-1.21
+Guinea;4.21
+Guinea Bissau;-0.29
+Guyana;0.96
+Haiti;1.74
+Honduras;-1.9
+Hong Kong;1.43
+Hungary;2.05
+Iceland;0.96
+India;0.48
+Indonesia;0.24
+Iran;-1.67
+Iraq;0.97
+Ireland;-3.57
+Israel;0.0
+Italy;-2.64
+Ivory Coast;0.1
+Jamaica;-0.28
+Japan;-2.44
+Jordan;2.45
+Kazakhstan;2.97
+Kenya;1.42
+Kuwait;0.0
+Kyrgyzstan;3.64
+Laos;-4.98
+Latvia;-5.37
+Lebanon;-28.17
+Lesotho;-1.4
+Liberia;8.49
+Libya;-0.96
+Lithuania;-7.11
+Luxembourg;-3.11
+Macau;1.33
+Macedonia;-4.92
+Madagascar;2.34
+Malawi;3.64
+Malaysia;0.0
+Maldives;2.88
+Mali;-1.37
+Malta;-1.89
+Mauritania;0.0
+Mauritius;-4.88
+Mexico;4.08
+Moldova;2.79
+Mongolia;6.67
+Morocco;-2.4
+Mozambique;6.42
+Myanmar;-0.93
+Namibia;-0.09
+Nepal;3.83
+Netherlands;-3.11
+New Caledonia;-0.44
+New Zealand;-0.48
+Nicaragua;2.97
+Niger;0.67
+Nigeria;-0.87
+Norway;-1.21
+Oman;0.98
+Pakistan;1.77
+Panama;-1.59
+Papua New Guinea;0.24
+Paraguay;4.59
+Peru;2.9
+Philippines;0.24
+Poland;0.71
+Portugal;-1.7
+Qatar;0.73
+Romania;-0.94
+Russia;1.9
+Rwanda;-2.3
+Sao Tome and Principe;0.0
+Saudi Arabia;2.02
+Senegal;-2.79
+Serbia;-2.17
+Seychelles;0.2
+Sierra Leone;-0.85
+Singapore;-3.0
+Slovakia;-4.66
+Slovenia;-2.64
+South Africa;-0.28
+South Korea;-0.49
+South Sudan;6.67
+Spain;-3.39
+Sri Lanka;-15.19
+Sudan;-36.97
+Suriname;-4.35
+Swaziland;1.25
+Sweden;-2.63
+Switzerland;-1.24
+Taiwan;-0.49
+Tajikistan;8.61
+Tanzania;1.55
+Thailand;-2.66
+Togo;-0.48
+Trinidad and Tobago;0.58
+Tunisia;0.94
+Turkey;-20.42
+Uganda;2.83
+Ukraine;7.76
+United Arab Emirates;2.45
+United Kingdom;-7.5
+United States;-1.1
+Uruguay;1.76
+Uzbekistan;6.48
+Venezuela;-36.95
+Vietnam;1.96
+Zambia;-0.73
+Zimbabwe;100.0

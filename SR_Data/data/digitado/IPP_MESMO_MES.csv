@@ -1,0 +1,11 @@
+title;IPP   Índice de Preços ao Produtor
+subtit;Mês de {last_month} em cada ano, em %
+dfont;IBGE
+group;samemonth
+decimal;2
+blk_dx;74
+blk_dx_jp2;90
+;
+;
+data;begin
+IBGE_6904,1396,543,33586

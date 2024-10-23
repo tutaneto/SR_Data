@@ -1,0 +1,10 @@
+title;Produção Industrial
+subtit;Variação mensal em %
+dfont;IBGE
+decimal;1
+blk_dx;74
+ylines;-2, -1, 0, 1
+;
+;
+data;begin
+IBGE_8159,11601,544,129314

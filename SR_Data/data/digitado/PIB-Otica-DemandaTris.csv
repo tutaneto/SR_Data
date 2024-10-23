@@ -1,0 +1,46 @@
+title;PIB - Sob a ótica da demanda
+subtit;Variação contra o trimestre anterior (%)
+dfont;Contas Nacionais Trimestrais
+vtype;rvalue
+group;name
+decimal;1
+quant;25
+last_diff;0
+;
+blk_dx;35,35,35,35,80,
+blk_dx_jp;44,44,44,44,100,
+blk_dx_inb;32,32,32,32,70,
+blk_w;40
+blk_w_jp;33
+blk_w_in;28
+blk_w_inb;25
+blk_w_nec;28
+blk_h;380
+blk_h_inb;500
+xaxis_fs_jp;17
+xaxis_fs_jp2;15
+xaxis_fs_in;13
+xaxis_fs_inb;10
+xaxis_fs_nec;13
+bar_val_fs_jp;25
+bar_val_fs_in;20
+bar_val_fs_inb;19
+bar_val_fs_nec;20
+;
+refy;165
+refy_inb;300
+ref_fs;30
+label;Famílias,       p2,refy,1,ref_fs,
+label;Governo,        p7,refy,1,ref_fs,
+label;Investimentos, p12,refy,1,ref_fs,
+label;Exportações,   p17,refy,1,ref_fs,
+label;Importações,   p22,refy,1,ref_fs,
+;
+;
+data;begin
+FILES
+PIB-Consum_Familias;5
+PIB-Gastos_Governo;5
+PIB-Investimentos;5
+PIB-Export;5
+PIB-Import;5

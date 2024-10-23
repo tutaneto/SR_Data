@@ -1,0 +1,25 @@
+title;Previsões para o PIB 2022 (em %)
+subtit;Previsões feitas em Jan/2022   vs   previsões feitas em Abr/2022
+dfont;FMI
+vtype;rvalue
+group;name
+decimal;1
+last_diff;0
+;
+blk_w;70
+blk_dx;90,150,
+blk_cor;1,2,
+;
+bar_val_fs;24
+xaxis_fs;22
+;
+data;begin
+x;y
+Jan/22    Abr/22<br>Mundo;                  4.4
+;                                           3.6
+Jan/22    Abr/22<br>Países Desenvolvidos;   3.9
+;                                           3.3
+Jan/22    Abr/22<br>Países Emergentes;      4.8
+;                                           3.8
+Jan/22    Abr/22<br>Brasil;                 0.3
+;                                           0.8

@@ -1,0 +1,67 @@
+interserver.net - RogerUp123Samy!   (Windows - pythonServer!)
+Remote Desktop: 174.138.184.134  pythonServer!  Administrator
+
+hMAXn20$17jj
+
+
+===================================================================
+PARA FUNCIONAR OS .py ONLINE:
+
+Atributo 755 (ou 711) nos arquivos .py
+
+
+
+===================================================================
+NO INÍCIO DO ARQUIVO .py:
+
+Caminho do python:
+#!/home/rogerup/opt/python-3.9.5/bin/python3
+
+Para poder exibir na tela:
+print("Content-type: text/html\n\n")
+
+Acentuação correta:
+print('<head><meta charset="UTF-8"></head>\n')
+
+
+
+===================================================================
+KALEIDO:
+Precisa liberar o kaleido (executável) para rodar sem o erro:
+# Fatal error in , line 0
+# Check failed: reservation_.SetPermissions(protect_start, protect_size, permission).
+
+setfattr
+-m disable MPROTECT
+-r disable RANDMMAP
+
+setfattr -n user.pax.flags -v "mr" ~/opt/python-3.9.5/lib/python3.9/site-packages/kaleido/executable/bin/kaleido
+
+https://www.linuxquestions.org/questions/blog/arniekat-436077/slackware-14-1-pax-notes-36048/
+
+
+Problema do Kaleido permanecer na memória (comando "top" do Linux para ver):
+https://github.com/plotly/Kaleido/issues/103
+https://github.com/plotly/Kaleido/issues/42
+
+
+
+
+===================================================================
+Para pegar as fontes precisa ter a variável HOME setada (no shared quando chama do browser não está)
+Colocar as fontes nas pastas:
+~/.fonts                (antiga pasta de fontes)    (* Aparentemente pega daqui)
+~/.local/share/fonts    (nova pasta de fontes)
+Cache:
+~/.fontconig            (antiga pasta de cache)
+~/.cache/fontconfig     (nova pasta de cache)
+
+fc-list - comando para ver as fontes
+
+
+===================================================================
+CRONJOB (CRON JOB):
+Precisa dar o comando CD pasta, antes de chamar o programa python
+Para poder rodar dentro da pasta correta (pasta onde está o programa)
+
+

@@ -1,0 +1,13 @@
+title;'Prévia do PIB' (IBC-Br)
+subtit;Variação em 12 meses, comparada com 12 meses ant., em %
+dfont;BCB-Depec
+;
+decimal;2
+group;12m_mean
+blk_dx;80
+blk_dx_inb;74
+;
+;
+;
+data;begin
+BC_24363

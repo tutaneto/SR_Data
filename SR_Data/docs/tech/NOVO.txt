@@ -1,0 +1,20 @@
+. Tudo programável por csv ou txt ou xls
+. Seguir padrão (tipo sempre , ou sempre ;)
+. No arquivo de dados dizer o tipo de cada coluna
+    x:
+        data: dd-mm-yyyy, yyyy, ...
+        names
+        ...
+    y:
+        valor: duro, índice
+        percentual
+
+. CONSTANTES PARA CADA TEMPLATE
+. Varia no .csv individual
+. E pode alterar na hora
+
+Mesmo padrão de dados para todos
+
+Data inicial e final para todos
+Períodos programáveis em .csv
+1D:1 util,  5D: 5 úteis, 30D: 30 corridos, ... 1A, 2A, Início do ano,  Início do ano anterior

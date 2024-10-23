@@ -1,0 +1,11 @@
+title;IPC-Fipe   Inflação em São Paulo
+subtit;Variação mensal do Índice de Preços ao Consumidor, em %
+dfont;Fipe
+decimal;2
+;
+blk_dx;80
+blk_dx_inb;74
+;
+;
+data;begin
+BC_193

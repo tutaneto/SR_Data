@@ -1,0 +1,28 @@
+title;CUSTOS DA CONTA DE ENERGIA
+subtit;Componentes do custo da energia
+dfont;ABRACE
+vtype;rvalue
+group;name
+decimal;1
+show_perc;1
+type;pizza
+;
+;Geração, Transmissão e Distribuição
+;Taxas, Impostos e Subsídios
+;
+label_x1;c670
+label_x2;c420
+label_x1_jp2;c870
+label_x2_jp2;c620
+label_y;360
+label;<b>GERAÇÃO<br>TRANSMISSÃO<br>DISTRIBUIÇÃO<b>,label_x1,label_y,white,,
+label;<b>TAXAS<br>IMPOSTOS<br>SUBSÍDIOS<b>,label_x2,label_y,white,,
+;
+label_yn;480
+label;<b>53.5%<b>,label_x1,label_yn,white,48,
+label;<b>46.5%<b>,label_x2,label_yn,white,48,
+;
+data;begin
+x;y
+GERAÇÃO, TRANSMISSÃO E DISTRIBUIÇÃO;53.5
+TAXAS, IMPOSTOS E SUBSÍDIOS;46.5

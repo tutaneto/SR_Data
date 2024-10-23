@@ -1,0 +1,12 @@
+title;Índice Geral de Preços (IGP-10)
+subtit;Variação acumulada em cada ano, em %
+dfont;FGV
+group;yearly
+decimal;1
+blk_dx;80
+blk_dx_inb;74
+;
+date_type;mm_yyyy
+;
+data;begin
+IGP10.csv

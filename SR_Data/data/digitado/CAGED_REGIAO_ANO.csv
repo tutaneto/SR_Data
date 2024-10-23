@@ -1,0 +1,26 @@
+title;Criação de empregos em 2021
+subtit;Número de vagas abertas dividido por região
+dfont;Ministério do Trabalho
+vtype;rvalue
+group;name
+blk_x_in;200
+blk_x_inb;200
+blk_dx;140
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+x;y
+Norte;154667
+Centro-Oeste;263304
+Nordeste;474578
+Sul;480771
+Sudeste;1349692

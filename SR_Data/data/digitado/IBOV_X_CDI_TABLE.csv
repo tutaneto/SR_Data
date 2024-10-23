@@ -1,0 +1,38 @@
+title;Ibovespa x CDI
+subtit;Percentual de vitórias, de 1994 a 2022
+dfont;B3
+vtype;rvalue
+group;name
+type;tableV
+;
+;
+;
+;bg_img;C:/Users/Rogerup/Downloads/Samy_Proj_Files/JM1_TABELA_SAMY.png
+tab_x;        c280
+tab_y;        m220
+;tab_tit_fs;  34
+tab_fs;       33
+tab_tit_fc;   bold_white
+tab_fc;       bold_4
+tab_tit_dy;   50
+tab_dy;       46
+tab_dx;       344
+tab_tit_rect; 320,44,#283C50D9,
+tab_rect;     320,40,#283C504D,
+;
+tab_tit_fs_in;24
+tab_fs_in;    26
+tab_dx_in;    280
+tab_tit_rect_in; 270,44,#283C50D9,
+tab_rect_in;     270,40,#283C504D,
+;
+;rgba(40,60,80,217),
+;
+;
+;
+data;begin
+x;y;v2;v3;v4;v5;v6;v7;v8;v9
+Anos (janela);           1;  2;  3;  4;  5;  10; 15;20;25
+% de vitórias na Bolsa; 51%;49%;45%;44%;41%;28%;20%;4%;0%
+% de vitórias no CDI;   49%;51%;55%;56%;59%;72%;80%;96%;100%
+Combinações;           6714;6462;6210;5958;5706;4446;3186;1926;666

@@ -1,0 +1,22 @@
+title;Quanto rende R$1.000 em um ano?
+subtit;Comparação entre rendimentos obtidos com a taxa Selic antiga e a atual
+dfont;Samy Dana
+vtype;rvalue
+decimal;2
+group;name
+type;table
+;
+data;begin
+x;y;v3
+;Selic em   9,25%**;Selic em 10,75%**
+SELIC;33.09;22.24
+90% CDI;24.05;13.68
+100% CDI;32.30;20.79
+110% CDI;40.56;27.89
+120% CDI;48.81;34.99
+150% CDI;73.58;56.30
+200% CDI;114.85;91.82
+250% CDI;156.13;127.33
+LCI 100%;51.86;37.61
+LCI 150%;99.84;78.90
+POUPANÇA;8.34;8.34

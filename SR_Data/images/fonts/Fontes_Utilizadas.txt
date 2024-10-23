@@ -1,0 +1,17 @@
+FONTES UTILIZADAS
+=================
+
+1) JOVEM PAN 'Mercado Financeiro':
+'Helvetica Neue LT'     ->  Helvetica Neue LT ... Condensed ttf
+
+2) INVEST NEWS
+'Rational Display'      ->  RationalDisplay- ... ttf
+
+3) INVEST NEWS BLACK
+'Rational Display'      ->  RationalDisplay- ... ttf
+
+4) NECTON:
+'Uni Neue'              ->  Fontfabric - UniNeue ... otf
+
+5) JOVEM PAN 2:
+'DIN Next LT Pro'

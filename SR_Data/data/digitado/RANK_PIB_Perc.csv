@@ -1,0 +1,55 @@
+title;PIB em 2021
+subtit;Ranking com variação anual em %
+dfont;Austing Rating
+vtype;rvalue
+decimal;2
+mult;1
+divshow;1
+group;name
+yref;0
+ylines;
+blk_dx;80
+period;month
+type;rank
+;
+;
+;
+;
+;
+;
+;
+x;y
+peru;13.3
+turkey;11.0
+colombia;10.7
+india;8.2
+china;8.1
+israel;8.1
+united kingdom;7.5
+singapore;7.2
+france;7.0
+belgium;6.4
+hong kong;6.4
+italy;6.4
+taiwan;6.3
+canada;5.7
+united states;5.7
+poland;5.7
+philippines;5.6
+netherlands;4.8
+mexico;4.8
+sweden;4.8
+brazil;4.6
+spain;4.5
+denmark;4.2
+norway;4.1
+south korea;4.0
+australia;3.8
+czech republic;3.8
+indonesia;3.7
+switzerland;3.7
+germany;3.1
+malaysia;3.1
+saudi arabia;2.9
+japan;1.7
+thailand;1.6

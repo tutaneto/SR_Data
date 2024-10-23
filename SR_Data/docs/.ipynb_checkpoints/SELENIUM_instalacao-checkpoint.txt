@@ -1,0 +1,40 @@
+Atualizar Google Chrome
+
+
+Criar novo atalho para o "Google Chrome" e chamar de "Chrome Selenium"
+Escolha o programa "chrome.exe"
+Pode estar na pastas:
+C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+C:\Program Files\Google\Chrome\Application\chrome.exe
+C:\Arquivos de Programas\Google\...\chrome.exe
+
+Abra as propriedades do novo atalho e adicione ao final do "Destino" ou "Target", o texto:
+ --user-data-dir="C:\Users\__x_x_x_x__\AppData\Local\Google\Chrome\User Data Selenium"
+ Obs: troque o __x_x_x_x__ pelo nome de usário da máquina
+ deixe um espaço após o "...\chrome.exe"
+ Ficando a linha inteira:
+ "C:\...\chrome.exe" --user-data-dir="C:\Users\__x_x_x_x__\AppData\Local\Google\Chrome\User Data Selenium"
+
+ Obs. A pasta "User Data Selenium" vai ser criada automaticamente (ela ainda não existe).
+
+
+Baixar chromedriver correto para versão em:
+https://chromedriver.chromium.org/downloads
+
+
+Criar pasta:
+C:/SR_Prev      (Windows)
+/Users/SR_Prev  (Mac)
+
+Copiar ou criar arquivo e colocar na pasta:
+chromedriver_path.txt
+
+1a linha) Caminho para o arquivo chromedriver.
+Exemplo:
+    C:/Users/__x_x_x_x__/Downloads/chromedriver.exe      (Windows)
+    /Users/SR_Prev/chromedriver                         (Mac)
+
+2a linha) Caminho para o arquivo usuário chrome.
+Exemplo:
+    C:/Users/__x_x_x_x__/AppData/Local/Google/Chrome/User Data Selenium               (Windows)
+    /Users/__x_x_x_x__/Library/Application Support/Google/Chrome/User Data Selenium   (Mac)

@@ -1,0 +1,10 @@
+title;Vendas do Comércio
+subtit;Variação contra o mesmo mês do ano anterior, em %
+dfont;IBGE
+decimal;1
+blk_dx;74
+;
+;
+;
+data;begin
+IBGE_8185,11709,11046,56734

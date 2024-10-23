@@ -1,0 +1,60 @@
+title;PNAD - Por tipo de ocupação
+subtit;Número de trabalhadores no trimestre encerrado em {last_month}, em milhões
+subtit_inb;Número de trabalhadores no trimestre encerrado em {last_month}
+dfont;IBGE
+vtype;rvalue
+group;name
+blk_dx;150
+blk_dx_in;120
+blk_dx_inb;110
+blk_dx_nec;120
+blk_dx_jp3;180
+blk_y;620
+blk_y_inb;900
+blk_y_jp3;900
+mult;1000
+divshow;1000000
+last_diff;0
+;
+;
+; Linha abaixo é ideia de como poderia configurar melhor
+; x_axix_txt;Total de Ocupados,Empregados com<br>carteira assinada,Conta própria,...
+;
+;
+; Linhas abaixo são usadas para eliminar meses do eixo X
+xstep;100
+xaxis_fc;#00000000
+bar_val_fc;1
+;
+;
+refy;626
+refy_inb;906
+refy_jp3;910
+ref_fs;24
+ref_fs_in;17
+ref_fs_inb;15
+ref_fs_nec;19
+ref_fs_jp3;26
+label;Total de<br>Ocupados,                 p0,refy,1,ref_fs,
+label;Empregados c/<br>cart. assinada,      p1,refy,1,ref_fs,
+label;Conta<br>própria,                     p2,refy,1,ref_fs,
+label;Empregados s/<br>cart. assinada,      p3,refy,1,ref_fs,
+label;Trabalhador<br> do setor púb.,        p4,refy,1,ref_fs,
+label;Doméstico<br>sem carteira,            p5,refy,1,ref_fs,
+label;Empregador,                           p6,refy,1,ref_fs,
+label;Trabalhador<br>familiar auxiliar,     p7,refy,1,ref_fs,
+label;Doméstico<br>com carteira,            p8,refy,1,ref_fs,
+;
+;
+;
+data;begin
+FILES
+PNAD_ocupacao;1
+PNAD_carteira_assinada;1
+PNAD_conta_propria;1
+PNAD_sem_carteira_assinada;1
+PNAD_trabalhador_setor_publico;1
+PNAD_domestico_sem_carteira;1
+PNAD_empregador;1
+PNAD_trabalhador_familiar_auxiliar;1
+PNAD_domestico_com_carteira;1

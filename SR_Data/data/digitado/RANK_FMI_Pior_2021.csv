@@ -1,0 +1,14 @@
+title;Crescimento acum. em 2020 e 2021 (Piores)
+subtit;Ranking melhores
+dfont;FMI
+title_fs_jp2;46
+vtype;rvalue
+decimal;2
+group;name
+blk_dx;80
+type;rankI
+;
+;
+;
+data;begin
+RANK_FMI_Melhor_2021.csv

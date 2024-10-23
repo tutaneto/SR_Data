@@ -1,0 +1,7 @@
+
+Problema com numero:
+https://github.com/plotly/plotly.js/issues/1264
+https://github.com/d3/d3-format/tree/v1.4.5#d3-format
+
+Problemas com data:
+https://community.plotly.com/t/how-to-get-plotly-to-use-the-set-locale/43499

@@ -1,0 +1,22 @@
+title;Faturamento nas praias
+subtit;Faturamento nas praias em cada ano
+dfont;Prefeituras
+vtype;rvalue
+group;name
+last_diff;0
+;
+ylines;0,200,400
+;
+blk_x;200
+blk_dx;70,70,110,
+;
+bar_val_fs;24
+xaxis_fs;24
+;
+type;barP
+;
+data;begin
+x;Praia do Forte;Porto Seguro;Itacaré
+2012;400;200;200
+2013;450;300;250
+2014;400;350;150
