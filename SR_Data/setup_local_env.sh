@@ -7,6 +7,12 @@ echo "Setting up SR_Data local environment..."
 
 # Create necessary directories
 mkdir -p lib bin data/config graphics videos
+mkdir -p ../wwwsec/output
+mkdir -p data/{bc,ibge,fgv,anbima,digitado,filter,mt,cache}
+
+# Create required files
+touch ../wwwsec/output/queue.txt
+touch data/config/auto.csv
 
 # Setup Python virtual environment
 python -m venv venv
