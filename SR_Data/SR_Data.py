@@ -3,10 +3,14 @@
 import time
 import sys, os, platform
 import argparse
+import signal
+import logging
+from datetime import datetime, timedelta
 
 time_start = time.time()
 
 from libraries.gvar import *
+from libraries.server_manager import ServerManager
 # Override default offline mode for main program
 gvar['ONLINE'] = True
 
@@ -20,6 +24,7 @@ gvar['ONLINE'] = True
 parser = argparse.ArgumentParser(description='Financial Data Visualization')
 parser.add_argument('--mode', type=str, help='Operation mode (MERC_FIN_AUTO_ROBO, CGI, CRONJOB)')
 parser.add_argument('--auto-file', type=str, default='auto', help='Auto file name')
+parser.add_argument('--reset', action='store_true', help='Reset server state and clear temporary data')
 args = parser.parse_args()
 
 # Roda no servidor
@@ -335,22 +340,48 @@ if MERC_FIN_AUTO_ROBO:
     gvar['send_by_telegram'] = True
     gvar['ONLINE'] = True  # Set online mode for actual processing
 
+    # Initialize server manager
+    graphics_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'graphics')
+    server = ServerManager(file_name_queue, graphics_dir)
+
     print("SR_Data Server Online")
 
-    while True:
+    # Handle reset request if specified
+    if args.reset:
+        server.reset_server()
+        sys.exit(0)
+
+    last_health_check = datetime.now()
+    health_check_interval = timedelta(minutes=5)
+
+    while server.running:
         try:
+            # Perform periodic health check
+            if datetime.now() - last_health_check > health_check_interval:
+                if not server.check_health():
+                    server.logger.error("Server health check failed")
+                server.log_server_status()
+                last_health_check = datetime.now()
+
             with open(file_name_queue, 'r') as f:
                 command = f.readline().strip()
                 if command:
                     parts = command.split()
                     if len(parts) >= 2:
                         ftype, symbol = parts[0], parts[1]
+                        # Check for reset command
+                        if ftype == 'reset':
+                            server.reset_server()
+                            continue
+
                         symbol_old = symbol
+                        server.logger.info(f"Processing command: {ftype} {symbol}")
                         button_call(ftype)
                         # Clear the queue file after processing
                         open(file_name_queue, 'w').close()
+                        server.logger.info("Command processed successfully")
         except Exception as e:
-            print(f"Error processing queue: {str(e)}")
+            server.logger.error(f"Error processing queue: {str(e)}")
         time.sleep(1)
 
 
