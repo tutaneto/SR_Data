@@ -11,11 +11,21 @@ import logging
 from typing import Optional
 
 class ServerManager:
-    def __init__(self, queue_file: str, graphics_dir: str):
-        self.queue_file = queue_file
-        self.graphics_dir = graphics_dir
+    def __init__(self, queue_file: str = None, graphics_dir: str = None):
+        # Set default paths relative to module location
+        module_dir = os.path.dirname(os.path.abspath(__file__))
+        project_dir = os.path.dirname(module_dir)
+
+        self.queue_file = queue_file or os.path.join(project_dir, '..', 'wwwsec', 'output', 'queue.txt')
+        self.graphics_dir = graphics_dir or os.path.join(project_dir, 'graphics')
+
+        # Initialize status tracking
         self.running = True
         self.start_time = datetime.now()
+        self.current_status = "Idle"
+        self.current_visualization = None
+        self.last_error = None
+
         self.setup_logging()
         self.setup_signal_handlers()
 
@@ -59,14 +69,49 @@ class ServerManager:
                 except Exception as e:
                     self.logger.error(f"Error removing temp file {temp_file}: {str(e)}")
 
+            # Reset status tracking
+            self.current_status = "Idle"
+            self.current_visualization = None
+            self.last_error = None
+
             self.logger.info("Cleanup completed successfully")
         except Exception as e:
             self.logger.error(f"Error during cleanup: {str(e)}")
+            self.last_error = str(e)
+
+    def set_status(self, status: str, visualization: str = None, error: str = None) -> None:
+        """Update server status with visualization information"""
+        self.current_status = status
+        if visualization:
+            self.current_visualization = visualization
+        if error:
+            self.last_error = error
+        self.log_server_status()
+
+    def get_status(self) -> str:
+        """Get current server status"""
+        return self.current_status
+
+    def get_visualization_status(self) -> dict:
+        """Get detailed visualization status information"""
+        return {
+            'status': self.current_status,
+            'current_visualization': self.current_visualization,
+            'last_error': self.last_error,
+            'uptime': str(datetime.now() - self.start_time)
+        }
 
     def log_server_status(self) -> None:
         """Log current server status and metrics"""
         uptime = datetime.now() - self.start_time
-        self.logger.info(f"Server Status - Uptime: {uptime}")
+        status_info = (
+            f"Server Status - Uptime: {uptime}, "
+            f"Status: {self.current_status}, "
+            f"Visualization: {self.current_visualization or 'None'}"
+        )
+        if self.last_error:
+            status_info += f", Last Error: {self.last_error}"
+        self.logger.info(status_info)
 
     def check_health(self) -> bool:
         """Check server health status"""
@@ -74,16 +119,21 @@ class ServerManager:
             # Check if queue file is accessible
             if not os.path.exists(self.queue_file):
                 self.logger.error("Queue file not found")
+                self.set_status("Error", error="Queue file not found")
                 return False
 
             # Check if graphics directory is writable
             if not os.access(self.graphics_dir, os.W_OK):
                 self.logger.error("Graphics directory not writable")
+                self.set_status("Error", error="Graphics directory not writable")
                 return False
 
+            if self.current_status == "Error":
+                self.set_status("Idle")
             return True
         except Exception as e:
             self.logger.error(f"Health check failed: {str(e)}")
+            self.set_status("Error", error=str(e))
             return False
 
     def reset_server(self) -> None:
@@ -92,4 +142,7 @@ class ServerManager:
         self.cleanup()
         self.running = True
         self.start_time = datetime.now()
+        self.current_status = "Idle"
+        self.current_visualization = None
+        self.last_error = None
         self.logger.info("Server reset completed")

@@ -13,18 +13,21 @@ from libraries.server_manager import ServerManager
 class TestServerManagement(unittest.TestCase):
     def setUp(self):
         """Set up test environment"""
-        self.test_queue_file = '../wwwsec/output/queue.txt'
-        self.test_graphics_dir = 'graphics'
+        # Use default paths from ServerManager
+        self.server = ServerManager()
+        self.test_queue_file = self.server.queue_file
+        self.test_graphics_dir = self.server.graphics_dir
 
         # Ensure directories exist
-        os.makedirs('../wwwsec/output', exist_ok=True)
+        os.makedirs(os.path.dirname(self.test_queue_file), exist_ok=True)
         os.makedirs(self.test_graphics_dir, exist_ok=True)
 
         # Create test queue file
         with open(self.test_queue_file, 'w') as f:
             f.write('0 0\n')
 
-        self.server = ServerManager(self.test_queue_file, self.test_graphics_dir)
+        # Verify initial status
+        self.assertEqual(self.server.get_status(), "Idle")
 
     def tearDown(self):
         """Clean up after tests"""
@@ -39,10 +42,13 @@ class TestServerManagement(unittest.TestCase):
     def test_health_check(self):
         """Test server health check functionality"""
         self.assertTrue(self.server.check_health())
+        self.assertEqual(self.server.get_status(), "Idle")
 
         # Test with missing queue file
         os.remove(self.test_queue_file)
         self.assertFalse(self.server.check_health())
+        self.assertEqual(self.server.get_status(), "Error")
+        self.assertIsNotNone(self.server.last_error)
 
         # Restore queue file
         with open(self.test_queue_file, 'w') as f:
@@ -59,6 +65,9 @@ class TestServerManagement(unittest.TestCase):
         with open(self.test_queue_file, 'w') as f:
             f.write('1 IPCA\n')
 
+        # Set some test status
+        self.server.set_status("Processing", "IPCA", "Test error")
+
         # Reset server
         self.server.reset_server()
 
@@ -66,6 +75,11 @@ class TestServerManagement(unittest.TestCase):
         self.assertFalse(os.path.exists(temp_file))
         with open(self.test_queue_file, 'r') as f:
             self.assertEqual(f.read().strip(), '0 0')
+
+        # Verify status reset
+        self.assertEqual(self.server.get_status(), "Idle")
+        self.assertIsNone(self.server.current_visualization)
+        self.assertIsNone(self.server.last_error)
 
     def test_shutdown_handling(self):
         """Test graceful shutdown handling"""
