@@ -334,11 +334,24 @@ if CGI:
 if MERC_FIN_AUTO_ROBO:
     gvar['send_by_telegram'] = True
     gvar['ONLINE'] = True  # Set online mode for actual processing
-    auto_file = 'auto'
-    if len(sys.argv) >= 2:
-        auto_file = sys.argv[1]
-    process_bat(auto_file)
-    sys.exit()
+
+    print("SR_Data Server Online")
+
+    while True:
+        try:
+            with open(file_name_queue, 'r') as f:
+                command = f.readline().strip()
+                if command:
+                    parts = command.split()
+                    if len(parts) >= 2:
+                        ftype, symbol = parts[0], parts[1]
+                        symbol_old = symbol
+                        button_call(ftype)
+                        # Clear the queue file after processing
+                        open(file_name_queue, 'w').close()
+        except Exception as e:
+            print(f"Error processing queue: {str(e)}")
+        time.sleep(1)
 
 
 #######################################
