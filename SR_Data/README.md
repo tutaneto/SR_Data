@@ -6,7 +6,8 @@ A Python-based financial data visualization system that fetches data from variou
 
 - Fetches financial data from multiple sources (BCB, Yahoo Finance, etc.)
 - Generates various types of visualizations (graphs, charts, etc.)
-- Supports automated data updates
+- Supports queue-based visualization requests with continuous processing
+- Provides automated data updates and real-time visualization generation
 - Includes local dependency management for portability
 
 ## Installation
@@ -33,15 +34,24 @@ A Python-based financial data visualization system that fetches data from variou
 
 ## Usage
 
-1. Basic usage:
-   ```bash
-   python SR_Data.py
-   ```
-
-2. Run with specific mode:
+1. Start the visualization server in continuous processing mode:
    ```bash
    python SR_Data.py --mode MERC_FIN_AUTO_ROBO
    ```
+   This will start the server and monitor for visualization requests.
+
+2. Request visualizations through the queue system:
+   ```bash
+   # Generate IPCA (inflation) visualization
+   echo "1 IPCA" > ../wwwsec/output/queue.txt
+
+   # Generate GDP visualization
+   echo "2 PIB" > ../wwwsec/output/queue.txt
+
+   # Generate SELIC rate visualization
+   echo "3 SELIC" > ../wwwsec/output/queue.txt
+   ```
+   Generated visualizations will be saved in the `graphics/` directory.
 
 3. Run tests:
    ```bash
@@ -66,13 +76,24 @@ All dependencies are managed locally within the project directory:
 
 Common issues and solutions:
 
-1. BCB API Access:
+1. Queue Processing Issues:
+   - Verify queue.txt exists in ../wwwsec/output/ directory
+   - Check file permissions on queue.txt and graphics directory
+   - Ensure correct command format (e.g., "1 IPCA", "2 PIB")
+   - Check SR_Server_Errors.txt for detailed error logs
+   - Verify server is running in MERC_FIN_AUTO_ROBO mode
+
+2. BCB API Access:
    - Ensure proper date formatting in API requests
    - Check API endpoint configuration in config.json
+   - Verify network connectivity to BCB servers
+   - Check for API rate limiting or access restrictions
 
-2. Visualization Issues:
+3. Visualization Issues:
    - Verify that all required data files exist
    - Check graphics output directory permissions
+   - Ensure sufficient disk space for output files
+   - Verify matplotlib and plotly dependencies are installed correctly
 
 ## Contributing
 
