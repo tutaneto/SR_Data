@@ -28,6 +28,11 @@ test_outputs/
 *.bak
 data/data_*.json
 data/bc/*.csv
+data/queue/*.txt
+!data/queue/README.md
+temp_backup/
+wwwsec/output/*.txt
+!wwwsec/output/README.md
 
 # IDE
 .idea/
