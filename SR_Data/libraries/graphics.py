@@ -137,7 +137,7 @@ def draw_line(fig, x0, y0, x1, y1, color, width=1, opacity=1.0, dash='solid', la
     if layer == None:
         layer = 'below'
     
-    if template_codes[template_num] == 'JP4_' and val != 0:
+    if template_config.current_template == 'JP4_' and val != 0:
         dash='dot'
 
     x0, y0 = adjust_xy(x0, y0)
@@ -196,7 +196,7 @@ def draw_rectangle(fig, x0, y0, x1, y1, color, opacity=1.0, layer=None):
     x0, y0 = adjust_xy(x0, y0)
     x1, y1 = adjust_xy(x1, y1)
 
-    if layer == None and (TEMPLATE != 'JP_MERC_FIN_4'):
+    if layer == None and (template_config.current_template != 'JP_MERC_FIN_4'):
         layer = 'below'
 
     color = get_txt_color(color, ret_bold=False)
@@ -339,7 +339,7 @@ def show_extra_labels(fig, annot, symbol, data, bar_val_fs, graph_layer):
         img = lbl[5]
         if img != '':
             draw_rectangle(fig, x-8, y+8, x-fs, y+fs, fc, layer=graph_layer)
-        if TEMPLATE == 'INVEST_NEWS_BLACK':
+        if template_config.current_template == 'INVEST_NEWS_BLACK':
             fc = 'white'
         if bold: txt = f'<b>{txt}</b>'
         add_annot(annot, x, y, txt, fc, fs,

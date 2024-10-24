@@ -161,7 +161,7 @@ def draw_rank(fig, annot, countries, values, br_pos, pt_mode=None, show_perc=Fal
             color = BLOCK_BG_COLOR_MID_DN
             flag_circle_color = FLAG_CIRCLE_COLOR_DN
 
-        if TEMPLATE == 'JP_MERC_FIN':
+        if template_config.current_template == 'JP_MERC_FIN':
             txt_color = FOCUS_FOOT_COLOR
         else:
             txt_color = flag_circle_color
@@ -199,7 +199,7 @@ def draw_rank(fig, annot, countries, values, br_pos, pt_mode=None, show_perc=Fal
         #             xanchor='left', yanchor=flag_yanchor)
 
         if not gvar.get('JP_Ibope'):
-            if TEMPLATE == 'INVEST_NEWS_BLACK':
+            if template_config.current_template == 'INVEST_NEWS_BLACK':
                 draw_circle_line(fig, x0+ 8, y0+dir*11, x1- 8, y0+dir*(11+w-16), flag_circle_color, width=3)
             else:
                 draw_circle(fig, x0+ 8, y0+dir*11, x1- 8, y0+dir*(11+w-16), flag_circle_color)
@@ -526,7 +526,7 @@ def show_rank(fig, annot, symbol, date_ini, date_end, dend_type, table_name, qtd
     # Coloca Brazil na lista
     if type(dfr_br) != int:
         # Gambiarra para ficar em 10 no máximo (Invest_News_Black)
-        if TEMPLATE == 'INVEST_NEWS_BLACK' and dfr.shape[0] > 9:
+        if template_config.current_template == 'INVEST_NEWS_BLACK' and dfr.shape[0] > 9:
             dfr = pd.concat([dfr_br, dfr[1:]], ignore_index=True)
         else:
             dfr = pd.concat([dfr_br, dfr], ignore_index=True)
@@ -631,7 +631,7 @@ def show_rank_dig(fig, annot, symbol, qtd=10, debug=None):
     # if rank_tot - br_pos > abs(qtd):
     if br_pos != None and br_pos > abs(qtd):
         # Gambiarra para ficar em 10 no máximo (Invest_News_Black)
-        if TEMPLATE == 'INVEST_NEWS_BLACK' and d_country.size > 9:
+        if template_config.current_template == 'INVEST_NEWS_BLACK' and d_country.size > 9:
             d_country = pd.concat([pd.Series(['brazil']), d_country[1:]], ignore_index=True)
             d_perc = pd.concat([pd.Series([data['yaxis'][br_pos-1]]), d_perc[1:]], ignore_index=True)
         else:

@@ -83,7 +83,7 @@ dfont_label         = [dfont_x, dfont_y, color_text_4,   GT_DFONT_FS]
 
 close_price_label   = [close_x, close_y, color_text_4,   GT_TICKS_FONT_SIZE]
 
-if template_num == 1:
+if template_config.current_template == 'JP_MERC_FIN':
     pres_price_label    = [diff_x, diff_y, GT_PRES_PRICE_FC, 27]  # 30
     asset_label         = [asset_x, asset_y, color_text_4,   34]  # 40
 
@@ -221,7 +221,7 @@ def init_close_line(fig):
 
 def show_close_line(fig, price_close):
     widh = 3
-    if template_num == 1:
+    if template_config.current_template == 'JP_MERC_FIN':
         width = 4
     fig.update_shapes(selector=3, yref='y',
         x0=0, y0=price_close, x1=1, y1=price_close,

@@ -1,6 +1,7 @@
 # Arquivos de dados criados manualmente
 
 from .pres_template import *
+from .template_config import template_config, get_template_config
 
 import pandas as pd
 from .symbols import *
@@ -56,27 +57,27 @@ def load_info_digitado(file_name, symbol=None):
             continue
 
         # Ignora variáveis específicas para o JP3
-        if template_codes[template_num] == 'JP3_' and var[0] in ['blk_w', 'blk_dx', 'bar_val_fs', 'xaxis_fs']:
+        if template_config.current_template == 'JP3_' and var[0] in ['blk_w', 'blk_dx', 'bar_val_fs', 'xaxis_fs']:
             continue
 
         # JP2_ também aceita modificador '_jp'
-        if TEMPLATE == 'JP_MERC_FIN' and var[0][-3:] == '_jp':
+        if template_config.current_template == 'JP_MERC_FIN' and var[0][-3:] == '_jp':
             var[0] = var[0][:-3]
 
-        if TEMPLATE == 'INVEST_NEWS' and var[0][-3:] == '_in':
+        if template_config.current_template == 'INVEST_NEWS' and var[0][-3:] == '_in':
             var[0] = var[0][:-3]
 
-        if TEMPLATE == 'INVEST_NEWS_BLACK' and var[0][-4:] == '_inb':
+        if template_config.current_template == 'INVEST_NEWS_BLACK' and var[0][-4:] == '_inb':
             var[0] = var[0][:-4]
 
-        if TEMPLATE == 'NECTON' and var[0][-4:] == '_nec':
+        if template_config.current_template == 'NECTON' and var[0][-4:] == '_nec':
             var[0] = var[0][:-4]
 
         # JP2_ além do '_jp' acima, também aceita '_jp2'
-        if template_codes[template_num] == 'JP2_' and var[0][-4:] == '_jp2':
+        if template_config.current_template == 'JP2_' and var[0][-4:] == '_jp2':
             var[0] = var[0][:-4]
 
-        if template_codes[template_num] == 'JP3_' and var[0][-4:] == '_jp3':
+        if template_config.current_template == 'JP3_' and var[0][-4:] == '_jp3':
             var[0] = var[0][:-4]
 
         # Converte variáveis de configuração para minúsculas

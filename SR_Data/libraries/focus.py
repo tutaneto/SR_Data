@@ -242,7 +242,7 @@ def show_focus_data(fig, annot, focus_year, gtype=None, debug=None):
              xyear += DVAR
 
         year_color = FOCUS2_HEADER_BLK_COLOR
-        if template_codes[template_num] == 'JP_':
+        if template_config.current_template == 'JP_':
             year_color = FOCUS2_TIT_COLOR
 
         add_annot(annot, xyear, y1-30, years[pos],
@@ -390,7 +390,7 @@ def show_focus_graph(fig, annot, symbol, year, date_ini, date_end, debug=None):
 
     set_ref_type(xref='paper', yref='paper')
     left, right = 200, 400
-    if template_codes[template_num] in ['IN_', 'INB_', 'NEC_']:
+    if template_config.current_template in ['IN_', 'INB_', 'NEC_']:
         right = 100
     set_margins(fig, left, right, 200, 160, 4)
     set_graph_center((left - right)/2)  # valor negativo (Subtrai do centro)

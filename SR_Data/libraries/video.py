@@ -29,7 +29,7 @@ def create_video(file_name, w, h, x=-1, y=-1, debug=None, adj_center=True, pos='
         # video = (mp.VideoFileClip('images/bg_videos/BG_TELAO_LEFT.mp4', audio=False,).fx(mp.vfx.mirror_x))
         video = (mp.VideoFileClip('images/bg_videos/BG_TELAO_RIGHT.mp4', audio=False,))
     else:
-        if template_codes[template_num] != 'JP2_':
+        if template_config.current_template != 'JP2_':
             if pos == 'CHEIA2':
                 # video = (mp.VideoFileClip('images/bg_videos/BG_GRAFICOS_LOOP_30P.mp4', audio=False,))
                 # video = (mp.ImageClip('images/bg_videos/BG_2K_MERCADO_FINANCEIRO.jpg'))
@@ -72,7 +72,7 @@ def create_video(file_name, w, h, x=-1, y=-1, debug=None, adj_center=True, pos='
         w2 *= MULT
         h2 *= MULT
         x = round((1920-w2) / 2)
-        if template_codes[template_num] == 'JP_':
+        if template_config.current_template == 'JP_':
             if h in [600, 524]:  # 001_, 002_
                 x += 60
 
@@ -128,7 +128,7 @@ def create_video(file_name, w, h, x=-1, y=-1, debug=None, adj_center=True, pos='
     clips.append(image)
 
     # Para JP1, 'CHEIA2' passou a se chamar 'TELAO' (v042b)
-    if template_codes[template_num] == 'JP_' and pos == 'CHEIA2':
+    if template_config.current_template == 'JP_' and pos == 'CHEIA2':
         pos = "TELAO"
 
     out = f'videos/{file_name}_{pos}.mp4'
@@ -137,7 +137,7 @@ def create_video(file_name, w, h, x=-1, y=-1, debug=None, adj_center=True, pos='
 
     dir_remote = remote_path()
 
-    if template_codes[template_num] in ['JP_', 'JP2_']:
+    if template_config.current_template in ['JP_', 'JP2_']:
         # https://zulko.github.io/moviepy/getting_started/videoclips.html
         out = out[:-3] + 'png'
         vid.save_frame(out)
@@ -147,7 +147,7 @@ def create_video(file_name, w, h, x=-1, y=-1, debug=None, adj_center=True, pos='
             except: pass
     else:
         vid.write_videofile(out, fps=fps, bitrate=str(10 ** quality))
-        if template_codes[template_num] == 'JP2_' and dir_remote:
+        if template_config.current_template == 'JP2_' and dir_remote:
             try:
                 vid.write_videofile(out.replace('videos/', dir_remote), fps=fps, bitrate=str(10 ** quality))
             except: pass

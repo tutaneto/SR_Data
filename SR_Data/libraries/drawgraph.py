@@ -1,5 +1,5 @@
 from datetime import datetime as dt, timedelta
-from .template_config import TemplateConfig
+from .template_config import template_config, current_template, get_template_config
 from .pres_template import *
 from .gvar import gvar  # Import gvar explicitly
 if gvar.get('is_SR_Data', True):
@@ -12,9 +12,6 @@ from .drawpizza import *
 from .video import *
 from .water import *
 from .getdata import *
-
-# Initialize template configuration system
-template_config = TemplateConfig()
 
 # BARHOR = False  # True
 
@@ -40,9 +37,9 @@ def get_bar_color(color):
     if type(color) == int:
         template = template_config.current_template
         if template == 'JP_MERC_FIN':
-            return template_config.get_color('bar_positive' if color % 2 == 0 else 'bar_negative')
+            return get_template_config('bar_positive' if color % 2 == 0 else 'bar_negative')
         elif template == 'INVEST_NEWS_BLACK':
-            return template_config.get_color('primary' if color % 2 == 0 else 'secondary')
+            return get_template_config('primary' if color % 2 == 0 else 'secondary')
         color = BLOCK_COLORS[color % len(BLOCK_COLORS)]
     return color
 
@@ -69,7 +66,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
     graph_type = data['type']
 
     txt_bg_color, graph_layer = True, None
-    if TEMPLATE in ['INVEST_NEWS_BLACK', 'JP_MERC_FIN_3', 'JP_MERC_FIN_4', 'SBT']:
+    if template_config.current_template in ['INVEST_NEWS_BLACK', 'JP_MERC_FIN_3', 'JP_MERC_FIN_4', 'SBT']:
         txt_bg_color = False
         graph_layer = 'above'
 
@@ -212,7 +209,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
     x0 = block_x - 24
     x1 = block_x + block_dx_tot + block_w + 24
 
-    if TEMPLATE in ['SBT']:
+    if template_config.current_template in ['SBT']:
         x1 = 1700
         xmax = x1
 
@@ -232,7 +229,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
 
         draw_line(fig, x0, y, x1, y, YAXIS_LINE_COLOR, width=width, opacity=opacity, layer=graph_layer, val=val)
 
-        if (val != 0 or yref != 0) and (TEMPLATE not in ['SBT']):
+        if (val != 0 or yref != 0) and (template_config.current_template not in ['SBT']):
             txt = format_data_to_show(data, val)
             add_annot(annot, x0 - 6, y, txt, YAXIS_TEXT_COLOR, YAXIS_FONT_SIZE,
                 xanchor='right', bg_color=txt_bg_color)
@@ -242,7 +239,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
     x0 = block_x
     for pos in range(size):
         x0s.append(x0)
-        if TEMPLATE not in ['SBT']:
+        if template_config.current_template not in ['SBT']:
             x0 += get_block_dx(data, pos)
         else:
             x0 += (xmax)/(size+1.5)
@@ -268,7 +265,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
         is_last = (pos == size - 1)
         last_diff = is_last and data.get('last_diff', True)
 
-        if TEMPLATE in ['JP_MERC_FIN_4', 'SBT']:
+        if template_config.current_template in ['JP_MERC_FIN_4', 'SBT']:
             last_diff = False
 
         # cor e se último pinta diferente pode vir do data
@@ -286,7 +283,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
                 color = BLOCK_BG_COLOR_END_UP
                 xaxis_fc = get_color_pos(XAXIS_TEXT_COLOR, 2)
         else:
-            if TEMPLATE in ['SBT']:
+            if template_config.current_template in ['SBT']:
                 if val>val_old:
                     color = BLOCK_BG_COLOR_END_UP
                 else:
@@ -298,7 +295,7 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
                 color = BLOCK_BG_COLOR_END_DN
                 xaxis_fc = get_color_pos(XAXIS_TEXT_COLOR, 3)
 
-        if graph_type[:3] != 'bar' and TEMPLATE != 'JP_MERC_FIN':
+        if graph_type[:3] != 'bar' and template_config.current_template != 'JP_MERC_FIN':
             color = T_COLOR_3
 
         color = data.get('blk_cor', color)
@@ -426,17 +423,17 @@ def index_draw_graph(fig, annot, symbol, n_months, val_col=None):
         if graph_type == 'barp' and data.get('show_leg', 1) == 2:
             date_y += font_size * 1.3
 
-        if TEMPLATE in ['SBT']:
+        if template_config.current_template in ['SBT']:
             if val>val_old:
-                color = '#50B7F8'
+                color = template_config.get_color('bar_positive')
             else:
-                color = '#FF8793'
+                color = template_config.get_color('bar_negative')
             txt = text_bold(txt, True)
 
         add_annot(annot, xc, date_y, txt, color, font_size,
             xanchor='center', yanchor=date_yanchor, bg_color=txt_bg_color)
 
-        if TEMPLATE in ['SBT']:
+        if template_config.current_template in ['SBT']:
             if val>0:
                 arrow_y = val_y+30
 
@@ -474,7 +471,7 @@ grapht, grapht_symbols = False, []
 
 # Separa título em 2 linhas se for o caso
 def adjust_title(title):
-    if TEMPLATE == 'INVEST_NEWS_BLACK':
+    if template_config.current_template == 'INVEST_NEWS_BLACK':
         pos = 25 + title[25:].find(' ')
         if pos != 25-1:  # -1 = returned if not found
             return [title[:pos], title[pos+1:]]
@@ -506,7 +503,7 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
     global some_error
     global symbol_list  # Add global declaration for symbol_list
 
-    # Get current template configuration
+    # Get current template configuration from module-level export
     current_template = template_config.current_template
 
     # Initialize date variables for testing environment
@@ -663,7 +660,7 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
 
     # Handle template-specific layout adjustments
     if current_template == 'INVEST_NEWS' and not g001:
-        logo_bar_color = template_config.get_color('logo_bar')
+        logo_bar_color = get_template_config('logo_bar')  # Use module-level get_template_config
         draw_rectangle(fig, TITLE_X, TITLE_Y-40, GWIDTH-40, TITLE_Y+70, logo_bar_color)
         draw_rectangle(fig, TITLE_X, DFONT_Y+20, GWIDTH-40, DFONT_Y+60, 'gradient_purple_right.png')
 
@@ -692,12 +689,12 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         titbold = True
 
         # Template-specific title adjustments
-        if current_template == 'JP2_':
+        if template_config.current_template == 'JP2_':
             title_x = get_graph_center()
             xanchor, align = 'center', 'center'
-        elif current_template == 'JP3_':
+        elif template_config.current_template == 'JP3_':
             titbold = False
-        elif current_template == 'SBT_':
+        elif template_config.current_template == 'SBT_':
             title_x = get_graph_center()
             xanchor, align = 'center', 'center'
 
@@ -706,7 +703,7 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
 
         # Title rendering based on template
         if titles[1] == '':
-            if current_template == 'SBT_':
+            if template_config.current_template == 'SBT_':
                 add_annot(annot, title_x-15, TITLE_Y, text_contour(title), None, 189, xanchor=xanchor, align=align)
                 add_annot(annot, title_x, TITLE_Y,
                     title.split(' ', 1)[0].upper(), title_fc, title_fs,
@@ -739,7 +736,7 @@ def update_graph(fig, symbol, n_months, title, subtit, dfont, bg_transparent, va
         if SUBTIT_CAPS:
             subtit_txt = subtit_txt.upper()
 
-        if current_template == 'SBT_':
+        if template_config.current_template == 'SBT_':
             title_x = get_graph_center()
             xanchor, align = 'center', 'center'
 
@@ -845,7 +842,7 @@ def get_save_file_name():
     return save_file_name
 
 def graph_create_video(pos='CHEIA'):
-    file_name = f'{template_codes[template_num]}_{save_file_name}'
+    file_name = f'{template_config.current_template}_{save_file_name}'
     create_video(file_name, gwidth, gheight, debug=debug, pos=pos)
 
 

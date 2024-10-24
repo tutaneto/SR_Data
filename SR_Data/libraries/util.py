@@ -55,11 +55,12 @@ def remote_path():
     try:
         dir_remote = None
         dir_date = dt.now().strftime("%Y%m%d")
-        if template_codes[template_num] == 'JP_':
+        current_template_val = template_config.current_template
+        if current_template_val == 'JP_':
             dir_remote = f'U:/Samy_Dana/Mercado Financeiro/{dir_date}/'
-        if template_codes[template_num] == 'JP2_':
+        if current_template_val == 'JP2_':
             dir_remote = f'U:/Samy_Dana/Jornal da Manhã/{dir_date}/'
-        if template_codes[template_num] == 'JP3_':
+        if current_template_val == 'JP3_':
             dir_remote = f'U:/Samy_Dana/Pros e Contras/{dir_date}/'
         if dir_remote:
             Path(dir_remote).mkdir(parents=True, exist_ok=True)
@@ -241,8 +242,8 @@ def get_xy_anchors(x, y):
 
     if y > -1.5 and y < 1.5:
         y *= gvar['gheight']
-    
-    if template_codes[template_num] == 'SBT_':
+
+    if template_config.current_template == 'SBT_':
         yanchor = 'bottom'
 
     return x, y, xanchor, yanchor

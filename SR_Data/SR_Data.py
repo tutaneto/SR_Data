@@ -10,8 +10,11 @@ from datetime import datetime, timedelta
 from libraries.gvar import *
 from libraries.server_manager import ServerManager
 from libraries.server_util import *
+from libraries.template_config import template_config, current_template, get_template_config, get_template_number
 # Override default offline mode for main program
 gvar['ONLINE'] = True
+# Initialize default template
+template_config.set_template('JP_MERC_FIN')
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -33,6 +36,10 @@ except locale.Error:
     except locale.Error:
         print("Warning: Brazilian locale not available, using system default")
 
+# Initialize template configuration
+template_num = 1  # Default template number
+gvar['template_num'] = template_num  # Sync with gvar
+
 df = {}
 getdata_init(df)
 init_countries()
@@ -53,11 +60,16 @@ def prepare_template(tp_num):
     if template_num != tp_num:
         template_num = tp_num
         set_template(template_num)
+        # Update template_config with corresponding template code
+        if template_num == 1:
+            template_config.set_template('JP_MERC_FIN')
+        elif template_num == 3:
+            template_config.set_template('INVEST_NEWS_BLACK')
 
     save_file_scale = 3
-    if template_codes[template_num] in ['IN_', 'NEC_']:
+    if template_config.current_template in ['IN_', 'NEC_']:
         save_file_scale = 0.675
-    if template_codes[template_num] in ['INB_', 'JP3_']:
+    if template_config.TEMPLATE_CODES[template_num] in ['INB_', 'JP3_']:
         save_file_scale = 1
 
 def process_bat(auto_file=None):
@@ -165,6 +177,11 @@ def on_trait_group(chg):
 
 def button_call(btype):
     global bg_transparent
+    from libraries.template_config import template_config
+
+    # Ensure template configuration is initialized
+    if not hasattr(template_config, 'current_template') or not template_config.current_template:
+        template_config.set_template('JP_MERC_FIN')
 
     # Convert numeric types to string and handle type conversion
     if isinstance(btype, (int, float, np.integer, np.floating)):
@@ -189,25 +206,37 @@ def button_call(btype):
     if btype == 'VID':
         bg_transparent = True
 
-    fig_save = call_draw_graph(save_file_scale, symbol_old)
+    try:
+        fig_save = call_draw_graph(save_file_scale, symbol_old)
 
-    filepath = f'graphics/{template_codes[template_num]}_{get_save_file_name()}.{btype.lower()}'
-    if btype == 'VID':
-        filepath = file_img_to_video
+        filepath = f'graphics/{template_config.current_template}_{get_save_file_name()}.{btype.lower()}'
+        if btype == 'VID':
+            filepath = file_img_to_video
 
-    delete_file(filepath)  # Apaga arquivo antigo p/ ficar com data ok
-    pio.write_image(fig_save, filepath)
+        # Ensure graphics directory exists
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
-    if btype in ['PNG', 'JPG']:
-        send_by_telegram(filepath)
+        delete_file(filepath)  # Apaga arquivo antigo p/ ficar com data ok
+        pio.write_image(fig_save, filepath)
 
-    if btype == 'VID':
-        graph_create_video()
-        graph_create_video(pos='CHEIA2')
+        if btype in ['PNG', 'JPG']:
+            send_by_telegram(filepath)
+
+        if btype == 'VID':
+            file_name = f'{template_config.current_template}_{get_save_file_name()}'
+            # Get width and height from figure
+            width = fig_save.layout.width or 800
+            height = fig_save.layout.height or 600
+            create_video(file_name, width, height, debug=None, pos='CHEIA')
+            create_video(file_name, width, height, debug=None, pos='CHEIA2')
+            bg_transparent = False
+            delete_file(filepath)  # Apaga imagem usada para gerar o vídeo
+
         bg_transparent = False
-        delete_file(filepath)  # Apaga imagem usada para gerar o vídeo
-
-    bg_transparent = False
+        return True
+    except Exception as e:
+        print(f"Error in button_call: {str(e)}")
+        return False
 
 def copy_graph_data_file():
     if platform.system() != 'Windows':
@@ -218,7 +247,7 @@ def generate_graph():
     button_call('png')
 
     btype = 'PNG'
-    filepath = f'graphics/{template_codes[template_num]}_{get_save_file_name()}.{btype.lower()}'
+    filepath = f'graphics/{template_config.current_template}_{get_save_file_name()}.{btype.lower()}'
 
     file_name_out = f'{file_name_base}_{pos_out}.png'
     shutil.move(filepath, file_name_out)
@@ -398,7 +427,7 @@ def main(args=None):
                 access_ok = True
 
             if access_ok:
-                tp_num = {'_inb':3, '_jp':1, '_jp2':5, '_jp3':7, '_nec':4}.get(tp_name, 2)
+                tp_num = template_config.get_template_number(tp_name) or 2  # Default to 2 if not found
                 prepare_template(tp_num)
 
                 file_name_symbol = f'{file_name_base}_{pos_out}.txt'

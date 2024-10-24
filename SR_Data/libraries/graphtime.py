@@ -176,7 +176,7 @@ def draw_graph_time(fig, annot, date_ini, date_end, glist, debug=None):
         names += f'{name}, '
 
         # line_color = [3, '#6688AA', 1]
-        if TEMPLATE == 'INVEST_NEWS_BLACK':
+        if template_config.current_template == 'INVEST_NEWS_BLACK':
             line_color = [1, 5, 6]
         else:
             line_color = ['#557799', 1, 3,  '#000044', '#000077', '#0000CC', '#444444', '#666666', '#999999']
@@ -289,7 +289,7 @@ def draw_graph_001(fig, annot, date_ini, date_end, symbol, bg_transparent, debug
     GS = get_scale()
     main_001(fig, GS)
 
-    if TEMPLATE == 'INVEST_NEWS_BLACK':
+    if template_config.current_template == 'INVEST_NEWS_BLACK':
         add_image(fig, 'images/invest_news/InvNews_Bg_Black.jpeg', 0, 0,
                 1080, 1080, xanchor='left', yanchor='top', layer='below')
 
