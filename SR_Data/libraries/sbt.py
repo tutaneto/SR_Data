@@ -20,17 +20,17 @@ SHOW_PERC = True
 #######################################
 
 T_COLOR_1 = '#FFFFFF'  # title
-T_COLOR_2 = '#FFFFFF'  # behind title 
+T_COLOR_2 = '#FFFFFF'  # behind title
 T_COLOR_3 = '#FFFFFF'  # date text
 T_COLOR_4 = '#FFFFFF'  # above graph text
 T_COLOR_5 = '#FFFFFF'  # bellow graph text
 T_COLOR_6 = '#FFFFFF'  # negative color
-T_COLOR_7 = '#FFFFFF'  # positive color 
+T_COLOR_7 = '#FFFFFF'  # positive color
 
 BG_COLOR = '#263240'
 
 BLOCK_BG_COLOR_MID_UP = 'sbt_pos_sub.png'
-BLOCK_BG_COLOR_MID_DN = 'sbt_neg_desc.png'  
+BLOCK_BG_COLOR_MID_DN = 'sbt_neg_desc.png'
 BLOCK_BG_COLOR_END_UP = 'sbt_neg_sub.png'  # T_COLOR_4  # new
 BLOCK_BG_COLOR_END_DN = 'sbt_pos_desc.png'  # T_COLOR_1  # new
 
@@ -56,7 +56,7 @@ TITLE_X = 120
 TITLE_Y = 110
 TITLE_DX = 0
 
-SUBTIT_X = TITLE_X 
+SUBTIT_X = TITLE_X
 SUBTIT_Y = TITLE_Y + 90
 SUBTIT_CAPS = True
 
@@ -98,7 +98,7 @@ WATERMARK_IMG = None
 # WATERMARK_ALPHA = 0.03
 # WATERMARK_LAYER = 'above'
 # WM_X, WM_Y, WM_W, WM_H = 700, 400, 1050, 150
-# WM_X_GT, WM_Y_GT = 500, 300
+# WM_Y_GT, WM_Y_GT = 500, 300
 
 #######################################
 #           RANKING

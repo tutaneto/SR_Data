@@ -169,7 +169,7 @@ def world_indexes_draw_rectangles(fig, labels, block_dy):
 
         draw_rectangle(fig, x0, y0, x1, y1, color_back_rect)
 
-        if TEMPLATE == 'JP_MERC_FIN':
+        if template_config.current_template == 'JP_MERC_FIN':
             height = y1-y0 + 2.5
             width = height / 780 * 780 # 1191
             add_image(fig, f'images/{world_flags[i]}_ok.png', x0-width+2, y0-1.3, width, height, xanchor='left', yanchor='top')
@@ -318,7 +318,7 @@ def show_moedas(fig, annotations):
     global t_error
     t_error = 0
 
-    if template_codes[template_num] == 'JP_':
+    if template_config.current_template == 'JP_MERC_FIN':
         ico_img = 'images/focus/jp_merc_fin/IPCA.png'
     else:
         ico_img = 'images/ico_moedas_ok.png'

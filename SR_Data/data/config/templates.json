@@ -1,0 +1,89 @@
+{
+    "description": "Template configuration file for different client templates",
+    "templates": {
+        "JP_MERC_FIN": {
+            "code": "JP",
+            "colors": {
+                "primary": "#1f77b4",
+                "secondary": "#ff7f0e",
+                "background": "#ffffff",
+                "text": "#000000",
+                "accent": "#2ca02c"
+            },
+            "fonts": {
+                "title": "Arial",
+                "subtitle": "Arial",
+                "text": "Arial"
+            },
+            "sizes": {
+                "width": 800,
+                "height": 600,
+                "title_size": 24,
+                "subtitle_size": 18,
+                "text_size": 12
+            },
+            "margins": {
+                "top": 80,
+                "right": 50,
+                "bottom": 50,
+                "left": 80
+            }
+        },
+        "INVEST_NEWS_BLACK": {
+            "code": "INB",
+            "colors": {
+                "primary": "#ffffff",
+                "secondary": "#00ff00",
+                "background": "#000000",
+                "text": "#ffffff",
+                "accent": "#00ccff"
+            },
+            "fonts": {
+                "title": "Helvetica",
+                "subtitle": "Helvetica",
+                "text": "Helvetica"
+            },
+            "sizes": {
+                "width": 1080,
+                "height": 1080,
+                "title_size": 32,
+                "subtitle_size": 24,
+                "text_size": 16
+            },
+            "margins": {
+                "top": 100,
+                "right": 60,
+                "bottom": 60,
+                "left": 60
+            }
+        },
+        "SBT_TEMPLATE": {
+            "code": "SBT",
+            "colors": {
+                "primary": "#ff0000",
+                "secondary": "#ffffff",
+                "background": "#000000",
+                "text": "#ffffff",
+                "accent": "#ffff00"
+            },
+            "fonts": {
+                "title": "Helvetica",
+                "subtitle": "Helvetica",
+                "text": "Helvetica"
+            },
+            "sizes": {
+                "width": 1920,
+                "height": 1080,
+                "title_size": 40,
+                "subtitle_size": 28,
+                "text_size": 18
+            },
+            "margins": {
+                "top": 120,
+                "right": 80,
+                "bottom": 80,
+                "left": 80
+            }
+        }
+    }
+}

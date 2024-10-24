@@ -1,11 +1,15 @@
 from .pres_template import *
+from .template_config import template_config, current_template
+
+# Initialize default template
+# current_template is now imported directly from template_config
 
 # Graphic size and margins
 IMAGEW  =  GT_IMAGE_W
 IMAGEH  =  GT_IMAGE_H
 MARGINL, MARGINR, MARGINT, MARGINB, MARGINPAD =  GT_001_MARGINS
 
-if TEMPLATE == 'INVEST_NEWS_BLACK':
+if template_config.current_template == 'INVEST_NEWS_BLACK':
     MARGINT = 240
     MARGINL = 120
 
@@ -43,7 +47,7 @@ color_diff_pos = color_text_3
 pp_x = IMAGEL + px_rel(8)
 pp_y = IMAGET - py_rel(40)  # 80
 
-if TEMPLATE == 'INVEST_NEWS_BLACK':
+if template_config.current_template == 'INVEST_NEWS_BLACK':
     pp_x += px_rel(160)
     pp_y -= px_rel( 60)
 
@@ -59,7 +63,7 @@ time_y  = pp_y - py_rel(85)  # 90
 asset_x = IMAGER - px_rel(8)
 asset_y = pp_y - py_rel(0)
 
-if TEMPLATE == 'INVEST_NEWS_BLACK':
+if template_config.current_template == 'INVEST_NEWS_BLACK':
     asset_x -= px_rel(2)
 
 dfont_x = asset_x  # pp_x
@@ -82,12 +86,12 @@ block_info_mid  = block_info_y0 + block_info_h * 0.5
 
 block_info_lbl_dx = [0.14, 0.10, 0.15]
 
-if template_num == 1:
+if template_config.current_template == 'JP_MERC_FIN':
     block_info_y1   = 0 - py_rel(68)
     block_info_lbl_dx = [0.20, 0.12, 0.22]
 
 if GT_INFO_52M:
-    if template_num == 1:
+    if current_template == 'JP_MERC_FIN':
         block_info_lbl_x = [
             block_info_cen - block_info_w * 0.31,
             block_info_cen - block_info_w * 0.03,
